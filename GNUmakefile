@@ -21,6 +21,7 @@ ADDITIONAL_OBJCFLAGS += -include Freecell_Prefix.h -Winvalid-pch
 
 APP_NAME = Freecell
 Freecell_PRINCIPAL_CLASS=NSApplication
+Freecell_APPLICATION_ICON=Freecell.tiff
 Freecell_OBJC_PRECOMPILED_HEADERS=Freecell_Prefix.h
 Freecell_OBJC_FILES=Card.m \
   CardView.m\
@@ -36,7 +37,8 @@ Freecell_OBJC_FILES=Card.m \
   TableLocation.m\
   TableMove.m
 Freecell_C_FILES=vccRand.c
-Freecell_RESOURCE_FILES=Info-Freecell.plist \
+Freecell_RESOURCE_FILES=FreecellInfo.plist \
+  Freecell.tiff\
   Licence.txt\
   Cards/bonded.png\
   Cards/large-bonded.png\
