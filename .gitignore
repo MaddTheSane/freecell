@@ -13,6 +13,7 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+*.mode1
 # GNUstep
 obj
 Freecell.app
