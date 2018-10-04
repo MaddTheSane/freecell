@@ -15,6 +15,7 @@
 		55B47D942166BB9500D34D16 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D932166BB9500D34D16 /* GameController.swift */; };
 		55B47D962166C28C00D34D16 /* TableLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D952166C28C00D34D16 /* TableLocation.swift */; };
 		55B47D982166C4E000D34D16 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D972166C4E000D34D16 /* Result.swift */; };
+		55B47D9A2166C6AF00D34D16 /* vccRandHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D992166C6AF00D34D16 /* vccRandHelper.swift */; };
 		F29D0D33158CE03A0050A6FA /* Freecell_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Freecell_Prefix.h */; };
 		F29D0D34158CE03A0050A6FA /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = F2CD26A404B477F30003D579 /* GameView.h */; };
 		F29D0D35158CE03A0050A6FA /* Table.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B3C1C304B48990008FB189 /* Table.h */; };
@@ -72,6 +73,7 @@
 		55B47D932166BB9500D34D16 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		55B47D952166C28C00D34D16 /* TableLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableLocation.swift; sourceTree = "<group>"; };
 		55B47D972166C4E000D34D16 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		55B47D992166C6AF00D34D16 /* vccRandHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vccRandHelper.swift; sourceTree = "<group>"; };
 		F21273FF0508ADD60038B809 /* French */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = French; path = French.lproj/Help; sourceTree = "<group>"; };
 		F241643C07C7A06B002C0965 /* bonded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bonded.png; path = Cards/bonded.png; sourceTree = "<group>"; };
 		F24508A204BB163A00664F50 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				55B47D952166C28C00D34D16 /* TableLocation.swift */,
 				55B47D972166C4E000D34D16 /* Result.swift */,
 				55B47D8D2166B96700D34D16 /* Card.swift */,
+				55B47D992166C6AF00D34D16 /* vccRandHelper.swift */,
 				55B47D932166BB9500D34D16 /* GameController.swift */,
 				55B47D822166B92000D34D16 /* Assets.xcassets */,
 				55B47D842166B92000D34D16 /* MainMenu.xib */,
@@ -424,6 +427,7 @@
 			files = (
 				55B47D982166C4E000D34D16 /* Result.swift in Sources */,
 				55B47D812166B91E00D34D16 /* AppDelegate.swift in Sources */,
+				55B47D9A2166C6AF00D34D16 /* vccRandHelper.swift in Sources */,
 				55B47D942166BB9500D34D16 /* GameController.swift in Sources */,
 				55B47D962166C28C00D34D16 /* TableLocation.swift in Sources */,
 				55B47D8E2166B96700D34D16 /* Card.swift in Sources */,
