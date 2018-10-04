@@ -263,11 +263,11 @@
 			isa = PBXGroup;
 			children = (
 				55B47D802166B91E00D34D16 /* AppDelegate.swift */,
+				55B47D8D2166B96700D34D16 /* Card.swift */,
 				55B47D822166B92000D34D16 /* Assets.xcassets */,
 				55B47D842166B92000D34D16 /* MainMenu.xib */,
 				55B47D872166B92000D34D16 /* Info.plist */,
 				55B47D882166B92000D34D16 /* FreeCell_Swift.entitlements */,
-				55B47D8D2166B96700D34D16 /* Card.swift */,
 				55B47D922166B9C600D34D16 /* FreeCellSwift-bridging.h */,
 			);
 			path = "FreeCell Swift";

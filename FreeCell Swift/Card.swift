@@ -9,43 +9,24 @@ import Foundation
 
 /// Suit order is important: must match the card graphics file.
 public enum Suit : Int32 {
-    
-    
     case clubs = 0
-    
     case diamonds
-    
     case hearts
-    
     case spades
 }
 
 public enum Rank : Int32 {
-    
-    
-    case ACE = 1
-    
-    case TWO
-    
-    case THREE
-    
-    case FOUR
-    
-    case FIVE
-    
-    case SIX
-    
-    case SEVEN
-    
-    case EIGHT
-    
-    case NINE
-    
-    case TEN
-    
-    case JACK
-    
-    case QUEEN
-    
-    case KING
+    case ace = 1
+    case two
+    case three
+    case four
+    case five
+    case six
+    case seven
+    case eight
+    case nine
+    case ten
+    case jack
+    case queen
+    case king
 }
