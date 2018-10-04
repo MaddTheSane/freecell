@@ -45,7 +45,7 @@
     IBOutlet NSTextField    *movesMade;
     Game                    *game;
     CardView                *cardView;
-    HistoryController       *history;
+    IBOutlet HistoryController *history;
     NSTimer                 *timer;
 }
 

@@ -12,6 +12,7 @@
 		55B47D862166B92000D34D16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D842166B92000D34D16 /* MainMenu.xib */; };
 		55B47D8C2166B92D00D34D16 /* vccRand.c in Sources */ = {isa = PBXBuildFile; fileRef = F2B6AE4D07F5933000F80727 /* vccRand.c */; };
 		55B47D8E2166B96700D34D16 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D8D2166B96700D34D16 /* Card.swift */; };
+		55B47D942166BB9500D34D16 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D932166BB9500D34D16 /* GameController.swift */; };
 		F29D0D33158CE03A0050A6FA /* Freecell_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Freecell_Prefix.h */; };
 		F29D0D34158CE03A0050A6FA /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = F2CD26A404B477F30003D579 /* GameView.h */; };
 		F29D0D35158CE03A0050A6FA /* Table.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B3C1C304B48990008FB189 /* Table.h */; };
@@ -66,6 +67,7 @@
 		55B47D882166B92000D34D16 /* FreeCell_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FreeCell_Swift.entitlements; sourceTree = "<group>"; };
 		55B47D8D2166B96700D34D16 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		55B47D922166B9C600D34D16 /* FreeCellSwift-bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FreeCellSwift-bridging.h"; sourceTree = "<group>"; };
+		55B47D932166BB9500D34D16 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		F21273FF0508ADD60038B809 /* French */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = French; path = French.lproj/Help; sourceTree = "<group>"; };
 		F241643C07C7A06B002C0965 /* bonded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bonded.png; path = Cards/bonded.png; sourceTree = "<group>"; };
 		F24508A204BB163A00664F50 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			children = (
 				55B47D802166B91E00D34D16 /* AppDelegate.swift */,
 				55B47D8D2166B96700D34D16 /* Card.swift */,
+				55B47D932166BB9500D34D16 /* GameController.swift */,
 				55B47D822166B92000D34D16 /* Assets.xcassets */,
 				55B47D842166B92000D34D16 /* MainMenu.xib */,
 				55B47D872166B92000D34D16 /* Info.plist */,
@@ -414,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B47D812166B91E00D34D16 /* AppDelegate.swift in Sources */,
+				55B47D942166BB9500D34D16 /* GameController.swift in Sources */,
 				55B47D8E2166B96700D34D16 /* Card.swift in Sources */,
 				55B47D8C2166B92D00D34D16 /* vccRand.c in Sources */,
 			);
