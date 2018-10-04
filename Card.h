@@ -30,15 +30,15 @@
 #import <Foundation/Foundation.h>
 
 // Suit order is important: must match the card graphics file.
-typedef enum {
+typedef NS_ENUM(int, Suit) {
     CLUBS, DIAMONDS, HEARTS, SPADES
-} Suit;
+};
 
 enum { NUMBER_OF_SUITS = 4 };
 
-typedef enum {
+typedef NS_ENUM(int, Rank) {
     ACE = 1, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
-} Rank;
+};
 
 
 @interface Card : NSObject <NSCopying>
@@ -47,18 +47,18 @@ typedef enum {
     Rank rank;
 }
 
-+ cardWithSuit: (Suit) newSuit rank: (Rank) newRank;
-- initWithSuit: (Suit) newSuit rank: (Rank) newRank;
++ (instancetype)cardWithSuit: (Suit) newSuit rank: (Rank) newRank;
+- (instancetype)initWithSuit: (Suit) newSuit rank: (Rank) newRank;
 
 // Accessors
 //
 
-- (Suit) suit;
+@property (readonly) Suit suit;
 - (NSString *) suitString;
-- (Rank) rank;
+@property (readonly) Rank rank;
 - (NSString *) rankString;
-- (BOOL) isRed;
-- (BOOL) isBlack;
+@property (readonly, getter=isRed) BOOL red;
+@property (readonly, getter=isBlack) BOOL black;
 - (BOOL) isSuccessorTo: (Card *) other; // Move to Game logic: these methods are
 - (BOOL) isPlayableOn: (Card *) other;  // not part of a generic card class.
 

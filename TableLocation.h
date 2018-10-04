@@ -29,7 +29,13 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum { NONE, FREE_CELL, STACK, COLUMN, DECK } TableLocationType;
+typedef NS_ENUM(short, TableLocationType) {
+    NONE,
+    FREE_CELL,
+    STACK,
+    COLUMN,
+    DECK
+};
 
 @interface TableLocation : NSObject <NSCopying>
 {
@@ -37,14 +43,14 @@ typedef enum { NONE, FREE_CELL, STACK, COLUMN, DECK } TableLocationType;
     unsigned short number;
 }
 
-+ (TableLocation *) locationWithType: (TableLocationType) newType number: (unsigned short) newNumber;
-+ (TableLocation *) noLocation;
-- (TableLocation *) initWithType: (TableLocationType) newType number: (unsigned short) newNumber;
++ (instancetype) locationWithType: (TableLocationType) newType number: (unsigned short) newNumber;
++ (instancetype) noLocation;
+- (instancetype) initWithType: (TableLocationType) newType number: (unsigned short) newNumber;
 
 // Accessors
 //
 
-- (TableLocationType) type;
-- (unsigned short) number;
+@property (readonly) TableLocationType type;
+@property (readonly) unsigned short number;
 
 @end

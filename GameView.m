@@ -196,6 +196,8 @@
 // Mutators
 //
 
+@synthesize game;
+
 - (void) setGame: (Game *) newGame
 {
     [game release];
@@ -204,11 +206,15 @@
     [self setNeedsDisplay: YES];
 }
 
+@synthesize controller;
+
 - (void) setController: (GameController *) newController;
 {
     controller = newController;
     [self setCardView: [CardView cardView]];
 }
+
+@synthesize cardView;
 
 - (void) setCardView: (CardView *) newCardView
 {
@@ -233,6 +239,8 @@
     [controller setWindowSize: NSMakeSize(size.width, size.height + 22)];
     [self setNeedsDisplay: YES];
 }
+
+@synthesize backgroundColour;
 
 - (void) setBackgroundColour: (NSColor *) colour
 {

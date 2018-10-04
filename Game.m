@@ -502,17 +502,9 @@ foundHint:
 // Accessors
 //
 
-- (Table *) table
-{
-    return table;
-}
-
+@synthesize table;
 @synthesize gameNumber;
-
-- (Result *) result
-{
-    return result;
-}
+@synthesize result;
 
 - (NSUInteger) moves
 {

@@ -111,39 +111,11 @@
 // Mutators
 //
 
-- (void) setSource: (TableLocation *) newSource
-{
-    [source release];
-    source = [newSource copy];
-}
-
-- (void) setDestination: (TableLocation *) newDestination
-{
-    [destination release];
-    destination = [newDestination copy];
-}
-
-- (void) setCount: (unsigned) newCount
-{
-    count = newCount;
-}
+@synthesize source;
+@synthesize destination;
+@synthesize count;
 
 // Accessors
 //
-
-- (TableLocation *) source
-{
-    return source;
-}
-
-- (TableLocation *) destination
-{
-    return destination;
-}
-
-- (unsigned) count
-{
-    return count;
-}
 
 @end

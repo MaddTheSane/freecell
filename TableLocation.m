@@ -78,14 +78,7 @@
 // Accessors
 //
 
-- (TableLocationType) type
-{
-    return type;
-}
-
-- (unsigned short) number
-{
-    return number;
-}
+@synthesize type;
+@synthesize number;
 
 @end

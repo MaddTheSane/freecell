@@ -83,10 +83,7 @@
 // Accessors
 //
 
-- (Suit) suit
-{
-    return suit;
-}
+@synthesize suit;
 
 - (NSString *) suitString
 {
@@ -96,10 +93,7 @@
     return suitToString[suit];
 }
 
-- (Rank) rank
-{
-    return rank;
-}
+@synthesize rank;
 
 - (NSString *) rankString
 {

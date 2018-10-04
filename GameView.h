@@ -52,9 +52,9 @@
 // Mutators
 //
 
-- (void) setGame: (Game *) newGame;
-- (void) setController: (GameController *) newController;
-- (void) setCardView: (CardView *) newCardView;
-- (void) setBackgroundColour: (NSColor *) colour;
+@property (nonatomic, retain) Game* game;
+@property (nonatomic, retain) GameController *controller;
+@property (nonatomic, retain) CardView *cardView;
+@property (nonatomic, retain) NSColor *backgroundColour;
 
 @end

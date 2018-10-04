@@ -37,11 +37,11 @@
     unsigned count;
 }
 
-+ moveFromSource: (TableLocation *) newSource;
-+ moveFromSource: (TableLocation *) newSource toDestination: (TableLocation *) newDestination;
-+ reverseMove: (TableMove *) move;
-- initWithSource: (TableLocation *) newSource destination: (TableLocation *) newDestination;
-- initWithSource: (TableLocation *) newSource destination: (TableLocation *) newDestination
++ (instancetype)moveFromSource: (TableLocation *) newSource;
++ (instancetype)moveFromSource: (TableLocation *) newSource toDestination: (TableLocation *) newDestination;
++ (instancetype)reverseMove: (TableMove *) move;
+- (instancetype)initWithSource: (TableLocation *) newSource destination: (TableLocation *) newDestination;
+- (instancetype)initWithSource: (TableLocation *) newSource destination: (TableLocation *) newDestination
            count: (unsigned) newCount;
 
 // Mutators
@@ -54,8 +54,8 @@
 // Accessors
 //
 
-- (TableLocation *) source;
-- (TableLocation *) destination;
-- (unsigned) count;
+@property (copy) TableLocation *source;
+@property (copy) TableLocation *destination;
+@property unsigned count;
 
 @end

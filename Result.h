@@ -29,7 +29,13 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum { UNPLAYED, LOSS, WIN } ResultValue;
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_ENUM(int, ResultValue) {
+    UNPLAYED,
+    LOSS,
+    WIN
+};
 
 @interface Result : NSObject <NSCopying>
 {
@@ -37,9 +43,9 @@ typedef enum { UNPLAYED, LOSS, WIN } ResultValue;
 }
 
 + (NSString *) translateResultFromString: (NSString *) result;
-+ (instancetype)resultWithUnplayed;
-+ (instancetype)resultWithWin;
-+ (instancetype)resultWithLoss;
+@property (class, readonly) Result* resultWithUnplayed;
+@property (class, readonly) Result* resultWithWin;
+@property (class, readonly) Result* resultWithLoss;
 - (instancetype)initWithResult: (ResultValue) newResult;
 
 // Accessor methods
@@ -48,3 +54,5 @@ typedef enum { UNPLAYED, LOSS, WIN } ResultValue;
 @property (readonly) ResultValue result;
 
 @end
+
+NS_ASSUME_NONNULL_END

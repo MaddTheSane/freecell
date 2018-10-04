@@ -38,8 +38,8 @@
     defaults = [NSUserDefaults standardUserDefaults];
     [defaults registerDefaults:
         [NSDictionary dictionaryWithObjectsAndKeys:
-            [NSNumber numberWithBool: YES], @"gameSuperMove",
-            [NSNumber numberWithBool: YES], @"gameAutoStack",
+            @YES, @"gameSuperMove",
+            @YES, @"gameAutoStack",
             nil]];
     
     [autoStack setState: [defaults boolForKey: @"gameAutoStack"]];

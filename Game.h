@@ -77,11 +77,11 @@
 // Accessors
 //
 
-- (Table *) table;
+@property (readonly, retain) Table *table;
 @property (readonly, retain) NSNumber *gameNumber;
-- (Result *) result;
-- (NSUInteger) moves;
-- (NSTimeInterval) duration;
+@property (readonly, retain) Result *result;
+@property (readonly) NSUInteger moves;
+@property (readonly) NSTimeInterval duration;
 @property (readonly) BOOL inProgress;
 - (BOOL) canUndo;
 - (BOOL) canRedo;
