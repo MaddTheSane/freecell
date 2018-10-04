@@ -41,14 +41,14 @@
     NSSize          cardSize;
 }
 
-+ cardView;
-- init;
++ (instancetype)cardView;
+- (instancetype)init;
 - (void) drawBlanks;
 - (void) drawCards;
 - (void) drawSelectedCards;
 
 - (NSImage *) imageForCard: (Card *) card selected: (BOOL) isSelected;
-- (NSSize) size;
+@property (readonly) NSSize size;
 - (unsigned) overlap;
 - (unsigned) smallOverlap;
 

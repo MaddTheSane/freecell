@@ -93,7 +93,7 @@
 
 - (void) addRecordWithGameNumber: (NSNumber *) gameNumber
                           result: (Result *) result
-                           moves: (unsigned) moves
+                           moves: (NSUInteger) moves
                         duration: (NSTimeInterval) duration
                             date: (NSDate *) date
 {
@@ -106,7 +106,7 @@
     record = [NSMutableDictionary dictionaryWithCapacity: 5];
     [record setObject: gameNumber forKey: @"gameNumber"];
     [record setObject: [result description] forKey: @"result"];
-    [record setObject: [NSNumber numberWithUnsignedInt: moves] forKey: @"moves"];
+    [record setObject: @(moves) forKey: @"moves"];
     [record setObject: [NSDate dateWithTimeIntervalSinceReferenceDate: duration] forKey: @"duration"];
     [record setObject: date forKey: @"date"];
     
@@ -132,11 +132,11 @@
 // Accessors
 //
 
-- (unsigned) numberOfRecordsWithResult: (Result *) result
+- (NSUInteger) numberOfRecordsWithResult: (Result *) result
 {
     NSEnumerator *enumerator = [records objectEnumerator];
     NSDictionary *record;
-    unsigned n = 0;
+    NSUInteger n = 0;
 
     while (record = [enumerator nextObject])
         if ([[record objectForKey: @"result"] isEqual: [result description]])
@@ -145,7 +145,7 @@
     return n;
 }
 
-- (NSDictionary *) record: (unsigned) n
+- (NSDictionary *) record: (NSUInteger) n
 {
     if (n < [records count])
         return [records objectAtIndex: n];
@@ -153,7 +153,7 @@
     return nil;
 }
 
-- (NSNumber *) gameNumberForRecord: (unsigned) n
+- (NSNumber *) gameNumberForRecord: (NSUInteger) n
 {
     return [[self record: n] objectForKey: @"gameNumber"];
 }
@@ -183,11 +183,11 @@
     return shortest;    
 }
 
-- (unsigned) shortestMoves
+- (NSUInteger) shortestMoves
 {
     NSDictionary *record;
     NSEnumerator *enumerator = [records objectEnumerator];
-    unsigned shortest = UINT_MAX;
+    NSUInteger shortest = UINT_MAX;
     
     while (record = [enumerator nextObject])
         if ([[record objectForKey: @"result"] isEqual: [[Result resultWithWin] description]])

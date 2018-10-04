@@ -36,14 +36,14 @@
     NSMutableArray	*records;
 }
 
-- initWithFile: (NSString *) file;
+- (instancetype)initWithFile: (NSString *) file;
 
 // Mutators
 //
 
 - (void) addRecordWithGameNumber: (NSNumber *) gameNumber
                           result: (Result *) result
-                           moves: (unsigned) moves
+                           moves: (NSUInteger) moves
                         duration: (NSTimeInterval) duration
                             date: (NSDate *) date;
 
@@ -53,11 +53,11 @@
 // Accessors
 //
 
-- (unsigned) numberOfRecordsWithResult: (Result *) result;
-- (NSDictionary *) record: (unsigned) n;
-- (NSNumber *) gameNumberForRecord: (unsigned) n;
+- (NSUInteger) numberOfRecordsWithResult: (Result *) result;
+- (NSDictionary *) record: (NSUInteger) n;
+- (NSNumber *) gameNumberForRecord: (NSUInteger) n;
 - (NSDictionary *) recordWithGameNumber: (NSNumber *) gameNumber;
 - (NSDate *) shortestDuration;
-- (unsigned) shortestMoves;
+- (NSUInteger) shortestMoves;
 
 @end

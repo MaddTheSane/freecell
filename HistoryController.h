@@ -60,12 +60,12 @@
 
 - (void) addRecordWithGameNumber: (NSNumber *) gameNumber
                           result: (Result *) result
-                           moves: (unsigned short) moves
+                           moves: (NSUInteger) moves
                         duration: (NSTimeInterval) duration
                             date: (NSDate *) date;
 
 - (NSDate *) shortestDuration;
-- (unsigned) shortestMoves;
-- (unsigned) numberOfGamesWon;
+- (NSUInteger) shortestMoves;
+- (NSUInteger) numberOfGamesWon;
 
 @end

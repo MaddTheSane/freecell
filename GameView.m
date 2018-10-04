@@ -99,9 +99,9 @@
         else
             operation = NSCompositeSourceOver;
                 
-        [image compositeToPoint: origin
-                      operation: operation
-                       fraction: card == nil? 0.5 : 1.0 ];
+        [image drawAtPoint: origin fromRect: NSZeroRect
+                 operation: operation
+                  fraction: card == nil? 0.5 : 1.0 ];
     }
     
     for (i = 0; i < NUMBER_OF_STACKS; i++)
@@ -119,9 +119,9 @@
         else
             operation = NSCompositeSourceOver;
         
-        [image compositeToPoint: origin
-                      operation: operation
-                       fraction: card == nil? 0.25 : 1.0 ];
+        [image drawAtPoint: origin fromRect: NSZeroRect
+                 operation: operation
+                  fraction: card == nil? 0.5 : 1.0 ];
     }
 
     for (i = 0; i < NUMBER_OF_COLUMNS; i++)
@@ -130,8 +130,8 @@
         NSArray *column = [table arrayForLocation: location];
         NSEnumerator *enumerator = [column objectEnumerator];
         Card *card;
-        int row;
-        int count = [column count];
+        NSInteger row;
+        NSInteger count = [column count];
         unsigned maxHeight = 19 * smallOverlap;
         unsigned short o;
 
@@ -143,7 +143,7 @@
                                          frame.size.height - edgeMargin
                                          - (cardHeight + margin) * 2 - o * row);
             NSImage *image = [cardView imageForCard: card selected: [game isCardSelected: card]];
-            [image compositeToPoint: origin operation: NSCompositeSourceOver];
+            [image drawAtPoint: origin fromRect: NSZeroRect operation: NSCompositingOperationSourceOver fraction: 1];
         }
 
         // If the column is empty and selected, draw the selected image
@@ -153,7 +153,7 @@
                                          frame.size.height - edgeMargin
                                          - (cardHeight + margin) * 2);
             NSImage *image = [cardView imageForCard: nil selected: YES];
-            [image compositeToPoint: origin operation: NSCompositePlusDarker fraction: 0.5];
+            [image drawAtPoint: origin fromRect: NSZeroRect operation: NSCompositingOperationPlusDarker fraction: 0.5];
         }
     }
 }

@@ -107,19 +107,19 @@
 
 - (void) HC_updateWindow
 {
-    unsigned won  = [history numberOfRecordsWithResult: [Result resultWithWin]];
-    unsigned lost = [history numberOfRecordsWithResult: [Result resultWithLoss]];
-    unsigned wonPercent = (unsigned) floor(((double) won * 100.0) / (won + lost));
-    unsigned lostPercent = 100 - wonPercent;
+    NSUInteger won  = [history numberOfRecordsWithResult: [Result resultWithWin]];
+    NSUInteger lost = [history numberOfRecordsWithResult: [Result resultWithLoss]];
+    NSUInteger wonPercent = (NSUInteger) floor(((double) won * 100.0) / (won + lost));
+    NSUInteger lostPercent = 100 - wonPercent;
     
     if (won + lost == 0)
         wonPercent = lostPercent = 0.0;
     
-    [gamesPlayed setIntValue: won + lost];
-    [gamesWon    setStringValue: [NSString stringWithFormat: @"%d (%d%%)",
-        won, wonPercent]];
-    [gamesLost    setStringValue: [NSString stringWithFormat: @"%d (%d%%)",
-        lost, lostPercent]];
+    [gamesPlayed setIntegerValue: won + lost];
+	[gamesWon    setStringValue: [NSString stringWithFormat: @"%lu (%lu%%)",
+								  (unsigned long)won, (unsigned long)wonPercent]];
+	[gamesLost    setStringValue: [NSString stringWithFormat: @"%lu (%lu%%)",
+								   (unsigned long)lost, (unsigned long)lostPercent]];
 
     [tableView noteNumberOfRowsChanged];
     [tableView setNeedsDisplay: YES];
@@ -188,7 +188,7 @@
 
 - (IBAction) retryGame: (id) sender
 {
-    int row = [tableView selectedRow];
+    NSInteger row = [tableView selectedRow];
 
     // Ignore double-clicks on the TableView if they are on a column header
     if (sender == tableView && [tableView clickedRow] == -1)
@@ -206,7 +206,7 @@
 
 - (void) addRecordWithGameNumber: (NSNumber *) gameNumber
                           result: (Result *) result
-                           moves: (unsigned short) moves
+                           moves: (NSUInteger) moves
                         duration: (NSTimeInterval) duration
                             date: (NSDate *) date
 {
@@ -221,12 +221,12 @@
     return [history shortestDuration];
 }
 
-- (unsigned) shortestMoves
+- (NSUInteger) shortestMoves
 {
     return [history shortestMoves];
 }
 
-- (unsigned) numberOfGamesWon
+- (NSUInteger) numberOfGamesWon
 {
     return [history numberOfRecordsWithResult: [Result resultWithWin]];
 }

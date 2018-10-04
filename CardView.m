@@ -41,18 +41,18 @@
 
 - init
 {
-    [super init];
-    
-    [self drawBlanks];
-    [self drawCards];
-    [self drawSelectedCards];
-    
+    if (self = [super init]) {
+        [self drawBlanks];
+        [self drawCards];
+        [self drawSelectedCards];
+    }
+	
     return self;
 }
 
 - (void) drawBlanks
 {
-    NSImage *bonded = [NSImage imageNamed: @"bonded.png"];
+    NSImage *bonded = [NSImage imageNamed: @"bonded"];
     NSSize bondedSize = [bonded size];
     NSRect source;
 
@@ -64,9 +64,9 @@
                         cardSize.width, cardSize.height);
     
     [blank lockFocus];
-    [bonded compositeToPoint: NSMakePoint(0, 0)
-                    fromRect: source
-                   operation: NSCompositeCopy];
+	[bonded drawAtPoint: NSZeroPoint
+			   fromRect: source
+			  operation: NSCompositingOperationCopy fraction:1];
     [blank unlockFocus];
     
     // Selected blank (for placeholders and compositing selected cards)
@@ -75,15 +75,15 @@
                         cardSize.width, cardSize.height);
     
     [selectedBlank lockFocus];
-    [bonded compositeToPoint: NSMakePoint(0, 0)
-                    fromRect: source
-                   operation: NSCompositeCopy];
+	[bonded drawAtPoint: NSZeroPoint
+			   fromRect: source
+			  operation: NSCompositingOperationCopy fraction: 1];
     [selectedBlank unlockFocus];
 }
 
 - (void) drawCards
 {
-    NSImage *bonded = [NSImage imageNamed: @"bonded.png"];
+    NSImage *bonded = [NSImage imageNamed: @"bonded"];
     NSImage *card;
     NSRect source;
     NSSize bondedSize = [bonded size];
@@ -102,9 +102,9 @@
                                        cardSize.width, cardSize.height);
             
             [card lockFocus];
-            [bonded compositeToPoint: NSMakePoint(0, 0)
-                            fromRect: source
-                           operation: NSCompositeCopy];
+            [bonded drawAtPoint: NSZeroPoint
+                       fromRect: source
+                      operation: NSCompositingOperationCopy fraction:1];
             [card unlockFocus];
             
             [dict setObject: card forKey: [Card cardWithSuit: i rank: j]];
@@ -144,10 +144,7 @@
     return [isSelected? selectedCards: cards objectForKey: card];
 }
 
-- (NSSize) size
-{
-    return cardSize;
-}
+@synthesize size=cardSize;
 
 - (unsigned) overlap
 {
