@@ -37,14 +37,14 @@ typedef enum { UNPLAYED, LOSS, WIN } ResultValue;
 }
 
 + (NSString *) translateResultFromString: (NSString *) result;
-+ resultWithUnplayed;
-+ resultWithWin;
-+ resultWithLoss;
-- initWithResult: (ResultValue) newResult;
++ (instancetype)resultWithUnplayed;
++ (instancetype)resultWithWin;
++ (instancetype)resultWithLoss;
+- (instancetype)initWithResult: (ResultValue) newResult;
 
 // Accessor methods
 //
 
-- (ResultValue) result;
+@property (readonly) ResultValue result;
 
 @end

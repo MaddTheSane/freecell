@@ -58,10 +58,9 @@
 
 - initWithResult: (ResultValue) newResult
 {
-    [super init];
-
-    if (self)
+    if (self = [super init]) {
         result = newResult;
+    }
 
     return self;
 }
@@ -93,9 +92,6 @@
 // Accessor methods
 //
 
-- (ResultValue) result
-{
-    return result;
-}
+@synthesize result;
 
 @end

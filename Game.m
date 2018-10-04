@@ -340,17 +340,8 @@ makeMove:
 // Mutators
 //
 
-- (void) setStartDate: (NSDate *) date
-{
-    [startDate release];
-    startDate = [date retain];
-}
-
-- (void) setEndDate: (NSDate *) date
-{
-    [endDate release];
-    endDate = [date retain];
-}
+@synthesize startDate;
+@synthesize endDate;
 
 - (void) undo
 {
@@ -498,11 +489,7 @@ foundHint:
     [self setHint: [TableMove moveFromSource: source toDestination: destination]];
 }
 
-- (void) setHint: (TableMove *) newHint
-{
-    [hint release];
-    hint = [newHint copy];
-}
+@synthesize hint;
 
 - (void) gameOverWithResult: (Result *) newResult
 {
@@ -520,20 +507,7 @@ foundHint:
     return table;
 }
 
-- (TableMove *) hint
-{
-    return hint;
-}
-
-- (NSNumber *) gameNumber
-{
-    return gameNumber;
-}
-
-- (NSDate *) startDate
-{
-    return startDate;
-}
+@synthesize gameNumber;
 
 - (Result *) result
 {
@@ -550,10 +524,7 @@ foundHint:
     return [endDate timeIntervalSinceDate: startDate];
 }
 
-- (BOOL) inProgress
-{
-    return inProgress;
-}
+@synthesize inProgress;
 
 - (BOOL) canUndo
 {
@@ -582,10 +553,8 @@ foundHint:
 - (NSArray *) movesList
 {
     NSMutableArray *moves = [NSMutableArray arrayWithCapacity: [self moves]];
-    NSEnumerator *enumerator = [played objectEnumerator];
-    TableMove *tableMove;
 
-    while (tableMove = [enumerator nextObject])
+    for (TableMove *tableMove in played)
         [moves addObject: [tableMove description]];
 
     return [NSArray arrayWithArray: moves];
