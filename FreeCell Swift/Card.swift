@@ -17,15 +17,12 @@ struct Card: Hashable, CustomStringConvertible {
         
         var description: String {
             switch self {
-                //@"Clubs", @"Diamonds", @"Hearts", @"Spades"
-                
             case .clubs:
                 return "Clubs"
             case .diamonds:
                 return "Diamonds"
             case .hearts:
                 return "Hearts"
-                
             case .spades:
                 return "Spades"
             }
@@ -105,9 +102,7 @@ struct Card: Hashable, CustomStringConvertible {
     var description: String {
         return "\(rank) of \(suit)"
     }
-}
-
-extension Card {
+    
     var isRed: Bool {
         return suit.isRed
     }
