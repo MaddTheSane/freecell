@@ -66,13 +66,6 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [game release];
-    [cardView release];
-    [super dealloc];
-}
-
 - (void) drawRect: (NSRect) rect
 {
     int i;
@@ -200,8 +193,7 @@
 
 - (void) setGame: (Game *) newGame
 {
-    [game release];
-    game = [newGame retain];
+    game = newGame;
     table = [game table];
     [self setNeedsDisplay: YES];
 }
@@ -220,8 +212,6 @@
 {
     NSSize size;
 
-    [newCardView retain];
-    [cardView release];
     cardView = newCardView;
 
     // Calculate frame size
@@ -244,8 +234,6 @@
 
 - (void) setBackgroundColour: (NSColor *) colour
 {
-    [colour retain];
-    [backgroundColour release];
     backgroundColour = colour;
     [self setNeedsDisplay: YES];
 }

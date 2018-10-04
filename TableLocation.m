@@ -34,19 +34,17 @@
 
 + (TableLocation *) locationWithType: (TableLocationType) newType number: (unsigned short) newNumber
 {
-    return [[[TableLocation alloc] initWithType: newType number: newNumber] autorelease];
+    return [[TableLocation alloc] initWithType: newType number: newNumber];
 }
 
 + (TableLocation *) noLocation
 {
-    return [[[TableLocation alloc] initWithType: NONE number: 0] autorelease];
+    return [[TableLocation alloc] initWithType: NONE number: 0];
 }
 
 - (TableLocation *) initWithType: (TableLocationType) newType number: (unsigned short) newNumber
 {
-    [super init];
-
-    if (self)
+    if (self = [super init])
     {
         type = newType;
         number = newNumber;

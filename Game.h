@@ -64,8 +64,8 @@
 // Mutators
 //
 
-@property (retain) NSDate *startDate;
-@property (retain) NSDate *endDate;
+@property (strong) NSDate *startDate;
+@property (strong) NSDate *endDate;
 - (void) undo;
 - (void) redo;
 - (void) clickedTableLocation: (TableLocation *) location;
@@ -77,9 +77,9 @@
 // Accessors
 //
 
-@property (readonly, retain) Table *table;
-@property (readonly, retain) NSNumber *gameNumber;
-@property (readonly, retain) Result *result;
+@property (readonly, strong) Table *table;
+@property (readonly, strong) NSNumber *gameNumber;
+@property (readonly, strong) Result *result;
 @property (readonly) NSUInteger moves;
 @property (readonly) NSTimeInterval duration;
 @property (readonly) BOOL inProgress;

@@ -139,7 +139,6 @@
 
 - (void) HC_setSortColumn: (NSString *) newSortColumn
 {
-    [sortColumn release];
     sortColumn = [newSortColumn copy];
 }
 
@@ -164,7 +163,7 @@
 
 - (IBAction) clear: (id) sender
 {
-    NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+    NSAlert *alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle: NSLocalizedString(@"cancelButton", @"Cancel button")];
     [alert addButtonWithTitle: NSLocalizedString(@"clearButton", @"Clear history button")];
     [alert setMessageText: NSLocalizedString(@"clearTitle", @"Clear history sheet title")];

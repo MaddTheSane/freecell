@@ -38,7 +38,7 @@
 {
     Game		*game;
     GameController	*controller;
-    Table		*table;
+    __unsafe_unretained Table		*table;
     CardView		*cardView;
     NSColor		*backgroundColour;
     unsigned short	cardWidth;

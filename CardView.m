@@ -36,7 +36,7 @@
 
 + cardView
 {
-    return [[[CardView alloc] init] autorelease];
+    return [[CardView alloc] init];
 }
 
 - init
@@ -96,7 +96,7 @@
         unsigned j;
         for (j = ACE; j <= KING; j++)
         {
-            card = [[[NSImage alloc] initWithSize: cardSize] autorelease];
+            card = [[NSImage alloc] initWithSize: cardSize];
             source = NSMakeRect((j - 1) * cardSize.width,
                                        bondedSize.height - (i + 1) * cardSize.height,
                                        cardSize.width, cardSize.height);
@@ -111,7 +111,7 @@
         }
     }
     
-    cards = [dict retain];
+    cards = dict;
 }
 
 - (void) drawSelectedCards
@@ -123,7 +123,7 @@
     while (card = [enumerator nextObject])
     {
         NSImage *cardImage = [cards objectForKey: card];
-        NSImage *selectedCardImage = [[[NSImage alloc] initWithSize: cardSize] autorelease];
+        NSImage *selectedCardImage = [[NSImage alloc] initWithSize: cardSize];
         [selectedCardImage lockFocus];
         [cardImage drawAtPoint: NSMakePoint(0, 0) fromRect: NSZeroRect
                      operation: NSCompositeCopy fraction: 1.0];
@@ -132,7 +132,7 @@
         [selectedCardImage unlockFocus];
         [dict setObject: selectedCardImage forKey: card];        
     }
-    selectedCards = [dict retain];
+    selectedCards = dict;
 }
 
 

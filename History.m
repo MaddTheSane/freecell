@@ -36,24 +36,15 @@
 
 - initWithFile: (NSString *) newFile
 {
-    [super init];
-
-    if (self)
+    if (self = [super init])
     {
-        file = [newFile retain];
-        records = [[NSMutableArray arrayWithContentsOfFile: file] retain];
+        file = newFile;
+        records = [NSMutableArray arrayWithContentsOfFile: file];
         if (records == nil)
-            records = [[NSMutableArray array] retain];
+            records = [[NSMutableArray alloc] init];
     }
 
     return self;
-}
-
-- (void) dealloc
-{
-    [file release];
-    [records release];
-    [super dealloc];
 }
 
 // Overridden methods
@@ -84,8 +75,7 @@
 
 - (void) H_setRecords: (NSMutableArray *) newRecords
 {
-    [records release];
-    records = [newRecords retain];
+    records = newRecords;
 }
 
 // Mutators

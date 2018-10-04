@@ -351,8 +351,7 @@
     if ([[game result] isEqual: [Result resultWithWin]] || [[game result] isEqual: [Result resultWithLoss]])
         [self recordGame];
     
-    [game release];
-    game = [newGame retain];
+    game = newGame;
 }
 
 - (void) gameOver

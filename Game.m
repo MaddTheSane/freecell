@@ -51,30 +51,28 @@
     controller: (GameController *) newController
     gameNumber: (NSNumber *) newGameNumber
 {
-    return [[[Game alloc] initWithView: newView
+    return [[Game alloc] initWithView: newView
                             controller: newController
-                            gameNumber: newGameNumber] autorelease];
+                            gameNumber: newGameNumber];
 }
 
 - initWithView: (GameView *) newView
     controller: (GameController *) newController
           gameNumber: (NSNumber *) newGameNumber
 {
-    [super init];
-
-    if (self)
+    if (self = [super init])
     {
         view = newView;
         controller = newController;
 
         defaults = [NSUserDefaults standardUserDefaults];
         
-        gameNumber = [newGameNumber retain];
+        gameNumber = newGameNumber;
         
         table = [[Table alloc] init];
         [self G_deal];
         
-        result = [[Result resultWithUnplayed] retain];
+        result = [Result resultWithUnplayed];
         played = [[NSMutableArray alloc] init];
         undone = [[NSMutableArray alloc] init];
 
@@ -86,20 +84,6 @@
     return self;
 }
 
-- (void) dealloc
-{
-    [gameNumber release];
-    [table release];
-    [result release];
-    [played release];
-    [undone release];
-    [move release];
-    [hint release];
-    [self setStartDate: nil];
-    [self setEndDate: nil];
-    [super dealloc];
-}
-
 // Private methods
 //
 
@@ -108,14 +92,14 @@
     TableLocation *deckTableLocation = [TableLocation locationWithType: DECK number: 0];
     NSMutableArray *deck = (NSMutableArray *) [table arrayForLocation: deckTableLocation];
     NSUInteger i, n;
-	
-	// Shuffle the deck
-	vcpp_srand((unsigned int) [gameNumber doubleValue]);
-	for (i = [deck count]; i > 0; i--)
-	{
-		unsigned j = vcpp_rand() % i;
-		[deck exchangeObjectAtIndex: (i-1) withObjectAtIndex: j];
-	}
+    
+    // Shuffle the deck
+    vcpp_srand((unsigned int) [gameNumber doubleValue]);
+    for (i = [deck count]; i > 0; i--)
+    {
+        unsigned j = vcpp_rand() % i;
+        [deck exchangeObjectAtIndex: (i-1) withObjectAtIndex: j];
+    }
 
     // Lay out table  
     n = [deck count];
@@ -128,7 +112,6 @@
 
 - (void) G_setMove: (TableMove *) newMove
 {
-    [move release];
     move = [newMove copy];
 }
 
@@ -494,7 +477,6 @@ foundHint:
 - (void) gameOverWithResult: (Result *) newResult
 {
     [self setEndDate: [NSDate date]];
-    [result release];
     result = [newResult copy];
     inProgress = NO;
 }
