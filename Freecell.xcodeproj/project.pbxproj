@@ -191,7 +191,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				F2C630BD04E07BDA00926905 /* Help */,
 			);
 			name = Freecell;
 			sourceTree = "<group>";
@@ -209,6 +208,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2C630BD04E07BDA00926905 /* Help */,
 				F29D0D5E158CE03A0050A6FA /* Info-Freecell.plist */,
 				F2F17F5C04E07FD4003ED142 /* Credits.html */,
 				F2E57CE104C20E36005D2EDB /* Freecell.icns */,
