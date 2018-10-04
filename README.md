@@ -1,5 +1,7 @@
 # Freecell
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5c10ed232e6a42a5943efb86eb914c7b)](https://app.codacy.com/app/alexmyczko/Freecell.app?utm_source=github.com&utm_medium=referral&utm_content=alexmyczko/Freecell.app&utm_campaign=Badge_Grade_Dashboard)
+
 [Freecell for Mac OS X—download here](https://www.dropbox.com/sh/wjzokkf6a4kg8c6/RRXmZWaORp).
 
 ![Screenshot of Freecell](http://i.imgur.com/C0eGcRj.png)

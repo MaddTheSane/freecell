@@ -19,34 +19,59 @@ include $(GNUSTEP_MAKEFILES)/common.make
 
 ADDITIONAL_OBJCFLAGS += -include Freecell_Prefix.h -Winvalid-pch
 
-APP_NAME = Freecell
+PACKAGE_NAME=Freecell
+APP_NAME=Freecell
+
+VERSION=0
+
+Freecell_OBJC_FILES=\
+	Card.m\
+	CardView.m\
+	Game.m\
+	GameController.m\
+	GameView.m\
+	History.m\
+	HistoryController.m\
+	PreferencesController.m\
+	Result.m\
+	Table.m\
+	TableLocation.m\
+	TableMove.m\
+	main.m
+
+Freecell_C_FILES=\
+	vccRand.c
+
+Freecell_RESOURCE_FILES=\
+	Freecell.tiff\
+	Licence.txt\
+	Cards/bonded.png\
+	Cards/large-bonded.png\
+	Cards/unedited-bonded.png\
+	Freecell.icns
+
+Freecell_LOCALIZED_RESOURCE_FILES=\
+        MainMenu.nib\
+        InfoPlist.strings\
+        Localizable.strings\
+        Credits.html
+
+Freecell_LANGUAGES=\
+	English\
+        Dutch\
+        Finnish\
+        French\
+        Japanese\
+        Spanish
+
 Freecell_PRINCIPAL_CLASS=NSApplication
 Freecell_APPLICATION_ICON=Freecell.tiff
 Freecell_OBJC_PRECOMPILED_HEADERS=Freecell_Prefix.h
-Freecell_OBJC_FILES=Card.m \
-  CardView.m\
-  GameController.m\
-  Game.m\
-  GameView.m\
-  HistoryController.m\
-  History.m\
-  main.m\
-  PreferencesController.m\
-  Result.m\
-  Table.m\
-  TableLocation.m\
-  TableMove.m
-Freecell_C_FILES=vccRand.c
-Freecell_RESOURCE_FILES=FreecellInfo.plist \
-  Freecell.tiff\
-  Licence.txt\
-  Cards/bonded.png\
-  Cards/large-bonded.png\
-  Cards/unedited-bonded.png
-Freecell_LOCALIZED_RESOURCE_FILES=Credits.html \
-  InfoPlist.strings\
-  Localizable.strings\
-  MainMenu.nib
-Freecell_LANGUAGES=Dutch English Finnish French Japanese Spanish
 
+Freecell_MAIN_MODEL_FILE=Freecell
+
+ADDITIONAL_CPPFLAGS+= -DGNUSTEP
+
+-include GNUmakefile.preamble
 include $(GNUSTEP_MAKEFILES)/application.make
+-include GNUmakefile.postamble

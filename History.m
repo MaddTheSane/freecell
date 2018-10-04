@@ -29,6 +29,7 @@
 
 #include <math.h>
 #include <limits.h>
+#import <AppKit/AppKit.h>
 #import "History.h"
 
 @implementation History

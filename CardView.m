@@ -28,7 +28,9 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <AppKit/NSStringDrawing.h>
+#import <AppKit/AppKit.h>
 #import "CardView.h"
+
 
 @implementation CardView
 
@@ -120,12 +122,15 @@
 
     while (card = [enumerator nextObject])
     {
-        NSImage *image = [[cards objectForKey: card] copy];
-        [image lockFocus];
+        NSImage *cardImage = [cards objectForKey: card];
+        NSImage *selectedCardImage = [[[NSImage alloc] initWithSize: cardSize] autorelease];
+        [selectedCardImage lockFocus];
+        [cardImage drawAtPoint: NSMakePoint(0, 0) fromRect: NSZeroRect
+                     operation: NSCompositeCopy fraction: 1.0];
         [selectedBlank drawAtPoint: NSMakePoint(0, 0) fromRect: NSZeroRect
                          operation: NSCompositeSourceAtop fraction: 0.5];
-        [image unlockFocus];
-        [dict setObject: image forKey: card];
+        [selectedCardImage unlockFocus];
+        [dict setObject: selectedCardImage forKey: card];        
     }
     selectedCards = [dict retain];
 }

@@ -1,11 +1,31 @@
 {
-  ApplicationDescription = "Freecell";
-  ApplicationIcon = "Freecell.tiff";
-  ApplicationName = "FreeCell";
-  ApplicationRelease = 56;
-  Authors = ("Alisdair McDiarmid", "Graham Lee");
-  Copyright = "Copyright (c) 2003 Alisdair McDiarmid";
-  CopyrightDescription = "See Licence.txt in the app bundle.";
-  NSMainNibFile = "MainMenu.nib";
-  URL="https://github.com/iamleeg/freecell";
+    ApplicationDescription = "A graphical Freecell card game";
+    ApplicationIcon = "Freecell.tiff";
+    ApplicationName = "FreeCell";
+    ApplicationRelease = 56;
+    Authors = (
+        "Alisdair McDiarmid",
+        "Alex Myczko",
+        "Graham Lee",
+        "with help from GNUstep devel mailing list"
+    );
+    Copyright = "Copyright (c) 2003 Alisdair McDiarmid";
+    CopyrightDescription = "See Licence.txt in the app bundle.";
+    CFBundleDevelopmentRegion = English;
+    CFBundleExecutable = Freecell;
+    CFBundleGetInfoString = "2.2";
+    CFBundleHelpBookFolder = Help;
+    CFBundleIconFile = "Freecell.icns";
+    CFBundleIdentifier = "org.wasters.Freecell";
+    CFBundleInfoDictionaryVersion = "6.0";
+    CFBundleName = Freecell;
+    CFBundlePackageType = APPL;
+    CFBundleShortVersionString = "2.2";
+    CFBundleSignature = "????";
+    CFBundleVersion = 56;
+    GSMainMarkupFile = "";
+    NSExecutable = Freecell;
+    NSMainNibFile = MainMenu;
+    NSPrincipalClass = NSApplication;
+    URL="https://github.com/iamleeg/freecell";
 }
