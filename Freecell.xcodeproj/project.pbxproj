@@ -16,6 +16,7 @@
 		55B47D962166C28C00D34D16 /* TableLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D952166C28C00D34D16 /* TableLocation.swift */; };
 		55B47D982166C4E000D34D16 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D972166C4E000D34D16 /* Result.swift */; };
 		55B47D9A2166C6AF00D34D16 /* vccRandHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D992166C6AF00D34D16 /* vccRandHelper.swift */; };
+		55CCAA202166DD67008EEFE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		F29D0D33158CE03A0050A6FA /* Freecell_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Freecell_Prefix.h */; };
 		F29D0D34158CE03A0050A6FA /* GameView.h in Headers */ = {isa = PBXBuildFile; fileRef = F2CD26A404B477F30003D579 /* GameView.h */; };
 		F29D0D35158CE03A0050A6FA /* Table.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B3C1C304B48990008FB189 /* Table.h */; };
@@ -36,7 +37,6 @@
 		F29D0D45158CE03A0050A6FA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = F2F17F5C04E07FD4003ED142 /* Credits.html */; };
 		F29D0D46158CE03A0050A6FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2BD40BD04E06C960098C7F4 /* Localizable.strings */; };
 		F29D0D47158CE03A0050A6FA /* Help in Resources */ = {isa = PBXBuildFile; fileRef = F2C630BD04E07BDA00926905 /* Help */; };
-		F29D0D48158CE03A0050A6FA /* bonded.png in Resources */ = {isa = PBXBuildFile; fileRef = F241643C07C7A06B002C0965 /* bonded.png */; };
 		F29D0D4A158CE03A0050A6FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		F29D0D4B158CE03A0050A6FA /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CD26A504B477F30003D579 /* GameView.m */; };
 		F29D0D4C158CE03A0050A6FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CBECB104B4D1890052BE5F /* Game.m */; };
@@ -284,6 +284,7 @@
 			);
 			path = "FreeCell Swift";
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		F263A24604DB34FB00922A1B /* Cards */ = {
 			isa = PBXGroup;
@@ -412,9 +413,9 @@
 				F29D0D43158CE03A0050A6FA /* InfoPlist.strings in Resources */,
 				F29D0D44158CE03A0050A6FA /* Freecell.icns in Resources */,
 				F29D0D45158CE03A0050A6FA /* Credits.html in Resources */,
+				55CCAA202166DD67008EEFE7 /* Assets.xcassets in Resources */,
 				F29D0D46158CE03A0050A6FA /* Localizable.strings in Resources */,
 				F29D0D47158CE03A0050A6FA /* Help in Resources */,
-				F29D0D48158CE03A0050A6FA /* bonded.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +539,7 @@
 		55B47D892166B92000D34D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Freecell;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -582,7 +583,7 @@
 		55B47D8A2166B92000D34D16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Freecell;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -692,6 +693,7 @@
 		F29D0D5B158CE03A0050A6FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Freecell;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -726,6 +728,7 @@
 		F29D0D5C158CE03A0050A6FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Freecell;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
