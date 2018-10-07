@@ -96,8 +96,8 @@ struct Card: Hashable, CustomStringConvertible {
         }
     }
 
-    var suit: Suit
-    var rank: Rank
+    let suit: Suit
+    let rank: Rank
     
     var description: String {
         return "\(rank) of \(suit)"

@@ -8,6 +8,6 @@
 #ifndef FreeCellSwift_bridging_h
 #define FreeCellSwift_bridging_h
 
-#include "vccRand.h"
+//#include "vccRand.h"
 
 #endif /* FreeCellSwift_bridging_h */
