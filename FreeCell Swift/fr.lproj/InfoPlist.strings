@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "Freecell Swift";
+CFBundleGetInfoString = "Freecell Swift, Copyright 2003–2012 Alisdair McDiarmid, 2018 C.W. \"Madd The Sane\" Betts.";
+NSHumanReadableCopyright = "Copyright 2003–2012 Alisdair McDiarmid, 2018 C.W. \"Madd The Sane\" Betts.";
+CFBundleHelpBookName = "Aide de Freecell";
