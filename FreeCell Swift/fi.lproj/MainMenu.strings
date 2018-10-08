@@ -1,0 +1,183 @@
+
+/* Class = "NSMenuItem"; title = "Tuo kaikki eteen"; ObjectID = "5"; */
+"5.title" = "Tuo kaikki eteen";
+
+/* Class = "NSMenuItem"; title = "Ikkuna"; ObjectID = "19"; */
+"19.title" = "Ikkuna";
+
+/* Class = "NSWindow"; title = "Freecell"; ObjectID = "21"; */
+"21.title" = "Freecell";
+
+/* Class = "NSMenuItem"; title = "Pienennä"; ObjectID = "23"; */
+"23.title" = "Pienennä";
+
+/* Class = "NSMenu"; title = "Ikkuna"; ObjectID = "24"; */
+"24.title" = "Ikkuna";
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "Freecell"; ObjectID = "56"; */
+"56.title" = "Freecell";
+
+/* Class = "NSMenu"; title = "Freecell"; ObjectID = "57"; */
+"57.title" = "Freecell";
+
+/* Class = "NSMenuItem"; title = "Tietoja: Freecell"; ObjectID = "58"; */
+"58.title" = "Tietoja: Freecell";
+
+/* Class = "NSMenuItem"; title = "Sulje"; ObjectID = "73"; */
+"73.title" = "Sulje";
+
+/* Class = "NSMenu"; title = "Peli"; ObjectID = "81"; */
+"81.title" = "Peli";
+
+/* Class = "NSMenuItem"; title = "Uusi peli"; ObjectID = "82"; */
+"82.title" = "Uusi peli";
+
+/* Class = "NSMenuItem"; title = "Peli"; ObjectID = "83"; */
+"83.title" = "Peli";
+
+/* Class = "NSMenuItem"; title = "Ohjeet"; ObjectID = "103"; */
+"103.title" = "Ohjeet";
+
+/* Class = "NSMenu"; title = "Ohjeet"; ObjectID = "106"; */
+"106.title" = "Ohjeet";
+
+/* Class = "NSMenuItem"; title = "Freecell ohjeet"; ObjectID = "111"; */
+"111.title" = "Freecell ohjeet";
+
+/* Class = "NSMenuItem"; title = "Asetukset..."; ObjectID = "129"; */
+"129.title" = "Asetukset...";
+
+/* Class = "NSMenu"; title = "Palvelut"; ObjectID = "130"; */
+"130.title" = "Palvelut";
+
+/* Class = "NSMenuItem"; title = "Palvelut"; ObjectID = "131"; */
+"131.title" = "Palvelut";
+
+/* Class = "NSMenuItem"; title = "Kätke Freecell"; ObjectID = "134"; */
+"134.title" = "Kätke Freecell";
+
+/* Class = "NSMenuItem"; title = "Lopeta Freecell"; ObjectID = "136"; */
+"136.title" = "Lopeta Freecell";
+
+/* Class = "NSMenuItem"; title = "Kätke muut"; ObjectID = "145"; */
+"145.title" = "Kätke muut";
+
+/* Class = "NSMenuItem"; title = "Näytä kaikki"; ObjectID = "150"; */
+"150.title" = "Näytä kaikki";
+
+/* Class = "NSMenuItem"; title = "Peru siirto"; ObjectID = "158"; */
+"158.title" = "Peru siirto";
+
+/* Class = "NSMenuItem"; title = "Muokkaus"; ObjectID = "163"; */
+"163.title" = "Muokkaus";
+
+/* Class = "NSMenu"; title = "Muokkaus"; ObjectID = "169"; */
+"169.title" = "Muokkaus";
+
+/* Class = "NSMenuItem"; title = "Uusi siirto"; ObjectID = "173"; */
+"173.title" = "Uusi siirto";
+
+/* Class = "NSMenuItem"; title = "Valitse aloituspöytä..."; ObjectID = "204"; */
+"204.title" = "Valitse aloituspöytä...";
+
+/* Class = "NSWindow"; title = "Pelaa numero"; ObjectID = "205"; */
+"205.title" = "Pelaa numero";
+
+/* Class = "NSMenuItem"; title = "Anna vihje"; ObjectID = "229"; */
+"229.title" = "Anna vihje";
+
+/* Class = "NSWindow"; title = "Freecell tilastot"; ObjectID = "231"; */
+"231.title" = "Freecell tilastot";
+
+/* Class = "NSTableColumn"; headerCell.title = "Tulos"; ObjectID = "233"; */
+"233.headerCell.title" = "Tulos";
+
+/* Class = "NSTableColumn"; headerCell.title = "Pöydän numero"; ObjectID = "236"; */
+"236.headerCell.title" = "Pöydän numero";
+
+/* Class = "NSTableColumn"; headerCell.title = "Siirrot"; ObjectID = "249"; */
+"249.headerCell.title" = "Siirrot";
+
+/* Class = "NSTableColumn"; headerCell.title = "Kesto"; ObjectID = "250"; */
+"250.headerCell.title" = "Kesto";
+
+/* Class = "NSMenuItem"; title = "Tilastot..."; ObjectID = "265"; */
+"265.title" = "Tilastot...";
+
+/* Class = "NSTableColumn"; headerCell.title = "Pelattu viimeksi"; ObjectID = "273"; */
+"273.headerCell.title" = "Pelattu viimeksi";
+
+/* Class = "NSMenuItem"; title = "Pelaa uudelleen"; ObjectID = "284"; */
+"284.title" = "Pelaa uudelleen";
+
+/* Class = "NSMenuItem"; title = "Pyyhi"; ObjectID = "342"; */
+"342.title" = "Pyyhi";
+
+/* Class = "NSMenuItem"; title = "Kopioi"; ObjectID = "343"; */
+"343.title" = "Kopioi";
+
+/* Class = "NSMenuItem"; title = "Liitä"; ObjectID = "344"; */
+"344.title" = "Liitä";
+
+/* Class = "NSMenuItem"; title = "Valitse kaikki"; ObjectID = "345"; */
+"345.title" = "Valitse kaikki";
+
+/* Class = "NSMenuItem"; title = "Leikkaa"; ObjectID = "346"; */
+"346.title" = "Leikkaa";
+
+/* Class = "NSWindow"; title = "Freecell asetukset"; ObjectID = "353"; */
+"353.title" = "Freecell asetukset";
+
+/* Class = "NSTextFieldCell"; title = "00:00:00 (best is 00:00:00)"; ObjectID = "427"; */
+"427.title" = "00:00:00 (best is 00:00:00)";
+
+/* Class = "NSTextFieldCell"; title = "0 moves (best is 0)"; ObjectID = "428"; */
+"428.title" = "0 moves (best is 0)";
+
+/* Class = "NSButtonCell"; title = "Pelaa"; ObjectID = "429"; */
+"429.title" = "Pelaa";
+
+/* Class = "NSButtonCell"; title = "Kumoa"; ObjectID = "430"; */
+"430.title" = "Kumoa";
+
+/* Class = "NSTextFieldCell"; title = "Pöydän numero:"; ObjectID = "432"; */
+"432.title" = "Pöydän numero:";
+
+/* Class = "NSTextFieldCell"; title = "Pelatut:"; ObjectID = "433"; */
+"433.title" = "Pelatut:";
+
+/* Class = "NSTextFieldCell"; title = "Voitot:"; ObjectID = "434"; */
+"434.title" = "Voitot:";
+
+/* Class = "NSTextFieldCell"; title = "Hävityt:"; ObjectID = "435"; */
+"435.title" = "Hävityt:";
+
+/* Class = "NSTextFieldCell"; title = "999"; ObjectID = "436"; */
+"436.title" = "999";
+
+/* Class = "NSTextFieldCell"; title = "900 (90%)"; ObjectID = "437"; */
+"437.title" = "900 (90%)";
+
+/* Class = "NSTextFieldCell"; title = "99 (10%)"; ObjectID = "438"; */
+"438.title" = "99 (10%)";
+
+/* Class = "NSButtonCell"; title = "Tyhjennä tilastot"; ObjectID = "439"; */
+"439.title" = "Tyhjennä tilastot";
+
+/* Class = "NSButtonCell"; title = "Pelaa uudelleen"; ObjectID = "440"; */
+"440.title" = "Pelaa uudelleen";
+
+/* Class = "NSButtonCell"; title = "Siirrä kortit automaattisesti lopullisiin ruutuihinsa"; ObjectID = "441"; */
+"441.title" = "Siirrä kortit automaattisesti lopullisiin ruutuihinsa";
+
+/* Class = "NSButtonCell"; title = "Salli useamman kortin siirtäminen kerrallaan"; ObjectID = "442"; */
+"442.title" = "Salli useamman kortin siirtäminen kerrallaan";
+
+/* Class = "NSButtonCell"; title = "Sulje"; ObjectID = "443"; */
+"443.title" = "Sulje";
+
+/* Class = "NSTextFieldCell"; title = "Pöydän väri:"; ObjectID = "444"; */
+"444.title" = "Pöydän väri:";

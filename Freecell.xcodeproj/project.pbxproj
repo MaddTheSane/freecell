@@ -66,6 +66,12 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Freecell_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Freecell_Prefix.h; sourceTree = "<group>"; };
+		552ED130216BED76009D31B2 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		552ED140216BEE76009D31B2 /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		552ED141216BEE80009D31B2 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		552ED142216BEE84009D31B2 /* nl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		552ED143216BEE88009D31B2 /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		552ED144216BEE8E009D31B2 /* fi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		55B47D7E2166B91E00D34D16 /* FreeCell Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FreeCell Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B47D802166B91E00D34D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B47D822166B92000D34D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -394,6 +400,12 @@
 				Spanish,
 				Finnish,
 				Base,
+				en,
+				ja,
+				fr,
+				nl,
+				es,
+				fi,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Freecell */;
 			projectDirPath = "";
@@ -504,6 +516,12 @@
 			isa = PBXVariantGroup;
 			children = (
 				55B47D852166B92000D34D16 /* Base */,
+				552ED130216BED76009D31B2 /* en */,
+				552ED140216BEE76009D31B2 /* ja */,
+				552ED141216BEE80009D31B2 /* fr */,
+				552ED142216BEE84009D31B2 /* nl */,
+				552ED143216BEE88009D31B2 /* es */,
+				552ED144216BEE8E009D31B2 /* fi */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
