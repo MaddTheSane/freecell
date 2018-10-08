@@ -1,4 +1,4 @@
-﻿/* Localized versions of Info.plist keys */
+/* Localized versions of Info.plist keys */
 
 CFBundleName = "Freecell";
 CFBundleGetInfoString = "Freecell, Copyright 2003–2012 Alisdair McDiarmid.";
