@@ -39,10 +39,10 @@ enum {
 
 @interface Table : NSObject
 {
-    NSMutableArray	*columns;
-    NSMutableArray	*stacks;
-    NSMutableArray	*freeCells;
-    NSMutableArray	*decks;
+    NSMutableArray<NSMutableArray<Card*>*>	*columns;
+    NSMutableArray<NSMutableArray<Card*>*>	*stacks;
+    NSMutableArray<NSMutableArray<Card*>*>	*freeCells;
+    NSMutableArray<NSMutableArray<Card*>*>	*decks;
 }
 
 // Mutators
@@ -53,8 +53,8 @@ enum {
 // Accessors
 //
 
-- (NSArray *) arrayForLocation: (TableLocation *) location;
-- (NSArray *) arrayForLocationType: (TableLocationType) locationType;
+- (NSArray<Card*> *) arrayForLocation: (TableLocation *) location;
+- (NSArray<Card*> *) arrayForLocationType: (TableLocationType) locationType;
 - (unsigned) numberOfEmptyTableLocationType: (TableLocationType) locationType;
 - (Card *) cardNumber: (unsigned) n atTableLocation: (TableLocation *) location;
 - (Card *) firstCardAtLocation: (TableLocation *) location;
