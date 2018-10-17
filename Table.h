@@ -54,7 +54,7 @@ enum {
 //
 
 - (NSArray<Card*> *) arrayForLocation: (TableLocation *) location;
-- (NSArray<Card*> *) arrayForLocationType: (TableLocationType) locationType;
+- (NSArray<NSArray<Card*>*> *) arrayForLocationType: (TableLocationType) locationType;
 - (unsigned) numberOfEmptyTableLocationType: (TableLocationType) locationType;
 - (Card *) cardNumber: (unsigned) n atTableLocation: (TableLocation *) location;
 - (Card *) firstCardAtLocation: (TableLocation *) location;
