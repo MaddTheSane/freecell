@@ -33,7 +33,7 @@
 #include <stdlib.h>
 #import "GameController.h"
 
-@interface GameController (PrivateMethods)
+@interface GameController ()
 
 - (void) GC_startGame;
 

@@ -30,7 +30,7 @@
 #import "HistoryController.h"
 #import "GameController.h"
 
-@interface HistoryController (PrivateMethods)
+@interface HistoryController ()
 
 - (void) HC_updateWindow;
 - (void) HC_sortTable;

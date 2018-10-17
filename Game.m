@@ -35,7 +35,7 @@
 #import "GameView.h"
 #import "GameController.h"
 
-@interface Game (PrivateMethods)
+@interface Game ()
 
 - (void) G_deal;
 - (void) G_setMove: (TableMove *) newTableMove;
