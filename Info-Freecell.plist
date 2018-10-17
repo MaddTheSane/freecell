@@ -9,7 +9,9 @@
 	<key>CFBundleGetInfoString</key>
 	<string>2.2</string>
 	<key>CFBundleHelpBookFolder</key>
-	<string>Freecell Help</string>
+	<string>Freecell.help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>org.wasters.Freecell.help</string>
 	<key>CFBundleIconFile</key>
 	<string>Freecell.icns</string>
 	<key>CFBundleIdentifier</key>

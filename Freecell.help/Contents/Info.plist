@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.wasters.Freecell.help</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2</string>
+	<key>CFBundleSignature</key>
+	<string>hbwr</string>
+	<key>CFBundleVersion</key>
+	<string>2</string>
+	<key>HPDBookAccessPath</key>
+	<string>Freecell.html</string>
+	<key>HPDBookIconPath</key>
+	<string>../GlobalArt/logo.png</string>
+	<key>HPDBookIndexPath</key>
+	<string>search.helpindex</string>
+	<key>HPDBookType</key>
+	<string>3</string>
+	<key>HPDBookUsesExternalViewer</key>
+	<false/>
+	<key>HPDMaxWindowWidth</key>
+	<integer>938</integer>
+	<key>HPDBookTitle</key>
+	<string>Freecell Help</string>
+</dict>
+</plist>

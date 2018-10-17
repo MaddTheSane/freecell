@@ -11,6 +11,8 @@
 		552B1E362177BDCE0062E4CC /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E352177BDCE0062E4CC /* HistoryController.swift */; };
 		552B1E392177D9CB0062E4CC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E382177D9CB0062E4CC /* Game.swift */; };
 		552B1E3B2177D9E90062E4CC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E3A2177D9E90062E4CC /* GameView.swift */; };
+		552B1E3D217801650062E4CC /* Freecell.help in Resources */ = {isa = PBXBuildFile; fileRef = 552B1E3C217801650062E4CC /* Freecell.help */; };
+		552B1E3E217801650062E4CC /* Freecell.help in Resources */ = {isa = PBXBuildFile; fileRef = 552B1E3C217801650062E4CC /* Freecell.help */; };
 		55B47D832166B92000D34D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		55B47D862166B92000D34D16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D842166B92000D34D16 /* MainMenu.xib */; };
 		55B47D8E2166B96700D34D16 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D8D2166B96700D34D16 /* Card.swift */; };
@@ -20,7 +22,6 @@
 		55B47D9A2166C6AF00D34D16 /* vccRandHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D992166C6AF00D34D16 /* vccRandHelper.swift */; };
 		55CCAA202166DD67008EEFE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		55CCAA212166EF96008EEFE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2BD40BD04E06C960098C7F4 /* Localizable.strings */; };
-		55CCAA222166EFDA008EEFE7 /* Freecell Help in Resources */ = {isa = PBXBuildFile; fileRef = F2C630BD04E07BDA00926905 /* Freecell Help */; };
 		55CCAA242166F053008EEFE7 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCAA232166F053008EEFE7 /* Table.swift */; };
 		55CCAA262166F085008EEFE7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCAA252166F085008EEFE7 /* CardView.swift */; };
 		55EB7F9E216BF37000827FEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55EB7FA0216BF37000827FEB /* InfoPlist.strings */; };
@@ -44,7 +45,6 @@
 		F29D0D44158CE03A0050A6FA /* Freecell.icns in Resources */ = {isa = PBXBuildFile; fileRef = F2E57CE104C20E36005D2EDB /* Freecell.icns */; };
 		F29D0D45158CE03A0050A6FA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = F2F17F5C04E07FD4003ED142 /* Credits.html */; };
 		F29D0D46158CE03A0050A6FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2BD40BD04E06C960098C7F4 /* Localizable.strings */; };
-		F29D0D47158CE03A0050A6FA /* Freecell Help in Resources */ = {isa = PBXBuildFile; fileRef = F2C630BD04E07BDA00926905 /* Freecell Help */; };
 		F29D0D4A158CE03A0050A6FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		F29D0D4B158CE03A0050A6FA /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CD26A504B477F30003D579 /* GameView.m */; };
 		F29D0D4C158CE03A0050A6FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CBECB104B4D1890052BE5F /* Game.m */; };
@@ -74,6 +74,7 @@
 		552B1E352177BDCE0062E4CC /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		552B1E382177D9CB0062E4CC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		552B1E3A2177D9E90062E4CC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		552B1E3C217801650062E4CC /* Freecell.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Freecell.help; sourceTree = "<group>"; };
 		552ED130216BED76009D31B2 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		552ED140216BEE76009D31B2 /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		552ED141216BEE80009D31B2 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -100,11 +101,9 @@
 		55EB7FA4216BF47700827FEB /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55EB7FA5216BF47800827FEB /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55ECE0882169DCC300943261 /* TableMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMove.swift; sourceTree = "<group>"; };
-		F21273FF0508ADD60038B809 /* fr */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = fr; path = "fr.lproj/Freecell Help"; sourceTree = "<group>"; };
 		F241643C07C7A06B002C0965 /* bonded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bonded.png; path = Cards/bonded.png; sourceTree = "<group>"; };
 		F24508A204BB163A00664F50 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		F24508A304BB163A00664F50 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
-		F247590907C9436F007E46D8 /* fi */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fi; path = "fi.lproj/Freecell Help"; sourceTree = "<group>"; };
 		F265026604BF76F50099FD16 /* TableMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableMove.h; sourceTree = "<group>"; };
 		F265026704BF76F50099FD16 /* TableMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableMove.m; sourceTree = "<group>"; };
 		F26D7EC904D5E9BA00388118 /* HistoryController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = HistoryController.h; sourceTree = "<group>"; };
@@ -113,7 +112,6 @@
 		F290B98E0505E6BD00DB1354 /* fr */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = fr; path = fr.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		F290B98F0505E6CF00DB1354 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F290B9900505E6DD00DB1354 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F2942F5A05023EBC002EC42F /* nl */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = nl; path = "nl.lproj/Freecell Help"; sourceTree = "<group>"; };
 		F29D0D5E158CE03A0050A6FA /* Info-Freecell.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Freecell.plist"; sourceTree = "<group>"; };
 		F29D0D5F158CE03A0050A6FA /* Freecell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freecell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2ABB4D504B76E8B006A8F0E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 		F2BD40BE04E06C960098C7F4 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F2BFB9B104B89C1D0085C4AC /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		F2BFB9B204B89C1D0085C4AC /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
-		F2C630BE04E07BDA00926905 /* en */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en; path = "en.lproj/Freecell Help"; sourceTree = "<group>"; };
 		F2CBECB004B4D1890052BE5F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		F2CBECB104B4D1890052BE5F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		F2CD26A404B477F30003D579 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
@@ -148,8 +145,6 @@
 		F2EBA8CB07C939260093A065 /* fi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = fi; path = fi.lproj/Credits.html; sourceTree = "<group>"; };
 		F2EBA8CC07C9392C0093A065 /* fi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F2EBA8CD07C939340093A065 /* fi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F2F8A98207C9226E00B609CB /* ja */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ja; path = "ja.lproj/Freecell Help"; sourceTree = "<group>"; };
-		F2F8A99407C9227000B609CB /* es */ = {isa = PBXFileReference; lastKnownFileType = folder; name = es; path = "es.lproj/Freecell Help"; sourceTree = "<group>"; };
 		F2FE114707C91DD800C0DC93 /* ja */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = ja; path = ja.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		F2FE114807C91DDB00C0DC93 /* es */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = es; path = es.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		F2FE115407C91E0400C0DC93 /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -262,7 +257,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F2C630BD04E07BDA00926905 /* Freecell Help */,
+				552B1E3C217801650062E4CC /* Freecell.help */,
 				F29D0D5E158CE03A0050A6FA /* Info-Freecell.plist */,
 				F2F17F5C04E07FD4003ED142 /* Credits.html */,
 				F2E57CE104C20E36005D2EDB /* Freecell.icns */,
@@ -442,9 +437,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B47D832166B92000D34D16 /* Assets.xcassets in Resources */,
-				55CCAA222166EFDA008EEFE7 /* Freecell Help in Resources */,
 				55CCAA212166EF96008EEFE7 /* Localizable.strings in Resources */,
 				55B47D862166B92000D34D16 /* MainMenu.xib in Resources */,
+				552B1E3E217801650062E4CC /* Freecell.help in Resources */,
 				55EB7F9E216BF37000827FEB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,8 +453,8 @@
 				F29D0D44158CE03A0050A6FA /* Freecell.icns in Resources */,
 				F29D0D45158CE03A0050A6FA /* Credits.html in Resources */,
 				55CCAA202166DD67008EEFE7 /* Assets.xcassets in Resources */,
+				552B1E3D217801650062E4CC /* Freecell.help in Resources */,
 				F29D0D46158CE03A0050A6FA /* Localizable.strings in Resources */,
-				F29D0D47158CE03A0050A6FA /* Freecell Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,19 +568,6 @@
 				F2EBA8CC07C9392C0093A065 /* fi */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		F2C630BD04E07BDA00926905 /* Freecell Help */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F2C630BE04E07BDA00926905 /* en */,
-				F2942F5A05023EBC002EC42F /* nl */,
-				F21273FF0508ADD60038B809 /* fr */,
-				F2F8A98207C9226E00B609CB /* ja */,
-				F2F8A99407C9227000B609CB /* es */,
-				F247590907C9436F007E46D8 /* fi */,
-			);
-			name = "Freecell Help";
 			sourceTree = "<group>";
 		};
 		F2F17F5C04E07FD4003ED142 /* Credits.html */ = {
