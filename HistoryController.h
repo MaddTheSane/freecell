@@ -33,7 +33,7 @@
 
 @class GameController;
 
-@interface HistoryController : NSObject
+@interface HistoryController : NSObject <NSTableViewDelegate>
 {
     IBOutlet NSTextField	*gamesLost;
     IBOutlet NSTextField	*gamesPlayed;
@@ -42,7 +42,7 @@
     IBOutlet NSTableView	*tableView;
     IBOutlet NSWindow		*window;
     IBOutlet NSTableColumn	*lastPlayedColumn;
-    GameController          *gameController;
+    IBOutlet GameController *gameController;
     History                 *history;
     NSString                *sortColumn;
     BOOL                    sortDescending;
