@@ -17,13 +17,13 @@ private var historySortColumn: String {
 
 
 class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
-	@IBOutlet var gamesLost: NSTextField!
-	@IBOutlet var gamesPlayed: NSTextField!
-	@IBOutlet var gamesWon: NSTextField!
-	@IBOutlet var retryGame: NSButton!
-	@IBOutlet var tableView: NSTableView!
-	@IBOutlet var window: NSWindow!
-	@IBOutlet var lastPlayedColumn: NSTableColumn!
+	@IBOutlet weak var gamesLost: NSTextField!
+	@IBOutlet weak var gamesPlayed: NSTextField!
+	@IBOutlet weak var gamesWon: NSTextField!
+	@IBOutlet weak var retryGame: NSButton!
+	@IBOutlet weak var tableView: NSTableView!
+	@IBOutlet weak var window: NSWindow!
+	@IBOutlet weak var lastPlayedColumn: NSTableColumn!
 	//IBOutlet GameController *gameController;
 	private let history: History
 	private var sortColumn = "date"
@@ -33,7 +33,8 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	override init() {
 		let defaults = UserDefaults.standard
 		let libraryPath = try! FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-		let file = libraryPath.appendingPathComponent("Preferences").appendingPathComponent("org.wasters.Freecell.history.json")
+		var file = libraryPath.appendingPathComponent("Preferences")
+		file.appendPathComponent("org.wasters.Freecell.history.json")
 		history = History.from(file)
 		
 		super.init()
@@ -61,11 +62,28 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	}
 	
 	private func setDateFormat() {
-		
+		let formatter = DateFormatter()
+		formatter.timeStyle = .none
+		formatter.dateStyle = .short
+		(lastPlayedColumn.dataCell as? NSCell)?.formatter = formatter
 	}
 	
 	private func updateWindow() {
+		let won = history.numberOfRecords(with: .win)
+		let lost = history.numberOfRecords(with: .loss)
+		var wonPercent = Int(floor(( Double(won) * 100.0) / Double(won + lost)));
+		var lostPercent = 100 - wonPercent;
+
+		if (won + lost == 0) {
+			wonPercent = 0
+			lostPercent = 0
+		}
 		
+		gamesPlayed.integerValue = won + lost
+		gamesWon.stringValue = "\(won) (\(wonPercent)%)"
+		gamesLost.stringValue = "\(lost) (\(lostPercent)%)"
+		tableView.noteNumberOfRowsChanged()
+		tableView.needsDisplay = true
 	}
 	
 	@IBAction func clear(_ sender: Any?) {
@@ -73,7 +91,7 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	}
 	
 	@IBAction func openWindow(_ sender: Any?) {
-		
+		window.makeKeyAndOrderFront(self)
 	}
 
 	@IBAction func retryGame(_ sender: Any?) {
@@ -85,4 +103,41 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		sortTable()
 		updateWindow()
 	}
+	
+	// MARK: - NSTableViewDataSource
+	
+	func numberOfRows(in tableView: NSTableView) -> Int {
+		assert(tableView === self.tableView)
+		return history.records.count
+	}
+	
+	func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+		assert(tableView === self.tableView)
+		guard let tableColumnIdentifier = tableColumn?.identifier, row < history.records.count else {
+			return nil
+		}
+		let historyObj = history.records[row]
+		switch tableColumnIdentifier {
+		case NSUserInterfaceItemIdentifier("gameNumber"):
+			return NSNumber(value: historyObj.gameNumber)
+			
+		case NSUserInterfaceItemIdentifier("result"):
+			return historyObj.result.localizedDescription
+
+		case NSUserInterfaceItemIdentifier("moves"):
+			return historyObj.moves
+
+		case NSUserInterfaceItemIdentifier("duration"):
+			_="%H:%M:%S"
+			return historyObj.duration
+
+		case NSUserInterfaceItemIdentifier("date"):
+			return historyObj.date
+
+		default:
+			return nil
+		}
+	}
+	
+	// MARK: - NSTableViewDelegate
 }

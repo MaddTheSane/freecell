@@ -40,4 +40,9 @@ class History: NSObject, Codable {
 	func addRecord(gameNumber: UInt64, result: Result, moves: Int, duration: TimeInterval, date: Date) {
 		
 	}
+	
+	func numberOfRecords(with result: Result) -> Int {
+		let filtered = records.filter({$0.result == result})
+		return filtered.count
+	}
 }
