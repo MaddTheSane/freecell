@@ -71,12 +71,15 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	private func updateWindow() {
 		let won = history.numberOfRecords(with: .win)
 		let lost = history.numberOfRecords(with: .loss)
-		var wonPercent = Int(floor(( Double(won) * 100.0) / Double(won + lost)));
-		var lostPercent = 100 - wonPercent;
+		var wonPercent: Int
+		var lostPercent: Int
 
-		if (won + lost == 0) {
+		if won + lost == 0 {
 			wonPercent = 0
 			lostPercent = 0
+		} else {
+			wonPercent = Int(floor(( Double(won) * 100.0) / Double(won + lost)));
+			lostPercent = 100 - wonPercent;
 		}
 		
 		gamesPlayed.integerValue = won + lost

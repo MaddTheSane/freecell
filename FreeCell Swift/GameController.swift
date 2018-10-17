@@ -9,13 +9,13 @@ import Cocoa
 
 @NSApplicationMain
 class GameController: NSObject, NSApplicationDelegate {
-    @IBOutlet weak var view: /*GameView!*/ AnyObject!
+    @IBOutlet weak var view: GameView!
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var playNumberDialog: NSPanel!
     @IBOutlet weak var gameNumberField: NSTextField!
     @IBOutlet weak var timeElapsed: NSTextField!
     @IBOutlet weak var movesMade: NSTextField!
-    @IBOutlet weak var history: AnyObject!
+    @IBOutlet weak var history: HistoryController!
     
     @IBAction open func newGame(_ sender: Any!) {
         

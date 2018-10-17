@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		552B1E2E2177B5710062E4CC /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E2D2177B5710062E4CC /* History.swift */; };
 		552B1E362177BDCE0062E4CC /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E352177BDCE0062E4CC /* HistoryController.swift */; };
+		552B1E392177D9CB0062E4CC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E382177D9CB0062E4CC /* Game.swift */; };
+		552B1E3B2177D9E90062E4CC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E3A2177D9E90062E4CC /* GameView.swift */; };
 		55B47D832166B92000D34D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		55B47D862166B92000D34D16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D842166B92000D34D16 /* MainMenu.xib */; };
 		55B47D8E2166B96700D34D16 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D8D2166B96700D34D16 /* Card.swift */; };
@@ -70,6 +72,8 @@
 		32CA4F630368D1EE00C91783 /* Freecell_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Freecell_Prefix.h; sourceTree = "<group>"; };
 		552B1E2D2177B5710062E4CC /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		552B1E352177BDCE0062E4CC /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		552B1E382177D9CB0062E4CC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		552B1E3A2177D9E90062E4CC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		552ED130216BED76009D31B2 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		552ED140216BEE76009D31B2 /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		552ED141216BEE80009D31B2 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 			children = (
 				55B47D8D2166B96700D34D16 /* Card.swift */,
 				55CCAA252166F085008EEFE7 /* CardView.swift */,
+				552B1E382177D9CB0062E4CC /* Game.swift */,
+				552B1E3A2177D9E90062E4CC /* GameView.swift */,
 				55B47D932166BB9500D34D16 /* GameController.swift */,
 				552B1E2D2177B5710062E4CC /* History.swift */,
 				552B1E352177BDCE0062E4CC /* HistoryController.swift */,
@@ -470,9 +476,11 @@
 				552B1E2E2177B5710062E4CC /* History.swift in Sources */,
 				55B47D942166BB9500D34D16 /* GameController.swift in Sources */,
 				55B47D962166C28C00D34D16 /* TableLocation.swift in Sources */,
+				552B1E392177D9CB0062E4CC /* Game.swift in Sources */,
 				55B47D8E2166B96700D34D16 /* Card.swift in Sources */,
 				552B1E362177BDCE0062E4CC /* HistoryController.swift in Sources */,
 				55CCAA242166F053008EEFE7 /* Table.swift in Sources */,
+				552B1E3B2177D9E90062E4CC /* GameView.swift in Sources */,
 				55ECE0892169DCC300943261 /* TableMove.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

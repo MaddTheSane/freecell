@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="650" height="596"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView id="197" customClass="GameView">
+                    <customView id="197" customClass="GameView" customModule="FreeCell_Swift" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="650" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </customView>
@@ -315,7 +315,7 @@ Gw
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="92t-5o-abx">
                             <rect key="frame" x="1" y="0.0" width="456" height="228"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" multipleSelection="NO" autosaveColumns="NO" headerView="458" id="234">
                                     <rect key="frame" x="0.0" y="0.0" width="456" height="203"/>
