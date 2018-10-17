@@ -34,7 +34,7 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		let defaults = UserDefaults.standard
 		let libraryPath = try! FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
 		var file = libraryPath.appendingPathComponent("Preferences")
-		file.appendPathComponent("org.wasters.Freecell.history.json")
+		file.appendPathComponent("com.github.MaddTheSane.FreeCell-Swift.history.json")
 		history = History.from(file)
 		
 		super.init()

@@ -7,7 +7,8 @@
 
 import Cocoa
 
-class GameController: NSObject {
+@NSApplicationMain
+class GameController: NSObject, NSApplicationDelegate {
     @IBOutlet weak var view: /*GameView!*/ AnyObject!
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var playNumberDialog: NSPanel!
@@ -47,4 +48,8 @@ class GameController: NSObject {
     @IBAction open func redo(_ sender: Any!) {
         
     }
+	
+	func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+		return .terminateNow
+	}
 }

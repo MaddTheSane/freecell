@@ -7,8 +7,9 @@
 
 import Foundation
 
-/// visual c cpp 6 srand and rand
-/// adapted from implementation found on the internet
+/// Visual C and C++ 6 `srand` and `rand`.
+///
+/// Adapted from implementation found on the internet
 /// http://www.codeguru.com/forum/showthread.php?t=312416&goto=nextnewest
 struct VCCRandomNumberGenerator: RandomNumberGenerator {
     private(set) var holdrand: UInt64 = 1

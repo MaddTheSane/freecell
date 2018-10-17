@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		552B1E2E2177B5710062E4CC /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E2D2177B5710062E4CC /* History.swift */; };
 		552B1E362177BDCE0062E4CC /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E352177BDCE0062E4CC /* HistoryController.swift */; };
-		55B47D812166B91E00D34D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D802166B91E00D34D16 /* AppDelegate.swift */; };
 		55B47D832166B92000D34D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		55B47D862166B92000D34D16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D842166B92000D34D16 /* MainMenu.xib */; };
 		55B47D8E2166B96700D34D16 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D8D2166B96700D34D16 /* Card.swift */; };
@@ -78,7 +77,6 @@
 		552ED143216BEE88009D31B2 /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		552ED144216BEE8E009D31B2 /* fi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		55B47D7E2166B91E00D34D16 /* FreeCell Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FreeCell Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		55B47D802166B91E00D34D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B47D822166B92000D34D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B47D852166B92000D34D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		55B47D872166B92000D34D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -281,6 +279,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		552B1E372177CF5B0062E4CC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				55B47D8D2166B96700D34D16 /* Card.swift */,
+				55CCAA252166F085008EEFE7 /* CardView.swift */,
+				55B47D932166BB9500D34D16 /* GameController.swift */,
+				552B1E2D2177B5710062E4CC /* History.swift */,
+				552B1E352177BDCE0062E4CC /* HistoryController.swift */,
+				55B47D972166C4E000D34D16 /* Result.swift */,
+				55CCAA232166F053008EEFE7 /* Table.swift */,
+				55B47D952166C28C00D34D16 /* TableLocation.swift */,
+				55ECE0882169DCC300943261 /* TableMove.swift */,
+				55B47D992166C6AF00D34D16 /* vccRandHelper.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		55B47D792166B85000D34D16 /* Freecell */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,17 +309,7 @@
 		55B47D7F2166B91E00D34D16 /* FreeCell Swift */ = {
 			isa = PBXGroup;
 			children = (
-				55B47D802166B91E00D34D16 /* AppDelegate.swift */,
-				55CCAA232166F053008EEFE7 /* Table.swift */,
-				55ECE0882169DCC300943261 /* TableMove.swift */,
-				55B47D952166C28C00D34D16 /* TableLocation.swift */,
-				55B47D972166C4E000D34D16 /* Result.swift */,
-				552B1E2D2177B5710062E4CC /* History.swift */,
-				552B1E352177BDCE0062E4CC /* HistoryController.swift */,
-				55B47D8D2166B96700D34D16 /* Card.swift */,
-				55CCAA252166F085008EEFE7 /* CardView.swift */,
-				55B47D992166C6AF00D34D16 /* vccRandHelper.swift */,
-				55B47D932166BB9500D34D16 /* GameController.swift */,
+				552B1E372177CF5B0062E4CC /* Classes */,
 				55B47D822166B92000D34D16 /* Assets.xcassets */,
 				55B47D842166B92000D34D16 /* MainMenu.xib */,
 				55EB7FA0216BF37000827FEB /* InfoPlist.strings */,
@@ -461,7 +466,6 @@
 			files = (
 				55B47D982166C4E000D34D16 /* Result.swift in Sources */,
 				55CCAA262166F085008EEFE7 /* CardView.swift in Sources */,
-				55B47D812166B91E00D34D16 /* AppDelegate.swift in Sources */,
 				55B47D9A2166C6AF00D34D16 /* vccRandHelper.swift in Sources */,
 				552B1E2E2177B5710062E4CC /* History.swift in Sources */,
 				55B47D942166BB9500D34D16 /* GameController.swift in Sources */,
