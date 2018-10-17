@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Result: CustomStringConvertible {
+enum Result: Int8, CustomStringConvertible, Codable {	
     case unplayed
     case loss
     case win

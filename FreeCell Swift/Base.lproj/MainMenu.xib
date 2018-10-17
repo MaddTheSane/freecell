@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -397,6 +398,7 @@ Gw
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
+                                        <outlet property="dataSource" destination="286" id="eMr-jO-gEr"/>
                                         <outlet property="delegate" destination="286" id="298"/>
                                     </connections>
                                 </tableView>
@@ -497,7 +499,7 @@ DQ
                 </subviews>
             </view>
         </window>
-        <customObject id="286" userLabel="HistoryController" customClass="HistoryController">
+        <customObject id="286" userLabel="HistoryController" customClass="HistoryController" customModule="FreeCell_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="gameController" destination="198" id="297"/>
                 <outlet property="gamesLost" destination="264" id="291"/>

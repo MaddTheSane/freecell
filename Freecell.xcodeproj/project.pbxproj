@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552B1E2E2177B5710062E4CC /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E2D2177B5710062E4CC /* History.swift */; };
+		552B1E362177BDCE0062E4CC /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552B1E352177BDCE0062E4CC /* HistoryController.swift */; };
 		55B47D812166B91E00D34D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D802166B91E00D34D16 /* AppDelegate.swift */; };
 		55B47D832166B92000D34D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		55B47D862166B92000D34D16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D842166B92000D34D16 /* MainMenu.xib */; };
@@ -67,6 +69,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Freecell_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Freecell_Prefix.h; sourceTree = "<group>"; };
+		552B1E2D2177B5710062E4CC /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		552B1E352177BDCE0062E4CC /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		552ED130216BED76009D31B2 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		552ED140216BEE76009D31B2 /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		552ED141216BEE80009D31B2 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 				55ECE0882169DCC300943261 /* TableMove.swift */,
 				55B47D952166C28C00D34D16 /* TableLocation.swift */,
 				55B47D972166C4E000D34D16 /* Result.swift */,
+				552B1E2D2177B5710062E4CC /* History.swift */,
+				552B1E352177BDCE0062E4CC /* HistoryController.swift */,
 				55B47D8D2166B96700D34D16 /* Card.swift */,
 				55CCAA252166F085008EEFE7 /* CardView.swift */,
 				55B47D992166C6AF00D34D16 /* vccRandHelper.swift */,
@@ -457,9 +463,11 @@
 				55CCAA262166F085008EEFE7 /* CardView.swift in Sources */,
 				55B47D812166B91E00D34D16 /* AppDelegate.swift in Sources */,
 				55B47D9A2166C6AF00D34D16 /* vccRandHelper.swift in Sources */,
+				552B1E2E2177B5710062E4CC /* History.swift in Sources */,
 				55B47D942166BB9500D34D16 /* GameController.swift in Sources */,
 				55B47D962166C28C00D34D16 /* TableLocation.swift in Sources */,
 				55B47D8E2166B96700D34D16 /* Card.swift in Sources */,
+				552B1E362177BDCE0062E4CC /* HistoryController.swift in Sources */,
 				55CCAA242166F053008EEFE7 /* Table.swift in Sources */,
 				55ECE0892169DCC300943261 /* TableMove.swift in Sources */,
 			);
