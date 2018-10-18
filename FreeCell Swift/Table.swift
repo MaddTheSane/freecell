@@ -52,6 +52,12 @@ class Table {
 		}
 	}
 
+	func shuffleDeck<T>(using randomGen: inout T)  where T : RandomNumberGenerator {
+		var theDeck = decks[0]
+		theDeck.shuffle(using: &randomGen)
+		decks[0] = theDeck
+	}
+	
 	func move(_ move: TableMove) {
 		// FIXME: rewrite to have better speed?
 		guard var source = array(for: move.source),
