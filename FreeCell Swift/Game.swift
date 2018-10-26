@@ -91,79 +91,69 @@ class Game {
 	}
 
 	func setHint() {
-		/*
-- (void) setHint
-{
-Card *card, *other;
-TableLocation *source, *destination;
-int i;
-
-for (i = 0; i < NUMBER_OF_COLUMNS; i++)
-{
-unsigned j;
-
-source = [TableLocation locationWithType: COLUMN number: i];
-card = [table firstCardAtLocation: source];
-for (j = 0; j < NUMBER_OF_STACKS; j++)
-{
-destination = [TableLocation locationWithType: STACK number: j];
-other = [table firstCardAtLocation: destination];
-if ([card isSuccessorTo: other])
-goto foundHint;
-}
-for (j = 0; j < NUMBER_OF_COLUMNS; j++)
-{
-destination = [TableLocation locationWithType: COLUMN number: j];
-other = [table firstCardAtLocation: destination];
-if ([card isPlayableOn: other])
-goto foundHint;
-}
-}
-
-for (i = 0; i < NUMBER_OF_FREE_CELLS; i++)
-{
-unsigned j;
-
-source = [TableLocation locationWithType: FREE_CELL number: i];
-card = [table firstCardAtLocation: source];
-for (j = 0; j < NUMBER_OF_STACKS; j++)
-{
-destination = [TableLocation locationWithType: STACK number: j];
-other = [table firstCardAtLocation: destination];
-if ([card isSuccessorTo: other])
-goto foundHint;
-}
-for (j = 0; j < NUMBER_OF_COLUMNS; j++)
-{
-destination = [TableLocation locationWithType: COLUMN number: j];
-other = [table firstCardAtLocation: destination];
-if ([card isPlayableOn: other])
-goto foundHint;
-}
-}
-
-for (i = 0; i < NUMBER_OF_COLUMNS; i++)
-{
-unsigned j;
-
-source = [TableLocation locationWithType: COLUMN number: i];
-if ([table firstCardAtLocation: source] == nil)
-continue;
-
-for (j = 0; j < NUMBER_OF_FREE_CELLS; j++)
-{
-destination = [TableLocation locationWithType: FREE_CELL number: j];
-if ([table firstCardAtLocation: destination] == nil)
-goto foundHint;
-}
-}
-
-// No hint found.
-[self setHint: nil];
-
-foundHint:
-[self setHint: [TableMove moveFromSource: source toDestination: destination]];
-}*/
+		for i in 0 ..< NUMBER_OF_COLUMNS {
+			let source = TableLocation(type: .column, number: UInt16(i))
+			guard let card = table.firstCard(at: source) else {
+				continue
+			}
+			for j in 0 ..< NUMBER_OF_STACKS {
+				let destination = TableLocation(type: .stack, number: UInt16(j))
+				let other = table.firstCard(at: destination)
+				if card.isSuccessor(to: other) {
+					hint = TableMove(source: source, destination: destination)
+					return
+				}
+			}
+			for j in 0 ..< NUMBER_OF_COLUMNS {
+				let destination = TableLocation(type: .column, number: UInt16(j))
+				let other = table.firstCard(at: destination)
+				if card.isSuccessor(to: other) {
+					hint = TableMove(source: source, destination: destination)
+					return
+				}
+			}
+		}
+		
+		for i in 0 ..< NUMBER_OF_FREE_CELLS {
+			let source = TableLocation(type: .freeCell, number: UInt16(i));
+			guard let card = table.firstCard(at: source) else {
+				continue
+			}
+			for j in 0 ..< NUMBER_OF_STACKS {
+				let destination = TableLocation(type: .stack, number: UInt16(j))
+				let other = table.firstCard(at: destination)
+				if card.isSuccessor(to: other) {
+					hint = TableMove(source: source, destination: destination)
+					return
+				}
+			}
+			for j in 0 ..< NUMBER_OF_COLUMNS {
+				let destination = TableLocation(type: .column, number: UInt16(j))
+				let other = table.firstCard(at: destination)
+				if card.isSuccessor(to: other) {
+					hint = TableMove(source: source, destination: destination)
+					return
+				}
+			}
+		}
+		
+		for i in 0 ..< NUMBER_OF_COLUMNS {
+			let source = TableLocation.init(type: .column, number: UInt16(i))
+			if table.firstCard(at: source) == nil {
+				continue;
+			}
+			
+			for j in 0 ..< NUMBER_OF_FREE_CELLS {
+				let destination = TableLocation(type: .freeCell, number: UInt16(j))
+				if table.firstCard(at: destination) == nil {
+					hint = TableMove(source: source, destination: destination)
+					return
+				}
+			}
+		}
+		
+		// No hint found.
+		hint = nil
 	}
 	
 	private func dealCards() {
@@ -318,67 +308,61 @@ foundHint:
 	}
 
 	func autoStack() {
+		var minimumStackedRank = Card.Rank.king
+		var source: TableLocation? = nil
+		var destination: TableLocation? = nil
+		func makeMove() {
+			guard let source = source, let destination = destination else {
+				return
+			}
+			
+			move = TableMove(source: source, destination: destination)
+			attemptMove()
+		}
 		
-	
-	
-	/*
-- (void) G_autoStack
-{
-unsigned i, minimumStackedRank;
-TableLocation *source, *destination;
-Card *card, *other;
-
-minimumStackedRank = KING;
-for (i = 0; i < NUMBER_OF_STACKS; i++)
-{
-TableLocation *stack = [TableLocation locationWithType: STACK number: i];
-unsigned rank = [[table firstCardAtLocation: stack] rank];
-if (rank < minimumStackedRank)
-minimumStackedRank = rank;
-}
-
-for (i = 0; i < NUMBER_OF_FREE_CELLS; i++)
-{
-unsigned j;
-
-source = [TableLocation locationWithType: FREE_CELL number: i];
-card = [table firstCardAtLocation: source];
-
-for (j = 0; j < NUMBER_OF_STACKS; j++)
-{
-destination = [TableLocation locationWithType: STACK number: j];
-other = [table firstCardAtLocation: destination];
-if ([card isSuccessorTo: other] && [card rank] < minimumStackedRank + 3)
-goto makeMove;
-}
-}
-
-for (i = 0; i < NUMBER_OF_COLUMNS; i++)
-{
-unsigned j;
-
-source = [TableLocation locationWithType: COLUMN number: i];
-card = [table firstCardAtLocation: source];
-
-for (j = 0; j < NUMBER_OF_STACKS; j++)
-{
-destination = [TableLocation locationWithType: STACK number: j];
-other = [table firstCardAtLocation: destination];
-if ([card isSuccessorTo: other] && [card rank] < minimumStackedRank + 3)
-goto makeMove;
-}
-}
-
-// No safe auto-stack possible
-return;
-
-makeMove:
-[self G_setMove: [TableMove moveFromSource: source toDestination: destination]];
-[self G_attemptMove];
-}
-
-	*/
-	
+		for i in 0 ..< NUMBER_OF_STACKS {
+			let stack = TableLocation(type: .stack, number: UInt16(i))
+			if let rank = table.firstCard(at: stack)?.rank {
+				if rank < minimumStackedRank {
+					minimumStackedRank = rank;
+				}
+			}
+		}
+		
+		for i in 0 ..< NUMBER_OF_FREE_CELLS {
+			source = TableLocation(type: .freeCell, number: UInt16(i))
+			guard let card = table.firstCard(at: source!) else {
+				continue
+			}
+			
+			for j in 0 ..< NUMBER_OF_STACKS {
+				destination = TableLocation(type: .stack, number: UInt16(j))
+				let other = table.firstCard(at: destination!)
+				if card.isSuccessor(to: other) && card.rank.rawValue < minimumStackedRank.rawValue + 3 {
+					makeMove()
+					return
+				}
+			}
+		}
+		
+		for i in 0 ..< NUMBER_OF_COLUMNS {
+			source = TableLocation(type: .column, number: UInt16(i))
+			guard let card = table.firstCard(at: source!) else {
+				continue
+			}
+			
+			for j in 0 ..< NUMBER_OF_STACKS {
+				destination = TableLocation(type: .stack, number: UInt16(j))
+				let other = table.firstCard(at: destination!)
+				if card.isSuccessor(to: other) && card.rank.rawValue < minimumStackedRank.rawValue + 3 {
+					makeMove()
+					return
+				}
+			}
+		}
+		
+		// No safe auto-stack possible
+		return
 	}
 	
 	func gameOver(with newResult: Result) {

@@ -37,7 +37,7 @@ struct Card: Hashable, CustomStringConvertible {
         }
     }
     
-    enum Rank: Int32, CustomStringConvertible, CaseIterable {
+	enum Rank: Int32, CustomStringConvertible, CaseIterable, Comparable {
         case ace = 1
         case two
         case three
@@ -94,6 +94,10 @@ struct Card: Hashable, CustomStringConvertible {
                 return "King"
             }
         }
+		
+		static func < (lhs: Card.Rank, rhs: Card.Rank) -> Bool {
+			return lhs.rawValue < rhs.rawValue
+		}
     }
 
     let suit: Suit
