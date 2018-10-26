@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TableMove {
+struct TableMove: CustomStringConvertible {
 	var source: TableLocation
 	
 	var destination: TableLocation
@@ -33,5 +33,9 @@ struct TableMove {
 	
 	var reversed: TableMove {
 		return TableMove(source: destination, destination: source, count: count)
+	}
+	
+	var description: String {
+		return "Source = \(source); Destination = \(destination)"
 	}
 }

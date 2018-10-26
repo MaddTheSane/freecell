@@ -111,3 +111,33 @@ struct Card: Hashable, CustomStringConvertible {
         return suit.isBlack
     }
 }
+
+extension Card {
+	func isSuccessor(to other: Card?) -> Bool {
+		// An ace is the only successor to a blank space
+		guard let other = other else {
+			return rank == .ace
+		}
+		
+		// If our suits match, and my rank is one more than the other card, I am
+		// its successor.
+		return suit == other.suit && rank == Card.Rank(rawValue: other.rank.rawValue + 1)
+	}
+	
+	func isPlayable(on other: Card?) -> Bool {
+		// Can play any card on a blank space
+		guard let other = other else {
+			return true
+		}
+
+		// Can't play a king on anything
+		if rank == .king {
+			return false
+		}
+		
+		// If I am red and the other card is black, or vice versa, and my rank is
+		// one less than the other card, I am playable on it.
+		return (((self.isRed && other.isBlack) || (self.isBlack && other.isRed))
+			&& Card.Rank(rawValue: rank.rawValue + 1) == other.rank)
+	}
+}

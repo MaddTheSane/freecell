@@ -52,4 +52,12 @@ class GameController: NSObject, NSApplicationDelegate {
 	func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
 		return .terminateNow
 	}
+	
+	func moveMade() {
+		
+	}
+	
+	func gameOver() {
+		
+	}
 }
