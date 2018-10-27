@@ -219,7 +219,7 @@
                 </menuItem>
             </items>
         </menu>
-        <customObject id="198" userLabel="GameController" customClass="GameController" customModule="FreeCell_Swift" customModuleProvider="target">
+        <customObject id="198" userLabel="Game Controller" customClass="GameController" customModule="FreeCell_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="gameNumberField" destination="212" id="219"/>
                 <outlet property="history" destination="286" id="296"/>
@@ -499,7 +499,7 @@ DQ
                 </subviews>
             </view>
         </window>
-        <customObject id="286" userLabel="HistoryController" customClass="HistoryController" customModule="FreeCell_Swift" customModuleProvider="target">
+        <customObject id="286" userLabel="History Controller" customClass="HistoryController" customModule="FreeCell_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="gameController" destination="198" id="297"/>
                 <outlet property="gamesLost" destination="264" id="291"/>
@@ -578,7 +578,7 @@ Gw
                 </subviews>
             </view>
         </window>
-        <customObject id="359" userLabel="PreferencesController" customClass="PreferencesController">
+        <customObject id="359" userLabel="Preferences Controller" customClass="PreferencesController" customModule="FreeCell_Swift" customModuleProvider="target">
             <connections>
                 <outlet property="autoStack" destination="355" id="363"/>
                 <outlet property="backgroundColour" destination="392" id="394"/>

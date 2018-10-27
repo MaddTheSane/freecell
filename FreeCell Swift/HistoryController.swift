@@ -24,9 +24,9 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	@IBOutlet weak var tableView: NSTableView!
 	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var lastPlayedColumn: NSTableColumn!
-	//IBOutlet GameController *gameController;
+	@IBOutlet weak var gameController: GameController!
 	private let history: History
-	private var sortColumn = "date"
+	private var sortColumn = NSUserInterfaceItemIdentifier("date")
 	private var sortDescending = true
 
 	
@@ -48,7 +48,7 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		tableView.target = self
 		tableView.doubleAction = #selector(HistoryController.retryGame(_:))
 		
-		sortColumn = UserDefaults.standard.string(forKey: historySortColumn)!
+		sortColumn = NSUserInterfaceItemIdentifier(UserDefaults.standard.string(forKey: historySortColumn)!)
 		sortDescending = UserDefaults.standard.bool(forKey: historySortDescending)
 		sortTable()
 		
@@ -57,8 +57,23 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		updateWindow()
 	}
 	
+	private func sortDescendingToImage() -> NSImage {
+		if sortDescending {
+			return NSImage(named: "NSDescendingSortIndicator")!
+		} else {
+			return NSImage(named: "NSAscendingSortIndicator")!
+		}
+	}
+	
 	private func sortTable() {
+		let sortImage = sortDescendingToImage()
+		let column = tableView.tableColumn(withIdentifier: sortColumn)!
 		
+		tableView.setIndicatorImage(sortImage, in: column)
+		tableView.highlightedTableColumn = column
+		
+		history.sort(byIdentifier: sortColumn.rawValue, descending: sortDescending)
+		tableView.reloadData()
 	}
 	
 	private func setDateFormat() {

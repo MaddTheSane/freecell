@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class History: NSObject, Codable {
+class History: Codable {
 	struct Object: Codable {
 		var gameNumber: UInt64
 		var result: Result
@@ -34,15 +34,50 @@ class History: NSObject, Codable {
 	init(internalFileURL fileURL: URL) {
 		file = fileURL
 		records = []
-		super.init()
 	}
 	
 	func addRecord(gameNumber: UInt64, result: Result, moves: Int, duration: TimeInterval, date: Date) {
-		
+		records.append(History.Object(gameNumber: gameNumber, result: result, moves: moves, duration: duration, date: date))
 	}
 	
 	func numberOfRecords(with result: Result) -> Int {
 		let filtered = records.filter({$0.result == result})
 		return filtered.count
+	}
+	
+	func sort(byIdentifier: String, descending: Bool) {
+		switch byIdentifier {
+		case "gameNumber":
+			records.sort { (lhs, rhs) -> Bool in
+				lhs.gameNumber > rhs.gameNumber
+			}
+			
+		case "moves":
+			records.sort { (lhs, rhs) -> Bool in
+				lhs.moves > rhs.moves
+			}
+			
+		case "result":
+			records.sort { (lhs, rhs) -> Bool in
+				lhs.result > rhs.result
+			}
+
+		case "duration":
+			records.sort { (lhs, rhs) -> Bool in
+				lhs.duration > rhs.duration
+			}
+
+		case "date":
+			records.sort { (lhs, rhs) -> Bool in
+				lhs.date > rhs.date
+			}
+
+		default:
+			return
+		}
+		
+		if descending {
+			records.reverse()
+		}
 	}
 }

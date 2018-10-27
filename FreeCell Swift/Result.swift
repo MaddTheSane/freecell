@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Result: Int8, CustomStringConvertible, Codable {	
+enum Result: Int8, CustomStringConvertible, Codable, Comparable {
     case unplayed
     case loss
     case win
@@ -37,4 +37,8 @@ enum Result: Int8, CustomStringConvertible, Codable {
             return "Invalid"
         }
     }
+	
+	static func < (lhs: Result, rhs: Result) -> Bool {
+		return lhs.rawValue < rhs.rawValue
+	}
 }
