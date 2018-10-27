@@ -60,4 +60,15 @@ class GameController: NSObject, NSApplicationDelegate {
 	func gameOver() {
 		
 	}
+	
+	var windowSize: NSSize {
+		get {
+			return window.frame.size
+		}
+		set {
+			var frame = window.frame
+			frame.size = newValue
+			window.setFrame(frame, display: true)
+		}
+	}
 }

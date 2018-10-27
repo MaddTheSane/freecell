@@ -84,11 +84,11 @@ class CardView: NSObject {
 	}
 	
 	
-	var overlap: UInt32 {
-		return UInt32(cardSize.height / 3)
+	var overlap: Int {
+		return Int(cardSize.height / 3)
 	}
 	
-	var smallOverlap: UInt32 {
-		return UInt32(cardSize.height / 4.75)
+	var smallOverlap: Int {
+		return Int(cardSize.height / 4.75)
 	}
 }
