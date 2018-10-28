@@ -80,4 +80,16 @@ class History: Codable {
 			records.reverse()
 		}
 	}
+	
+	var shortestDuration: TimeInterval {
+		var shortest = Double.greatestFiniteMagnitude
+		
+		for record in records {
+			if record.result == .win {
+				shortest = min(shortest, record.duration)
+			}
+		}
+		
+		return shortest
+	}
 }

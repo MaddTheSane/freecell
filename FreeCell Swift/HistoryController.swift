@@ -122,6 +122,10 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		updateWindow()
 	}
 	
+	var shortestDuration: TimeInterval {
+		return history.shortestDuration
+	}
+	
 	// MARK: - NSTableViewDataSource
 	
 	func numberOfRows(in tableView: NSTableView) -> Int {
