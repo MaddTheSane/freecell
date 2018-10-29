@@ -24,7 +24,6 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	@IBOutlet weak var tableView: NSTableView!
 	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var lastPlayedColumn: NSTableColumn!
-	@IBOutlet weak var durationColumn: NSTableColumn!
 	@IBOutlet weak var gameController: GameController!
 	private let history: History
 	private var sortColumn = NSUserInterfaceItemIdentifier("date")
