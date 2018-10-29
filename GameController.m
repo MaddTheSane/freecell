@@ -233,7 +233,7 @@
 // Sheet handlers
 //
 
-- (void) startGameSheetDidEnd: (NSWindow *) sheet returnCode: (int) returnCode
+- (void) startGameSheetDidEnd: (NSWindow *) sheet returnCode: (NSModalResponse) returnCode
                   contextInfo: (void *) contextInfo
 {
     if (returnCode == NSAlertDefaultReturn)
@@ -243,14 +243,14 @@
     }
 }
 
-- (void) windowCloseSheetDidEnd: (NSWindow *) sheet returnCode: (int) returnCode
+- (void) windowCloseSheetDidEnd: (NSWindow *) sheet returnCode: (NSModalResponse) returnCode
                         contextInfo: (void *) contextInfo
 {
     if (returnCode == NSAlertDefaultReturn)
         [window close];
 }
 
-- (void) applicationTerminateSheetDidEnd: (NSWindow *) sheet returnCode: (int) returnCode
+- (void) applicationTerminateSheetDidEnd: (NSWindow *) sheet returnCode: (NSModalResponse) returnCode
                              contextInfo: (void *) contextInfo
 {
     if (returnCode == NSAlertDefaultReturn)
@@ -258,7 +258,7 @@
     [NSApp replyToApplicationShouldTerminate: (returnCode == NSAlertDefaultReturn)];
 }
 
-- (void) gameWonSheetDidEnd: (NSWindow *) sheet returnCode: (int) returnCode
+- (void) gameWonSheetDidEnd: (NSWindow *) sheet returnCode: (NSModalResponse) returnCode
                 contextInfo: (void *) contextInfo
 {
     if (returnCode == NSAlertAlternateReturn)
@@ -267,7 +267,7 @@
         [self newGame: self];
 }
 
-- (void) gameLostSheetDidEnd: (NSWindow *) sheet returnCode: (int) returnCode
+- (void) gameLostSheetDidEnd: (NSWindow *) sheet returnCode: (NSModalResponse) returnCode
                  contextInfo: (void *) contextInfo
 {
     if (returnCode == NSAlertAlternateReturn)

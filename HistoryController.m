@@ -98,7 +98,7 @@
     [self HC_sortTable];
 
     [defaults setObject: sortColumn forKey: @"historySortColumn"];
-    [defaults setObject: [NSNumber numberWithBool: sortDescending] forKey: @"historySortDescending"];
+    [defaults setBool: sortDescending forKey: @"historySortDescending"];
     [defaults synchronize];
 }
 
