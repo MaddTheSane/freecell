@@ -501,6 +501,7 @@ DQ
         </window>
         <customObject id="286" userLabel="History Controller" customClass="HistoryController" customModule="FreeCell_Swift" customModuleProvider="target">
             <connections>
+                <outlet property="durationColumn" destination="250" id="HW9-MW-N73"/>
                 <outlet property="gameController" destination="198" id="297"/>
                 <outlet property="gamesLost" destination="264" id="291"/>
                 <outlet property="gamesPlayed" destination="257" id="292"/>

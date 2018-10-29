@@ -186,7 +186,7 @@ class GameController: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuI
 		alert.messageText = NSLocalizedString("closeTitle", comment: "windowShouldClose sheet title")
 		alert.informativeText = NSLocalizedString("closeText", comment: "windowShouldClose sheet text")
 		alert.addButton(withTitle: NSLocalizedString("closeButton", comment: "Close button"))
-		alert.addButton(withTitle: NSLocalizedString("cancelButton", comment: "Cancel button"))
+		alert.addButton(withTitle: NSLocalizedString("cancelButton", comment: "Cancel button")).keyEquivalent = "\u{1b}"
 		alert.beginSheetModal(for: window) { (returnCode) in
 			if returnCode == .alertFirstButtonReturn {
 				self.window.close()
@@ -205,6 +205,27 @@ class GameController: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuI
 		}
 		
 		return true
+	}
+	
+	func windowShouldClose(_ sender: NSWindow) -> Bool {
+		guard let game = game, game.inProgress else {
+			self.game = nil
+			return true
+		}
+		
+		let alert = NSAlert()
+		alert.messageText = NSLocalizedString("closeTitle", comment: "windowShouldClose sheet title")
+		alert.informativeText = NSLocalizedString("closeText", comment: "windowShouldClose sheet text")
+		alert.addButton(withTitle: NSLocalizedString("closeButton", comment: "Close button"))
+		alert.addButton(withTitle: NSLocalizedString("cancelButton", comment: "Cancel button")).keyEquivalent = "\u{1b}"
+		
+		alert.beginSheetModal(for: window) { (response) in
+			if response == .alertFirstButtonReturn {
+				self.window.close()
+			}
+		}
+		
+		return false
 	}
 	
 	func windowWillClose(_ notification: Notification) {

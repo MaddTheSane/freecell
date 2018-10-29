@@ -36,8 +36,24 @@ class History: Codable {
 		records = []
 	}
 	
+	private func writeData() throws {
+		let enc = JSONEncoder()
+		let dat = try enc.encode(self)
+		try dat.write(to: file)
+	}
+	
 	func addRecord(gameNumber: UInt64, result: Result, moves: Int, duration: TimeInterval, date: Date) {
 		records.append(History.Object(gameNumber: gameNumber, result: result, moves: moves, duration: duration, date: date))
+		do {
+			try writeData()
+		} catch _ { }
+	}
+	
+	func clear() {
+		records.removeAll()
+		do {
+			try writeData()
+		} catch _ { }
 	}
 	
 	func numberOfRecords(with result: Result) -> Int {
@@ -49,27 +65,27 @@ class History: Codable {
 		switch byIdentifier {
 		case "gameNumber":
 			records.sort { (lhs, rhs) -> Bool in
-				lhs.gameNumber > rhs.gameNumber
+				lhs.gameNumber < rhs.gameNumber
 			}
 			
 		case "moves":
 			records.sort { (lhs, rhs) -> Bool in
-				lhs.moves > rhs.moves
+				lhs.moves < rhs.moves
 			}
 			
 		case "result":
 			records.sort { (lhs, rhs) -> Bool in
-				lhs.result > rhs.result
+				lhs.result < rhs.result
 			}
 
 		case "duration":
 			records.sort { (lhs, rhs) -> Bool in
-				lhs.duration > rhs.duration
+				lhs.duration < rhs.duration
 			}
 
 		case "date":
 			records.sort { (lhs, rhs) -> Bool in
-				lhs.date > rhs.date
+				lhs.date < rhs.date
 			}
 
 		default:
@@ -103,5 +119,20 @@ class History: Codable {
 		}
 		
 		return shortest
+	}
+	
+	func record(_ n: Int) -> Object? {
+		guard n < records.count else {
+			return nil
+		}
+		return records[n]
+	}
+	
+	func gameNumber(forRecord n: Int) -> UInt64? {
+		return record(n)?.gameNumber
+	}
+	
+	func record(gameNumber: UInt64) -> Object? {
+		return records.first(where: {$0.gameNumber == gameNumber})
 	}
 }

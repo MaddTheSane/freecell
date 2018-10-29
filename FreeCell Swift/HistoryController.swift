@@ -24,6 +24,7 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	@IBOutlet weak var tableView: NSTableView!
 	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var lastPlayedColumn: NSTableColumn!
+	@IBOutlet weak var durationColumn: NSTableColumn!
 	@IBOutlet weak var gameController: GameController!
 	private let history: History
 	private var sortColumn = NSUserInterfaceItemIdentifier("date")
@@ -81,6 +82,11 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		formatter.timeStyle = .none
 		formatter.dateStyle = .short
 		(lastPlayedColumn.dataCell as? NSCell)?.formatter = formatter
+		
+		let format = DateComponentsFormatter()
+		format.zeroFormattingBehavior = [.pad]
+		format.allowedUnits = [.hour, .minute, .second]
+		(durationColumn.dataCell as? NSCell)?.formatter = format
 	}
 	
 	private func updateWindow() {
@@ -105,7 +111,18 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	}
 	
 	@IBAction func clear(_ sender: Any?) {
-		
+		let alert = NSAlert()
+		alert.addButton(withTitle: NSLocalizedString("cancelButton", comment: "Cancel button"))
+		alert.addButton(withTitle: NSLocalizedString("clearButton", comment: "Clear history button"))
+		alert.alertStyle = .warning
+		alert.messageText = NSLocalizedString("clearTitle", comment: "Clear history sheet title")
+		alert.informativeText = NSLocalizedString("clearText", comment: "Clear history sheet text")
+		alert.beginSheetModal(for: window) { (returnCode) in
+			if returnCode == .alertSecondButtonReturn {
+				self.history.clear()
+				self.updateWindow()
+			}
+		}
 	}
 	
 	@IBAction func openWindow(_ sender: Any?) {
@@ -113,7 +130,18 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	}
 
 	@IBAction func retryGame(_ sender: Any?) {
+		let row = tableView.selectedRow
 		
+		// Ignore double-clicks on the TableView if they are on a column header
+		if (sender as AnyObject?) === tableView && tableView.clickedRow == -1 {
+			return
+		}
+		
+		guard row != -1 else {
+			return
+		}
+		gameController.playGame(withNumber: history.gameNumber(forRecord: row)!)
+		window.close()
 	}
 	
 	func addRecord(gameNumber: UInt64, result: Result, moves: Int, duration: TimeInterval, date: Date) {
@@ -166,4 +194,29 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	}
 	
 	// MARK: - NSTableViewDelegate
+	
+	func tableViewSelectionDidChange(_ notification: Notification) {
+		if tableView.selectedRow == -1 {
+			retryGame.isEnabled = false
+		} else {
+			retryGame.isEnabled = true
+		}
+	}
+	
+	func tableView(_ tableView: NSTableView, didClick tableColumn: NSTableColumn) {
+		let defaults = UserDefaults.standard
+		if sortColumn == tableColumn.identifier {
+			sortDescending = !sortDescending
+		} else {
+			tableView.setIndicatorImage(nil, in: tableView.tableColumn(withIdentifier: sortColumn)!)
+			sortDescending = false
+		}
+		
+		sortColumn = tableColumn.identifier
+		sortTable()
+		
+		defaults.set(sortColumn.rawValue, forKey: "historySortColumn")
+		defaults.set(sortDescending, forKey: "historySortDescending")
+		defaults.synchronize()
+	}
 }
