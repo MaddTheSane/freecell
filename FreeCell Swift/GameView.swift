@@ -102,7 +102,7 @@ class GameView: NSView {
 		
 		for i in 0 ..< NUMBER_OF_FREE_CELLS {
 			let location = TableLocation(type: .freeCell, number: UInt16(i))
-			let origin = NSPoint(x: CGFloat(edgeMargin + (cardWidth + margin) * i), y: frame.size.height - CGFloat(edgeMargin - cardHeight))
+			let origin = NSPoint(x: CGFloat(edgeMargin + (cardWidth + margin) * i), y: frame.size.height - CGFloat(edgeMargin + cardHeight))
 			let card = table?.firstCard(at: location)
 			let selected = game.isSelected(location)
 			let image = cardView.image(for: card, selected: selected)
@@ -119,7 +119,7 @@ class GameView: NSView {
 		
 		for i in 0 ..< NUMBER_OF_STACKS {
 			let location = TableLocation(type: .stack, number: UInt16(i))
-			let origin = NSPoint(x: CGFloat(edgeMargin + (cardWidth + margin) * (i + 4)), y: frame.size.height - CGFloat(edgeMargin - cardHeight))
+			let origin = NSPoint(x: CGFloat(edgeMargin + (cardWidth + margin) * (i + 4)), y: frame.size.height - CGFloat(edgeMargin + cardHeight))
 			let card = table?.firstCard(at: location)
 			let selected = game.isSelected(location)
 			let image = cardView.image(for: card, selected: selected)
@@ -145,8 +145,8 @@ class GameView: NSView {
 			var curRow: Int = 0
 			for (row, card) in column.enumerated() {
 				let origin = NSPoint(x: CGFloat(edgeMargin + (cardWidth + margin) * i),
-									 y: frame.size.height - CGFloat(edgeMargin
-										- (cardHeight + margin) * 2 - o * row));
+									 y: frame.size.height - CGFloat(edgeMargin)
+										- CGFloat((cardHeight + margin) * 2) - CGFloat(o * row));
 				let image = cardView.image(for: card, selected: game.isSelected(card))
 				image?.draw(at: origin, from: .zero, operation: .sourceOver, fraction: 1)
 				curRow = row
@@ -155,8 +155,8 @@ class GameView: NSView {
 			// If the column is empty and selected, draw the selected image
 			if curRow == 0 && game.isSelected(TableLocation(type: .column, number: UInt16(i))) {
 				let origin = NSPoint(x: CGFloat(edgeMargin + (cardWidth + margin) * i),
-									 y: frame.size.height - CGFloat(edgeMargin
-										- (cardHeight + margin) * 2));
+									 y: frame.size.height - CGFloat(edgeMargin)
+										- CGFloat((cardHeight + margin) * 2));
 				let image = cardView.image(for: nil, selected: true)!
 				image.draw(at: origin, from: .zero, operation: .plusDarker, fraction: 0.5)
 			}
@@ -170,7 +170,7 @@ class GameView: NSView {
 		
 		if Int(pos.x) > edgeMargin && Int(pos.x) < Int(frame.size.width) - edgeMargin
 			&& Int(pos.y) < Int(frame.size.height) - edgeMargin {
-			if pos.y >= frame.size.height - CGFloat(cardHeight - margin) {
+			if pos.y >= frame.size.height - CGFloat(cardHeight + margin) {
 				if (pos.x < CGFloat(edgeMargin + (cardWidth + margin) * NUMBER_OF_FREE_CELLS)) {
 					location = TableLocation(type: .freeCell, number: UInt16((pos.x - CGFloat(edgeMargin))/CGFloat(cardWidth + margin)))
 				} else {
