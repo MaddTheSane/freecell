@@ -107,7 +107,7 @@ class Game {
 			for j in 0 ..< NUMBER_OF_COLUMNS {
 				let destination = TableLocation(type: .column, number: UInt16(j))
 				let other = table.firstCard(at: destination)
-				if card.isSuccessor(to: other) {
+				if card.isPlayable(on: other) {
 					hint = TableMove(source: source, destination: destination)
 					return
 				}
@@ -130,7 +130,7 @@ class Game {
 			for j in 0 ..< NUMBER_OF_COLUMNS {
 				let destination = TableLocation(type: .column, number: UInt16(j))
 				let other = table.firstCard(at: destination)
-				if card.isSuccessor(to: other) {
+				if card.isPlayable(on: other) {
 					hint = TableMove(source: source, destination: destination)
 					return
 				}
@@ -195,7 +195,7 @@ class Game {
 			
 			// So, the maximum number of cards is (F + 1) * 2^C, and
 			// 2^C == 1 << C.
-			for count in (0 ..< (emptyFreeCells + 1) * (1 << emptyColumns)).reversed() {
+			for count in (1 ... (emptyFreeCells + 1) * (1 << emptyColumns)).reversed() {
 				// Check that the `count' cards are in valid sequence; break from the
 				// loop if they are not.
 				var try1 = count

@@ -182,7 +182,6 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 			return historyObj.moves
 
 		case NSUserInterfaceItemIdentifier("duration"):
-			_="%H:%M:%S"
 			return historyObj.duration
 
 		case NSUserInterfaceItemIdentifier("date"):
@@ -215,8 +214,8 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		sortColumn = tableColumn.identifier
 		sortTable()
 		
-		defaults.set(sortColumn.rawValue, forKey: "historySortColumn")
-		defaults.set(sortDescending, forKey: "historySortDescending")
+		defaults.set(sortColumn.rawValue, forKey: historySortColumn)
+		defaults.set(sortDescending, forKey: historySortDescending)
 		defaults.synchronize()
 	}
 }

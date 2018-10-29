@@ -77,7 +77,7 @@ class GameController: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuI
 			window.makeMain()
 			
 			timer?.invalidate()
-			timer = Timer(timeInterval: 1, target: self, selector: #selector(GameController.updateTime(_:)), userInfo: nil, repeats: true)
+			timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameController.updateTime(_:)), userInfo: nil, repeats: true)
 			updateTime(timer)
 			moveMade()
 		}
