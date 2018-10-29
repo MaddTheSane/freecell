@@ -8,7 +8,7 @@
 import Cocoa
 
 @NSApplicationMain
-class GameController: NSObject, NSApplicationDelegate {
+class GameController: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuItemValidation {
     @IBOutlet weak var view: GameView!
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var playNumberDialog: NSPanel!
@@ -17,8 +17,14 @@ class GameController: NSObject, NSApplicationDelegate {
     @IBOutlet weak var movesMade: NSTextField!
     @IBOutlet weak var history: HistoryController!
 	private var game: Game? {
-		didSet {
+		willSet {
+			if game?.inProgress ?? false {
+				game?.gameOver(with: .loss)
+			}
 			
+			if game?.result == .win || game?.result == .loss {
+				recordGame()
+			}
 		}
 	}
 	private weak var cardView: CardView?
@@ -72,12 +78,12 @@ class GameController: NSObject, NSApplicationDelegate {
 			
 			timer?.invalidate()
 			timer = Timer(timeInterval: 1, target: self, selector: #selector(GameController.updateTime(_:)), userInfo: nil, repeats: true)
-			updateTime(timer!)
+			updateTime(timer)
 			moveMade()
 		}
 	}
 	
-	@objc private func updateTime(_ aTimer: Timer) {
+	@objc private func updateTime(_ aTimer: Timer?) {
 		var current = TimeInterval()
 		var shortest = TimeInterval()
 		
@@ -108,18 +114,24 @@ class GameController: NSObject, NSApplicationDelegate {
     }
     
     @IBAction open func playGameNumber(_ sender: Any!) {
-		NSApp.stopModal()
-		window.endSheet(playNumberDialog)
-		startGame()
+		//NSApp.stopModal()
+		window.endSheet(playNumberDialog, returnCode: .OK)
+		//startGame()
     }
     
     @IBAction open func openPlayNumberDialog(_ sender: Any!) {
-        
+		if window.attachedSheet == nil {
+			window.beginSheet(playNumberDialog) { (retVal) in
+				if retVal == .OK {
+					self.startGame()
+				}
+			}
+		}
     }
     
     @IBAction open func closePlayNumberDialog(_ sender: Any!) {
-		NSApp.stopModal()
-		window.endSheet(playNumberDialog)
+		//NSApp.stopModal()
+		window.endSheet(playNumberDialog, returnCode: .cancel)
     }
     
     @IBAction open func showHint(_ sender: Any!) {
@@ -134,15 +146,71 @@ class GameController: NSObject, NSApplicationDelegate {
     }
     
     @IBAction open func undo(_ sender: Any!) {
-        
+        game?.undo()
     }
     
     @IBAction open func redo(_ sender: Any!) {
-        
+        game?.redo()
     }
 	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		
+		history.awakeFromNib()
+
+		updateTime(timer)
+		moveMade()
+		
+		window.isReleasedWhenClosed = false
+		window.miniwindowTitle = "Freecell"
+		
+		view.controller = self
+		newGame(self)
+		timer = nil;
+	}
+	
+	func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+		if !flag {
+			newGame(self)
+		}
+		
+		return true
+	}
+	
 	func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-		return .terminateNow
+		guard let game = game, game.inProgress else {
+			return .terminateNow
+		}
+		
+		let alert = NSAlert()
+		alert.messageText = NSLocalizedString("closeTitle", comment: "windowShouldClose sheet title")
+		alert.informativeText = NSLocalizedString("closeText", comment: "windowShouldClose sheet text")
+		alert.addButton(withTitle: NSLocalizedString("closeButton", comment: "Close button"))
+		alert.addButton(withTitle: NSLocalizedString("cancelButton", comment: "Cancel button"))
+		alert.beginSheetModal(for: window) { (returnCode) in
+			if returnCode == .alertFirstButtonReturn {
+				self.window.close()
+			}
+			NSApp.reply(toApplicationShouldTerminate: returnCode == .alertFirstButtonReturn)
+		}
+		
+		return .terminateLater
+	}
+	
+	func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+		if menuItem.tag == 1 {
+			return game?.canUndo ?? false
+		} else if menuItem.tag == 2 {
+			return game?.canRedo ?? false
+		}
+		
+		return true
+	}
+	
+	func windowWillClose(_ notification: Notification) {
+		if (notification.object as AnyObject?) === window {
+			game = nil
+		}
 	}
 	
 	func moveMade() {
@@ -152,7 +220,74 @@ class GameController: NSObject, NSApplicationDelegate {
 	}
 	
 	func gameOver() {
+		var title: String; var defaultButton: String; var alternateButton: String; var message: String;
+		var selector: (NSApplication.ModalResponse) -> Void
+		guard let result = game?.result, let moves = game?.moves else {
+			return
+		}
 		
+		timer?.fire()
+		
+		timer?.invalidate()
+		timer = nil
+		
+		switch result {
+		case .win:
+			title = NSLocalizedString("wonTitle", comment: "Won sheet title");
+			defaultButton = NSLocalizedString("wonDefaultButton", comment: "Won sheet default button");
+			alternateButton = NSLocalizedString("showHistoryButton", comment: "Show history button");
+			message = NSLocalizedString("wonText", comment: "Won sheet text");
+			selector = { (returnCode) in
+				switch returnCode {
+				case .alertSecondButtonReturn:
+					self.history.openWindow(self)
+					
+				case .alertThirdButtonReturn:
+					self.newGame(self)
+					
+				default:
+					break
+				}
+			}
+
+		case .loss:
+			title = NSLocalizedString("lostTitle", comment: "Lost sheet title");
+			defaultButton = NSLocalizedString("lostDefaultButton", comment: "Lost sheet default button");
+			alternateButton = NSLocalizedString("retryGameButton", comment: "Retry game button");
+			message = NSLocalizedString("lostText", comment: "Lost sheet text");
+			selector = { (returnCode) in
+				switch returnCode {
+				case .alertSecondButtonReturn:
+					self.retryGame(self)
+					
+				case .alertThirdButtonReturn:
+					self.newGame(self)
+					
+				default:
+					break
+				}
+			}
+
+		default:
+			return
+		}
+		recordGame()
+		
+		let alert = NSAlert()
+		alert.messageText = title
+		alert.informativeText = String(format: message, moves)
+		alert.addButton(withTitle: defaultButton)
+		alert.addButton(withTitle: alternateButton)
+		alert.addButton(withTitle: NSLocalizedString("newGameButton", comment: "New game button"))
+		alert.beginSheetModal(for: window, completionHandler: selector)
+	}
+	
+	func recordGame() {
+		guard let game = game else {
+			NSSound.beep()
+			return
+		}
+		history.addRecord(gameNumber: game.gameNumber, result: game.result, moves: game.moves, duration: game.duration, date: game.startDate)
 	}
 	
 	var windowSize: NSSize {
