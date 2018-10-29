@@ -29,7 +29,12 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	private let history: History
 	private var sortColumn = NSUserInterfaceItemIdentifier("date")
 	private var sortDescending = true
-
+	private var timeIntervalFormatter: DateComponentsFormatter = {
+		let format = DateComponentsFormatter()
+		format.zeroFormattingBehavior = [.pad]
+		format.allowedUnits = [.hour, .minute, .second]
+		return format
+	}()
 	
 	override init() {
 		let defaults = UserDefaults.standard
@@ -82,11 +87,6 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		formatter.timeStyle = .none
 		formatter.dateStyle = .short
 		(lastPlayedColumn.dataCell as? NSCell)?.formatter = formatter
-		
-		let format = DateComponentsFormatter()
-		format.zeroFormattingBehavior = [.pad]
-		format.allowedUnits = [.hour, .minute, .second]
-		(durationColumn.dataCell as? NSCell)?.formatter = format
 	}
 	
 	private func updateWindow() {
@@ -182,7 +182,7 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 			return historyObj.moves
 
 		case NSUserInterfaceItemIdentifier("duration"):
-			return historyObj.duration
+			return timeIntervalFormatter.string(from: historyObj.duration)
 
 		case NSUserInterfaceItemIdentifier("date"):
 			return historyObj.date
