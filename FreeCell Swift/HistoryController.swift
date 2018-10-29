@@ -126,6 +126,10 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		return history.shortestDuration
 	}
 	
+	var shortestMoves: Int {
+		return history.shortestMoves
+	}
+	
 	// MARK: - NSTableViewDataSource
 	
 	func numberOfRows(in tableView: NSTableView) -> Int {

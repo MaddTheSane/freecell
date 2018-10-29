@@ -104,11 +104,13 @@ class GameController: NSObject, NSApplicationDelegate {
     }
     
     @IBAction open func retryGame(_ sender: Any!) {
-        
+        startGame()
     }
     
     @IBAction open func playGameNumber(_ sender: Any!) {
-        
+		NSApp.stopModal()
+		window.endSheet(playNumberDialog)
+		startGame()
     }
     
     @IBAction open func openPlayNumberDialog(_ sender: Any!) {
@@ -116,11 +118,19 @@ class GameController: NSObject, NSApplicationDelegate {
     }
     
     @IBAction open func closePlayNumberDialog(_ sender: Any!) {
-        
+		NSApp.stopModal()
+		window.endSheet(playNumberDialog)
     }
     
     @IBAction open func showHint(_ sender: Any!) {
-        
+		game?.setHint()
+		if game?.hint != nil {
+			view.needsDisplay = true
+			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(1)) { [weak self] in
+				self?.game?.hint = nil
+				self?.view.needsDisplay = true
+			}
+		}
     }
     
     @IBAction open func undo(_ sender: Any!) {
@@ -136,7 +146,9 @@ class GameController: NSObject, NSApplicationDelegate {
 	}
 	
 	func moveMade() {
-		
+		let currentMoves = game?.moves ?? 0
+		let shortestMoves = history.shortestMoves
+		movesMade.stringValue = "\(currentMoves) \(NSLocalizedString("moves", comment: "moves")) (\(NSLocalizedString("bestIs", comment: "best is")) \(shortestMoves))"
 	}
 	
 	func gameOver() {

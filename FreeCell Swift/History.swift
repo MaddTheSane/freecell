@@ -92,4 +92,16 @@ class History: Codable {
 		
 		return shortest
 	}
+	
+	var shortestMoves: Int {
+		var shortest = Int.max
+		
+		for record in records {
+			if record.result == .win {
+				shortest = min(shortest, record.moves)
+			}
+		}
+		
+		return shortest
+	}
 }
