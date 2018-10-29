@@ -15,7 +15,7 @@ struct VCCRandomNumberGenerator: RandomNumberGenerator {
     private(set) var holdrand: UInt64 = 1
     
     mutating func next() -> UInt64 {
-        holdrand = holdrand * 214013 + 2531011
+        holdrand = holdrand &* 214013 &+ 2531011
         return ((holdrand >> 16) & 0x7fff)
     }
     
