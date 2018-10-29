@@ -58,10 +58,10 @@ class GameView: NSView {
 		let data = NSKeyedArchiver.archivedData(withRootObject: color)
 		
 		// Set the default
-		defaults.register(defaults: ["backgroundColour": data])
+		defaults.register(defaults: [gameBackgroundColour: data])
 		
 		// Then try to read the preference
-		if let data = defaults.data(forKey: "backgroundColour"), let otherColor = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSColor {
+		if let data = defaults.data(forKey: gameBackgroundColour), let otherColor = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSColor {
 			color = otherColor
 		}
 		
@@ -78,10 +78,10 @@ class GameView: NSView {
 		let data = NSKeyedArchiver.archivedData(withRootObject: color)
 		
 		// Set the default
-		defaults.register(defaults: ["backgroundColour": data])
+		defaults.register(defaults: [gameBackgroundColour: data])
 		
 		// Then try to read the preference
-		if let data = defaults.data(forKey: "backgroundColour"), let otherColor = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSColor {
+		if let data = defaults.data(forKey: gameBackgroundColour), let otherColor = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSColor {
 			color = otherColor
 		}
 		

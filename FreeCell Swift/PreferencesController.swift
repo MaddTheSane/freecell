@@ -7,6 +7,10 @@
 
 import Cocoa
 
+let gameSuperMove = "gameSuperMove"
+let gameAutoStack = "gameAutoStack"
+let gameBackgroundColour = "backgroundColour"
+
 class PreferencesController: NSObject {
 	@IBOutlet weak var gameView: GameView!
 	@IBOutlet weak var autoStack: NSButton!
@@ -16,12 +20,12 @@ class PreferencesController: NSObject {
 
 	override func awakeFromNib() {
 		let defaults = UserDefaults.standard
-		defaults.register(defaults: ["gameSuperMove": true, "gameAutoStack": true])
+		defaults.register(defaults: [gameSuperMove: true, gameAutoStack: true])
 		
-		autoStack.state = defaults.bool(forKey: "gameAutoStack") ? .on : .off
-		superMove.state = defaults.bool(forKey: "gameSuperMove") ? .on : .off
+		autoStack.state = defaults.bool(forKey: gameAutoStack) ? .on : .off
+		superMove.state = defaults.bool(forKey: gameSuperMove) ? .on : .off
 		
-		if let data = defaults.data(forKey: "backgroundColour"), let colour = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSColor {
+		if let data = defaults.data(forKey: gameBackgroundColour), let colour = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSColor {
 			backgroundColour.color = colour
 		}
 	}
@@ -32,17 +36,17 @@ class PreferencesController: NSObject {
 	
 	@IBAction func autoStackClicked(_ sender: Any?) {
 		let state = autoStack.state == .on
-		UserDefaults.standard.set(state, forKey: "gameAutoStack")
+		UserDefaults.standard.set(state, forKey: gameAutoStack)
 	}
 	
 	@IBAction func superMoveClicked(_ sender: Any?) {
 		let state = superMove.state == .on
-		UserDefaults.standard.set(state, forKey: "gameSuperMove")
+		UserDefaults.standard.set(state, forKey: gameSuperMove)
 	}
 	
 	@IBAction func backgroundColourChosen(_ sender: Any?) {
 		let colour = backgroundColour.color
-		UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: colour), forKey: "backgroundColour")
+		UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: colour), forKey: gameBackgroundColour)
 		gameView.backgroundColor = colour
 	}
 }

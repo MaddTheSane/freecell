@@ -189,7 +189,7 @@ class Game {
 			}
 			
 			// If super-move is disabled, just pretend there are no empty free cells or columns.
-			if UserDefaults.standard.bool(forKey: "gameSuperMove") == false {
+			if UserDefaults.standard.bool(forKey: gameSuperMove) == false {
 				emptyFreeCells = 0; emptyColumns = 0;
 			}
 			
@@ -241,7 +241,7 @@ class Game {
 		self.move = nil
 		view.needsDisplay = true
 		moreMoves()
-		if UserDefaults.standard.bool(forKey: "gameAutoStack") {
+		if UserDefaults.standard.bool(forKey: gameAutoStack) {
 			autoStack()
 		}
 	}
