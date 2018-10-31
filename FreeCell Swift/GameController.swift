@@ -42,12 +42,27 @@ class GameController: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuI
 		startGame()
 	}
 	
+	private func forceStartGame() {
+		let gameNumber = (gameNumberField.objectValue as? NSNumber)?.uint64Value ?? UInt64(arc4random())
+		
+		game = Game(view: view, controller: self, gameNumber: gameNumber)
+		view.game = game
+		
+		window.title = String(format: NSLocalizedString("gameWindowTitleFormat", comment: "Format for the title of the game window"), gameNumberField.stringValue)
+		window.makeKeyAndOrderFront(self)
+		window.makeMain()
+		
+		timer?.invalidate()
+		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameController.updateTime(_:)), userInfo: nil, repeats: true)
+		updateTime(timer)
+		moveMade()
+	}
+	
 	private func startGame() {
 		if let attachedSheet = window.attachedSheet {
 			// Clear up the you-won/you-lost dialog if it's open
 			if game?.inProgress ?? false {
-				window.endSheet(attachedSheet)
-				NSApp.stopModal()
+				window.endSheet(attachedSheet, returnCode: .cancel)
 				// Otherwise, we must already be checking whether or not to end the game
 			} else {
 				return
@@ -62,24 +77,12 @@ class GameController: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuI
 			alert.beginSheetModal(for: window) { (response) in
 				if response == .alertFirstButtonReturn {
 					self.game = nil
-					self.startGame()
+					self.forceStartGame()
 				}
 			}
 			return
 		} else {
-			let gameNumber = (gameNumberField.objectValue as? NSNumber)?.uint64Value ?? UInt64(arc4random())
-			
-			game = Game(view: view, controller: self, gameNumber: gameNumber)
-			view.game = game
-			
-			window.title = String(format: NSLocalizedString("gameWindowTitleFormat", comment: "Format for the title of the game window"), gameNumberField.stringValue)
-			window.makeKeyAndOrderFront(self)
-			window.makeMain()
-			
-			timer?.invalidate()
-			timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameController.updateTime(_:)), userInfo: nil, repeats: true)
-			updateTime(timer)
-			moveMade()
+			forceStartGame()
 		}
 	}
 	
@@ -110,7 +113,7 @@ class GameController: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuI
     }
     
     @IBAction open func retryGame(_ sender: Any!) {
-        startGame()
+        forceStartGame()
     }
     
     @IBAction open func playGameNumber(_ sender: Any!) {
@@ -123,7 +126,8 @@ class GameController: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuI
 		if window.attachedSheet == nil {
 			window.beginSheet(playNumberDialog) { (retVal) in
 				if retVal == .OK {
-					self.startGame()
+					self.game = nil
+					self.forceStartGame()
 				}
 			}
 		}
