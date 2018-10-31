@@ -106,6 +106,9 @@ class History: Codable {
 			}
 		}
 		
+		if shortest == Double.greatestFiniteMagnitude {
+			return 0
+		}
 		return shortest
 	}
 	
@@ -118,6 +121,9 @@ class History: Codable {
 			}
 		}
 		
+		if shortest == Int.max {
+			return 0
+		}
 		return shortest
 	}
 	
