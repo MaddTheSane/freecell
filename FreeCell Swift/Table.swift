@@ -26,10 +26,9 @@ class Table {
 		
 		for i in Card.Rank.allCases {
 			// Use Windows suit ordering
-			decks[0].append(Card(suit: .clubs, rank: i))
-			decks[0].append(Card(suit: .diamonds, rank: i))
-			decks[0].append(Card(suit: .hearts, rank: i))
-			decks[0].append(Card(suit: .spades, rank: i))
+			for j in Card.Suit.allCases {
+				decks[0].append(Card(suit: j, rank: i))
+			}
 		}
 	}
 	

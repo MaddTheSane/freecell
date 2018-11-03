@@ -8,6 +8,8 @@
 import Foundation
 
 struct Card: Hashable, CustomStringConvertible {
+	/// Card suite.
+	///
     /// Suit order is important: must match the card graphics file.
     enum Suit: Int32, CustomStringConvertible, CaseIterable {
         case clubs = 0
@@ -36,7 +38,8 @@ struct Card: Hashable, CustomStringConvertible {
             return self == .clubs || self == .spades
         }
     }
-    
+	
+	/// Card rank.
 	enum Rank: Int32, CustomStringConvertible, CaseIterable, Comparable {
         case ace = 1
         case two
