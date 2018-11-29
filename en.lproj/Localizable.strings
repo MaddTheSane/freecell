@@ -36,7 +36,7 @@ lostDefaultButton = "Bah!";
 /* Retry game button */
 retryGameButton = "Retry Game";
 /* Lost sheet text */
-lostText = "There are no more valid moves. You lost after %u moves!";
+lostText = "There are no more valid moves. You lost after %lu moves!";
 
 /* Clear history sheet title */
 clearTitle = "Delete history";

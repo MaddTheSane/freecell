@@ -48,7 +48,7 @@
 "111.title" = "Freecell Help";
 
 /* Class = "NSMenuItem"; title = "Preferences..."; ObjectID = "129"; */
-"129.title" = "Preferences...";
+"129.title" = "Preferences…";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
 "130.title" = "Services";
@@ -81,7 +81,7 @@
 "173.title" = "Redo move";
 
 /* Class = "NSMenuItem"; title = "Play number..."; ObjectID = "204"; */
-"204.title" = "Play number...";
+"204.title" = "Play number…";
 
 /* Class = "NSWindow"; title = "Play number"; ObjectID = "205"; */
 "205.title" = "Play number";
@@ -105,7 +105,7 @@
 "250.headerCell.title" = "Duration";
 
 /* Class = "NSMenuItem"; title = "History..."; ObjectID = "265"; */
-"265.title" = "History...";
+"265.title" = "History…";
 
 /* Class = "NSTableColumn"; headerCell.title = "Last Played"; ObjectID = "273"; */
 "273.headerCell.title" = "Last Played";

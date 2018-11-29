@@ -36,7 +36,7 @@ lostDefaultButton = "Bah!";
 /* Retry game button */
 retryGameButton = "Speel het spel opnieuw";
 /* Lost sheet text */
-lostText = "Er zijn geen geldige zetten meer mogelijk. U heeft verloren na %u zetten!";
+lostText = "Er zijn geen geldige zetten meer mogelijk. U heeft verloren na %lu zetten!";
 
 
 /*

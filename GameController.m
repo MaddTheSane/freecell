@@ -390,7 +390,7 @@
 
     NSBeginAlertSheet(title, defaultButton, alternateButton,
                       NSLocalizedString(@"newGameButton", @"New game button"),
-                      window, self, selector, NULL, NULL, message, moves);
+                      window, self, selector, NULL, NULL, message, (unsigned long)moves);
 }
 
 @end

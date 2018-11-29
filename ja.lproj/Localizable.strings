@@ -36,7 +36,7 @@ lostDefaultButton = "残念でした";
 /* Retry game button */
 retryGameButton = "もう一度挑戦";
 /* Lost sheet text */
-lostText = "もう動かせるカードがありません。%u手であなたの負けです。";
+lostText = "もう動かせるカードがありません。%lu手であなたの負けです。";
 
 
 /*

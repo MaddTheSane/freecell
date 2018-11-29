@@ -36,7 +36,7 @@ lostDefaultButton = "Bah!";
 /* Retry game button */
 retryGameButton = "Réessayer";
 /* Lost sheet text */
-lostText = "Il n'y a plus de déplacement valide. Vous avez perdu après %u déplacements!";
+lostText = "Il n'y a plus de déplacement valide. Vous avez perdu après %lu déplacements!";
 
 
 /*

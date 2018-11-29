@@ -36,7 +36,7 @@ lostDefaultButton = "Pahus!";
 /* Retry game button */
 retryGameButton = "Pelaa uudelleen";
 /* Lost sheet text */
-lostText = "Mahdollisia siirtoja ei ole enää jäljellä. Hävisit %u siirron jälkeen!";
+lostText = "Mahdollisia siirtoja ei ole enää jäljellä. Hävisit %lu siirron jälkeen!";
 
 
 /*
