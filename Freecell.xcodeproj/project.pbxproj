@@ -25,6 +25,7 @@
 		55CCAA212166EF96008EEFE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2BD40BD04E06C960098C7F4 /* Localizable.strings */; };
 		55CCAA242166F053008EEFE7 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCAA232166F053008EEFE7 /* Table.swift */; };
 		55CCAA262166F085008EEFE7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCAA252166F085008EEFE7 /* CardView.swift */; };
+		55E630F321C4277E002C0FBA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55E630F121C4277E002C0FBA /* Credits.rtf */; };
 		55EB7F9E216BF37000827FEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55EB7FA0216BF37000827FEB /* InfoPlist.strings */; };
 		55ECE0892169DCC300943261 /* TableMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ECE0882169DCC300943261 /* TableMove.swift */; };
 		F29D0D33158CE03A0050A6FA /* Freecell_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Freecell_Prefix.h */; };
@@ -96,6 +97,12 @@
 		55B47D992166C6AF00D34D16 /* vccRandHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vccRandHelper.swift; sourceTree = "<group>"; };
 		55CCAA232166F053008EEFE7 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		55CCAA252166F085008EEFE7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		55E630F221C4277E002C0FBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		55E630F421C42786002C0FBA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
+		55E630F521C4278C002C0FBA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fr; path = fr.lproj/Credits.rtf; sourceTree = "<group>"; };
+		55E630F621C42799002C0FBA /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = nl; path = nl.lproj/Credits.rtf; sourceTree = "<group>"; };
+		55E630F721C4279C002C0FBA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = es; path = es.lproj/Credits.rtf; sourceTree = "<group>"; };
+		55E630F821C4279E002C0FBA /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = fi; path = fi.lproj/Credits.rtf; sourceTree = "<group>"; };
 		55EB7F9F216BF37000827FEB /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55EB7FA1216BF47300827FEB /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55EB7FA2216BF47400827FEB /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -317,6 +324,7 @@
 				55B47D822166B92000D34D16 /* Assets.xcassets */,
 				55B47D842166B92000D34D16 /* MainMenu.xib */,
 				55EB7FA0216BF37000827FEB /* InfoPlist.strings */,
+				55E630F121C4277E002C0FBA /* Credits.rtf */,
 				55B47D872166B92000D34D16 /* Info.plist */,
 				55B47D882166B92000D34D16 /* FreeCell_Swift.entitlements */,
 				55B47D922166B9C600D34D16 /* FreeCellSwift-bridging.h */,
@@ -440,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B47D832166B92000D34D16 /* Assets.xcassets in Resources */,
+				55E630F321C4277E002C0FBA /* Credits.rtf in Resources */,
 				55CCAA212166EF96008EEFE7 /* Localizable.strings in Resources */,
 				55B47D862166B92000D34D16 /* MainMenu.xib in Resources */,
 				552B1E3E217801650062E4CC /* Freecell.help in Resources */,
@@ -546,6 +555,19 @@
 				552ED144216BEE8E009D31B2 /* fi */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		55E630F121C4277E002C0FBA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55E630F221C4277E002C0FBA /* en */,
+				55E630F421C42786002C0FBA /* ja */,
+				55E630F521C4278C002C0FBA /* fr */,
+				55E630F621C42799002C0FBA /* nl */,
+				55E630F721C4279C002C0FBA /* es */,
+				55E630F821C4279E002C0FBA /* fi */,
+			);
+			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		55EB7FA0216BF37000827FEB /* InfoPlist.strings */ = {
