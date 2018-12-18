@@ -27,7 +27,7 @@ wonDefaultButton = "Hourra!";
 /* Show history button */
 showHistoryButton = "Afficher l'historique";
 /* Won sheet text */
-wonText = "Vous avez gagné après %u déplacement. Bien joué!";
+wonText = "Vous avez gagné après %lu déplacement. Bien joué!";
 
 /* Lost sheet title */
 lostTitle = "Vous avez perdu!";

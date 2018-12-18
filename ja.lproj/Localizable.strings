@@ -27,7 +27,7 @@ wonDefaultButton = "おめでとう!";
 /* Show history button */
 showHistoryButton = "成績表を見る";
 /* Won sheet text */
-wonText = "%u手であなたが勝ちました。おめでとう!";
+wonText = "%lu手であなたが勝ちました。おめでとう!";
 
 /* Lost sheet title */
 lostTitle = "あなたの負けです!";

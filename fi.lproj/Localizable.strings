@@ -27,7 +27,7 @@ wonDefaultButton = "Jippii!";
 /* Show history button */
 showHistoryButton = "Näytä tilastot";
 /* Won sheet text */
-wonText = "Voitit %u siirron jälkeen! Hieno suoritus!";
+wonText = "Voitit %lu siirron jälkeen! Hieno suoritus!";
 
 /* Lost sheet title */
 lostTitle = "Sinä hävisit!";
