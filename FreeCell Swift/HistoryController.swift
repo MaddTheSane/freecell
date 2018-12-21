@@ -15,6 +15,25 @@ private var historySortColumn: String {
 	return "historySortColumn"
 }
 
+private var gameNumberIdentifier: NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier("gameNumber")
+}
+
+private var dateIdentifier: NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier("date")
+}
+
+private var resultIdentifier: NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier("result")
+}
+
+private var movesIdentifier: NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier("moves")
+}
+
+private var durationIdentifier: NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier("duration")
+}
 
 class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	@IBOutlet weak var gamesLost: NSTextField!
@@ -26,7 +45,7 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 	@IBOutlet weak var lastPlayedColumn: NSTableColumn!
 	@IBOutlet weak var gameController: GameController!
 	private let history: History
-	private var sortColumn = NSUserInterfaceItemIdentifier("date")
+	private var sortColumn = dateIdentifier
 	private var sortDescending = true
 	private var timeIntervalFormatter: DateComponentsFormatter = {
 		let format = DateComponentsFormatter()
@@ -44,7 +63,7 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		
 		super.init()
 		
-		defaults.register(defaults: [historySortColumn: "date", historySortDescending: true])
+		defaults.register(defaults: [historySortColumn: dateIdentifier.rawValue, historySortDescending: true])
 	}
 	
 	override func awakeFromNib() {
@@ -171,19 +190,19 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		}
 		let historyObj = history.records[row]
 		switch tableColumnIdentifier {
-		case NSUserInterfaceItemIdentifier("gameNumber"):
+		case gameNumberIdentifier:
 			return NSNumber(value: historyObj.gameNumber)
 			
-		case NSUserInterfaceItemIdentifier("result"):
+		case resultIdentifier:
 			return historyObj.result.localizedDescription
 
-		case NSUserInterfaceItemIdentifier("moves"):
+		case movesIdentifier:
 			return historyObj.moves
 
-		case NSUserInterfaceItemIdentifier("duration"):
+		case durationIdentifier:
 			return timeIntervalFormatter.string(from: historyObj.duration)
 
-		case NSUserInterfaceItemIdentifier("date"):
+		case dateIdentifier:
 			return historyObj.date
 
 		default:

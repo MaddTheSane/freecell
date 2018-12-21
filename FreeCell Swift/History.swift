@@ -98,33 +98,27 @@ class History: Codable {
 	}
 	
 	var shortestDuration: TimeInterval {
-		var shortest = Double.greatestFiniteMagnitude
-		
-		for record in records {
-			if record.result == .win {
-				shortest = min(shortest, record.duration)
+		var durations = records.compactMap { (anObj) -> TimeInterval? in
+			guard anObj.result == .win else {
+				return nil
 			}
+			return anObj.duration
 		}
+		durations.sort(by: <)
 		
-		if shortest == Double.greatestFiniteMagnitude {
-			return 0
-		}
-		return shortest
+		return durations.first ?? 0
 	}
 	
 	var shortestMoves: Int {
-		var shortest = Int.max
-		
-		for record in records {
-			if record.result == .win {
-				shortest = min(shortest, record.moves)
+		var moves = records.compactMap { (anObj) -> Int? in
+			guard anObj.result == .win else {
+				return nil
 			}
+			return anObj.moves
 		}
+		moves.sort(by: <)
 		
-		if shortest == Int.max {
-			return 0
-		}
-		return shortest
+		return moves.first ?? 0
 	}
 	
 	func record(_ n: Int) -> Object? {
