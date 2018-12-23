@@ -131,53 +131,53 @@
 /* Class = "NSWindow"; title = "フリーセル環境設定"; ObjectID = "353"; */
 "353.title" = "フリーセル環境設定";
 
-/* Class = "NSTextFieldCell"; title = "0 moves (best is 0)"; ObjectID = "413"; */
-"413.title" = "0 moves (best is 0)";
+/* Class = "NSTextFieldCell"; title = "00:00:00 (best is 00:00:00)"; ObjectID = "427"; */
+"427.title" = "00:00:00 (best is 00:00:00)";
 
-/* Class = "NSTextFieldCell"; title = "00:00:00 (best is 00:00:00)"; ObjectID = "414"; */
-"414.title" = "00:00:00 (best is 00:00:00)";
+/* Class = "NSTextFieldCell"; title = "0 moves (best is 0)"; ObjectID = "428"; */
+"428.title" = "0 moves (best is 0)";
 
-/* Class = "NSButtonCell"; title = "開始"; ObjectID = "415"; */
-"415.title" = "開始";
+/* Class = "NSButtonCell"; title = "開始"; ObjectID = "429"; */
+"429.title" = "開始";
 
-/* Class = "NSButtonCell"; title = "キャンセル"; ObjectID = "416"; */
-"416.title" = "キャンセル";
+/* Class = "NSButtonCell"; title = "キャンセル"; ObjectID = "430"; */
+"430.title" = "キャンセル";
 
-/* Class = "NSTextFieldCell"; title = "ゲーム番号:"; ObjectID = "418"; */
-"418.title" = "ゲーム番号:";
+/* Class = "NSTextFieldCell"; title = "ゲーム番号:"; ObjectID = "432"; */
+"432.title" = "ゲーム番号:";
 
-/* Class = "NSTextFieldCell"; title = "総ゲーム数:\n"; ObjectID = "419"; */
-"419.title" = "総ゲーム数:\n";
+/* Class = "NSTextFieldCell"; title = "総ゲーム数:"; ObjectID = "433"; */
+"433.title" = "総ゲーム数:";
 
-/* Class = "NSTextFieldCell"; title = "勝ち:\n"; ObjectID = "420"; */
-"420.title" = "勝ち:\n";
+/* Class = "NSTextFieldCell"; title = "勝ち:"; ObjectID = "434"; */
+"434.title" = "勝ち:";
 
-/* Class = "NSTextFieldCell"; title = "負け:"; ObjectID = "421"; */
-"421.title" = "負け:";
+/* Class = "NSTextFieldCell"; title = "負け:"; ObjectID = "435"; */
+"435.title" = "負け:";
 
-/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "422"; */
-"422.title" = "0";
+/* Class = "NSTextFieldCell"; title = "999"; ObjectID = "436"; */
+"436.title" = "999";
 
-/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "423"; */
-"423.title" = "0";
+/* Class = "NSTextFieldCell"; title = "900 (90%)"; ObjectID = "437"; */
+"437.title" = "900 (90%)";
 
-/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "424"; */
-"424.title" = "0";
+/* Class = "NSTextFieldCell"; title = "99 (10%)"; ObjectID = "438"; */
+"438.title" = "99 (10%)";
 
-/* Class = "NSButtonCell"; title = "成績を初期化"; ObjectID = "425"; */
-"425.title" = "成績を初期化";
+/* Class = "NSButtonCell"; title = "成績を初期化"; ObjectID = "439"; */
+"439.title" = "成績を初期化";
 
-/* Class = "NSButtonCell"; title = "再挑戦"; ObjectID = "426"; */
-"426.title" = "再挑戦";
+/* Class = "NSButtonCell"; title = "再挑戦"; ObjectID = "440"; */
+"440.title" = "再挑戦";
 
-/* Class = "NSButtonCell"; title = "カードを自動的にカード置き場に移動"; ObjectID = "427"; */
-"427.title" = "カードを自動的にカード置き場に移動";
+/* Class = "NSButtonCell"; title = "カードを自動的にカード置き場に移動"; ObjectID = "441"; */
+"441.title" = "カードを自動的にカード置き場に移動";
 
-/* Class = "NSButtonCell"; title = "複数のカードの同時移動"; ObjectID = "428"; */
-"428.title" = "複数のカードの同時移動";
+/* Class = "NSButtonCell"; title = "複数のカードの同時移動"; ObjectID = "442"; */
+"442.title" = "複数のカードの同時移動";
 
-/* Class = "NSButtonCell"; title = "閉じる"; ObjectID = "429"; */
-"429.title" = "閉じる";
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "429"; */
+"443.title" = "閉じる";
 
-/* Class = "NSTextFieldCell"; title = "ゲームの背景色:"; ObjectID = "430"; */
-"430.title" = "ゲームの背景色:";
+/* Class = "NSTextFieldCell"; title = "ゲームの背景色:"; ObjectID = "444"; */
+"444.title" = "ゲームの背景色:";
