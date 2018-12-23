@@ -131,53 +131,53 @@
 /* Class = "NSWindow"; title = "Freecell voorkeuren"; ObjectID = "353"; */
 "353.title" = "Freecell voorkeuren";
 
-/* Class = "NSTextFieldCell"; title = "00:00:00 (beste is 00:00:00)"; ObjectID = "413"; */
-"413.title" = "00:00:00 (beste is 00:00:00)";
+/* Class = "NSTextFieldCell"; title = "00:00:00 (beste is 00:00:00)"; ObjectID = "427"; */
+"427.title" = "00:00:00 (beste is 00:00:00)";
 
-/* Class = "NSTextFieldCell"; title = "0 bewegingen (beste is 0)"; ObjectID = "414"; */
-"414.title" = "0 bewegingen (beste is 0)";
+/* Class = "NSTextFieldCell"; title = "0 bewegingen (beste is 0)"; ObjectID = "428"; */
+"428.title" = "0 bewegingen (beste is 0)";
 
-/* Class = "NSButtonCell"; title = "Speel"; ObjectID = "415"; */
-"415.title" = "Speel";
+/* Class = "NSButtonCell"; title = "Speel"; ObjectID = "429"; */
+"429.title" = "Speel";
 
-/* Class = "NSButtonCell"; title = "Annuleer"; ObjectID = "416"; */
-"416.title" = "Annuleer";
+/* Class = "NSButtonCell"; title = "Annuleer"; ObjectID = "430"; */
+"430.title" = "Annuleer";
 
-/* Class = "NSTextFieldCell"; title = "Spel nummer:"; ObjectID = "418"; */
-"418.title" = "Spel nummer:";
+/* Class = "NSTextFieldCell"; title = "Spel nummer:"; ObjectID = "432"; */
+"432.title" = "Spel nummer:";
 
-/* Class = "NSTextFieldCell"; title = "Gespeeld:"; ObjectID = "419"; */
-"419.title" = "Gespeeld:";
+/* Class = "NSTextFieldCell"; title = "Gespeeld:"; ObjectID = "433"; */
+"433.title" = "Gespeeld:";
 
-/* Class = "NSTextFieldCell"; title = "Gewonnen:"; ObjectID = "420"; */
-"420.title" = "Gewonnen:";
+/* Class = "NSTextFieldCell"; title = "Gewonnen:"; ObjectID = "434"; */
+"434.title" = "Gewonnen:";
 
-/* Class = "NSTextFieldCell"; title = "Verloren:"; ObjectID = "421"; */
-"421.title" = "Verloren:";
+/* Class = "NSTextFieldCell"; title = "Verloren:"; ObjectID = "435"; */
+"435.title" = "Verloren:";
 
-/* Class = "NSTextFieldCell"; title = "999"; ObjectID = "422"; */
-"422.title" = "999";
+/* Class = "NSTextFieldCell"; title = "999"; ObjectID = "436"; */
+"436.title" = "999";
 
-/* Class = "NSTextFieldCell"; title = "900 (90%)"; ObjectID = "423"; */
-"423.title" = "900 (90%)";
+/* Class = "NSTextFieldCell"; title = "900 (90%)"; ObjectID = "437"; */
+"437.title" = "900 (90%)";
 
-/* Class = "NSTextFieldCell"; title = "99 (10%)"; ObjectID = "424"; */
-"424.title" = "99 (10%)";
+/* Class = "NSTextFieldCell"; title = "99 (10%)"; ObjectID = "438"; */
+"438.title" = "99 (10%)";
 
-/* Class = "NSButtonCell"; title = "Wis geschiedenis"; ObjectID = "425"; */
-"425.title" = "Wis geschiedenis";
+/* Class = "NSButtonCell"; title = "Wis geschiedenis"; ObjectID = "439"; */
+"439.title" = "Wis geschiedenis";
 
-/* Class = "NSButtonCell"; title = "Probeer spel opnieuw"; ObjectID = "426"; */
-"426.title" = "Probeer spel opnieuw";
+/* Class = "NSButtonCell"; title = "Probeer spel opnieuw"; ObjectID = "440"; */
+"440.title" = "Probeer spel opnieuw";
 
-/* Class = "NSButtonCell"; title = "Verplaats kaarten automatisch naar de stapel"; ObjectID = "427"; */
-"427.title" = "Verplaats kaarten automatisch naar de stapel";
+/* Class = "NSButtonCell"; title = "Verplaats kaarten automatisch naar de stapel"; ObjectID = "441"; */
+"441.title" = "Verplaats kaarten automatisch naar de stapel";
 
-/* Class = "NSButtonCell"; title = "Verplaatsen van meer kaarten tegelijkertijd toegestaan"; ObjectID = "428"; */
-"428.title" = "Verplaatsen van meer kaarten tegelijkertijd toegestaan";
+/* Class = "NSButtonCell"; title = "Verplaatsen van meer kaarten tegelijkertijd toegestaan"; ObjectID = "442"; */
+"442.title" = "Verplaatsen van meer kaarten tegelijkertijd toegestaan";
 
-/* Class = "NSButtonCell"; title = "Sluit"; ObjectID = "429"; */
-"429.title" = "Sluit";
+/* Class = "NSButtonCell"; title = "Sluit"; ObjectID = "443"; */
+"443.title" = "Sluit";
 
-/* Class = "NSTextFieldCell"; title = "Kleur speelveld:"; ObjectID = "430"; */
-"430.title" = "Kleur speelveld:";
+/* Class = "NSTextFieldCell"; title = "Kleur speelveld:"; ObjectID = "444"; */
+"444.title" = "Kleur speelveld:";

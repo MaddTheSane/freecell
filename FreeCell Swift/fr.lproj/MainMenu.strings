@@ -68,6 +68,18 @@
 /* Class = "NSMenuItem"; title = "Tout afficher"; ObjectID = "150"; */
 "150.title" = "Tout afficher";
 
+/* Class = "NSMenuItem"; title = "Annuler déplacement"; ObjectID = "158"; */
+"158.title" = "Annuler déplacement";
+
+/* Class = "NSMenuItem"; title = "Édition"; ObjectID = "163"; */
+"163.title" = "Édition";
+
+/* Class = "NSMenu"; title = "Édition"; ObjectID = "169"; */
+"169.title" = "Édition";
+
+/* Class = "NSMenuItem"; title = "Rétablir déplacement"; ObjectID = "173"; */
+"173.title" = "Rétablir déplacement";
+
 /* Class = "NSMenuItem"; title = "Jouer numéro..."; ObjectID = "204"; */
 "204.title" = "Jouer numéro...";
 
@@ -104,83 +116,71 @@
 /* Class = "NSMenuItem"; title = "Réessayer"; ObjectID = "284"; */
 "284.title" = "Réessayer";
 
-/* Class = "NSWindow"; title = "Préférences"; ObjectID = "353"; */
-"353.title" = "Préférences";
+/* Class = "NSMenuItem"; title = "Supprimer"; ObjectID = "342"; */
+"342.title" = "Supprimer";
 
-/* Class = "NSMenuItem"; title = "Coller"; ObjectID = "410"; */
-"410.title" = "Coller";
+/* Class = "NSMenuItem"; title = "Copier"; ObjectID = "343"; */
+"343.title" = "Copier";
 
-/* Class = "NSMenuItem"; title = "Couper"; ObjectID = "412"; */
-"412.title" = "Couper";
+/* Class = "NSMenuItem"; title = "Coller"; ObjectID = "344"; */
+"344.title" = "Coller";
 
-/* Class = "NSMenuItem"; title = "Rétablir déplacement"; ObjectID = "413"; */
-"413.title" = "Rétablir déplacement";
+/* Class = "NSMenuItem"; title = "Tout sélectionner"; ObjectID = "345"; */
+"345.title" = "Tout sélectionner";
 
-/* Class = "NSMenu"; title = "Édition"; ObjectID = "414"; */
-"414.title" = "Édition";
+/* Class = "NSMenuItem"; title = "Couper"; ObjectID = "346"; */
+"346.title" = "Couper";
 
-/* Class = "NSMenuItem"; title = "Annuler déplacement"; ObjectID = "415"; */
-"415.title" = "Annuler déplacement";
+/* Class = "NSWindow"; title = "Freecell Preferences"; ObjectID = "353"; */
+"353.title" = "Freecell Preferences";
 
-/* Class = "NSMenuItem"; title = "Supprimer"; ObjectID = "416"; */
-"416.title" = "Supprimer";
-
-/* Class = "NSMenuItem"; title = "Copier"; ObjectID = "417"; */
-"417.title" = "Copier";
-
-/* Class = "NSMenuItem"; title = "Tout sélectionner"; ObjectID = "418"; */
-"418.title" = "Tout sélectionner";
-
-/* Class = "NSMenuItem"; title = "Édition"; ObjectID = "419"; */
-"419.title" = "Édition";
+/* Class = "NSTextFieldCell"; title = "00:00:00 (meilleur est 00:00:00)"; ObjectID = "427"; */
+"427.title" = "00:00:00 (meilleur est 00:00:00)";
 
 /* Class = "NSTextFieldCell"; title = "0 déplacement (meilleur est 0)"; ObjectID = "428"; */
 "428.title" = "0 déplacement (meilleur est 0)";
 
-/* Class = "NSTextFieldCell"; title = "00:00:00 (meilleur est 00:00:00)"; ObjectID = "429"; */
-"429.title" = "00:00:00 (meilleur est 00:00:00)";
+/* Class = "NSButtonCell"; title = "Jouer"; ObjectID = "429"; */
+"429.title" = "Jouer";
 
-/* Class = "NSButtonCell"; title = "Jouer"; ObjectID = "430"; */
-"430.title" = "Jouer";
+/* Class = "NSButtonCell"; title = "Annuler"; ObjectID = "430"; */
+"430.title" = "Annuler";
 
-/* Class = "NSButtonCell"; title = "Annuler"; ObjectID = "431"; */
-"431.title" = "Annuler";
+/* Class = "NSTextFieldCell"; title = "Jouer numéro:"; ObjectID = "432"; */
+"432.title" = "Jouer numéro:";
 
-/* Class = "NSTextFieldCell"; title = "Jouer numéro:"; ObjectID = "433"; */
-"433.title" = "Jouer numéro:";
+/* Class = "NSTextFieldCell"; title = "Joués:"; ObjectID = "433"; */
+"433.title" = "Joués:";
 
-/* Class = "NSTextFieldCell"; title = "Joués:"; ObjectID = "434"; */
-"434.title" = "Joués:";
+/* Class = "NSTextFieldCell"; title = "Gagnés:"; ObjectID = "434"; */
+"434.title" = "Gagnés:";
 
-/* Class = "NSTextFieldCell"; title = "Gagnés:"; ObjectID = "435"; */
-"435.title" = "Gagnés:";
+/* Class = "NSTextFieldCell"; title = "Perdus:"; ObjectID = "435"; */
+"435.title" = "Perdus:";
 
-/* Class = "NSTextFieldCell"; title = "Perdus:"; ObjectID = "436"; */
-"436.title" = "Perdus:";
+/* Class = "NSTextFieldCell"; title = "999"; ObjectID = "436"; */
+"436.title" = "999";
 
-/* Class = "NSTextFieldCell"; title = "999"; ObjectID = "437"; */
-"437.title" = "999";
+/* Class = "NSTextFieldCell"; title = "900 (90%)"; ObjectID = "437"; */
+"437.title" = "900 (90%)";
 
-/* Class = "NSTextFieldCell"; title = "900 (90%)"; ObjectID = "438"; */
-"438.title" = "900 (90%)";
+/* Class = "NSTextFieldCell"; title = "99 (10%)"; ObjectID = "438"; */
+"438.title" = "99 (10%)";
 
-/* Class = "NSTextFieldCell"; title = "99 (10%)"; ObjectID = "439"; */
-"439.title" = "99 (10%)";
+/* Class = "NSButtonCell"; title = "Effacer l'historique"; ObjectID = "439"; */
+"439.title" = "Effacer l'historique";
 
-/* Class = "NSButtonCell"; title = "Effacer l'historique"; ObjectID = "440"; */
-"440.title" = "Effacer l'historique";
+/* Class = "NSButtonCell"; title = "Réessayer la partie"; ObjectID = "440"; */
+"440.title" = "Réessayer la partie";
 
-/* Class = "NSButtonCell"; title = "Réessayer la partie"; ObjectID = "441"; */
-"441.title" = "Réessayer la partie";
+/* Class = "NSButtonCell"; title = "Déplacement automatique des cartes vers les piles"; ObjectID = "441"; */
+"441.title" = "Déplacement automatique des cartes vers les piles";
 
-/* Class = "NSButtonCell"; title = "Déplacement automatique des cartes vers les piles"; ObjectID = "442"; */
-"442.title" = "Déplacement automatique des cartes vers les piles";
+/* Class = "NSButtonCell"; title = "Permettre le déplacement de plusieurs cartes"; ObjectID = "442"; */
+"442.title" = "Permettre le déplacement de plusieurs cartes";
 
-/* Class = "NSButtonCell"; title = "Permettre le déplacement de plusieurs cartes"; ObjectID = "443"; */
-"443.title" = "Permettre le déplacement de plusieurs cartes";
+/* Class = "NSButtonCell"; title = "Fermer"; ObjectID = "443"; */
+"443.title" = "Fermer";
 
-/* Class = "NSButtonCell"; title = "Fermer"; ObjectID = "444"; */
-"444.title" = "Fermer";
-
-/* Class = "NSTextFieldCell"; title = "Couleur de l'arrière plan:"; ObjectID = "445"; */
-"445.title" = "Couleur de l'arrière plan:";
+/* Class = "NSTextFieldCell"; title = "Couleur de l'arrière plan:"; ObjectID = "444"; */
+"444.title" = "Couleur de l'arrière plan:";

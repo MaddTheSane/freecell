@@ -131,53 +131,53 @@
 /* Class = "NSWindow"; title = "Configuración de Freecell"; ObjectID = "353"; */
 "353.title" = "Configuración de Freecell";
 
-/* Class = "NSTextFieldCell"; title = "00:00:00 (best is 00:00:00)"; ObjectID = "413"; */
-"413.title" = "00:00:00 (best is 00:00:00)";
+/* Class = "NSTextFieldCell"; title = "00:00:00 (best is 00:00:00)"; ObjectID = "427"; */
+"427.title" = "00:00:00 (best is 00:00:00)";
 
-/* Class = "NSTextFieldCell"; title = "0 moves (best is 0)"; ObjectID = "414"; */
-"414.title" = "0 moves (best is 0)";
+/* Class = "NSTextFieldCell"; title = "0 moves (best is 0)"; ObjectID = "428"; */
+"428.title" = "0 moves (best is 0)";
 
-/* Class = "NSButtonCell"; title = "Jugar"; ObjectID = "415"; */
-"415.title" = "Jugar";
+/* Class = "NSButtonCell"; title = "Jugar"; ObjectID = "429"; */
+"429.title" = "Jugar";
 
-/* Class = "NSButtonCell"; title = "Cancelar"; ObjectID = "416"; */
-"416.title" = "Cancelar";
+/* Class = "NSButtonCell"; title = "Cancelar"; ObjectID = "430"; */
+"430.title" = "Cancelar";
 
-/* Class = "NSTextFieldCell"; title = "Juego número:"; ObjectID = "418"; */
-"418.title" = "Juego número:";
+/* Class = "NSTextFieldCell"; title = "Juego número:"; ObjectID = "432"; */
+"432.title" = "Juego número:";
 
-/* Class = "NSTextFieldCell"; title = "Juegos:"; ObjectID = "419"; */
-"419.title" = "Juegos:";
+/* Class = "NSTextFieldCell"; title = "Juegos:"; ObjectID = "433"; */
+"433.title" = "Juegos:";
 
-/* Class = "NSTextFieldCell"; title = "Victorias:"; ObjectID = "420"; */
-"420.title" = "Victorias:";
+/* Class = "NSTextFieldCell"; title = "Victorias:"; ObjectID = "434"; */
+"434.title" = "Victorias:";
 
-/* Class = "NSTextFieldCell"; title = "Derrotas:"; ObjectID = "421"; */
-"421.title" = "Derrotas:";
+/* Class = "NSTextFieldCell"; title = "Derrotas:"; ObjectID = "435"; */
+"435.title" = "Derrotas:";
 
-/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "422"; */
-"422.title" = "0";
+/* Class = "NSTextFieldCell"; title = "999"; ObjectID = "436"; */
+"436.title" = "999";
 
-/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "423"; */
-"423.title" = "0";
+/* Class = "NSTextFieldCell"; title = "900 (90%)"; ObjectID = "437"; */
+"437.title" = "900 (90%)";
 
-/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "424"; */
-"424.title" = "0";
+/* Class = "NSTextFieldCell"; title = "99 (10%)"; ObjectID = "438"; */
+"438.title" = "99 (10%)";
 
-/* Class = "NSButtonCell"; title = "Borrar Historia"; ObjectID = "425"; */
-"425.title" = "Borrar Historia";
+/* Class = "NSButtonCell"; title = "Borrar Historia"; ObjectID = "439"; */
+"439.title" = "Borrar Historia";
 
-/* Class = "NSButtonCell"; title = "Reintentar"; ObjectID = "426"; */
-"426.title" = "Reintentar";
+/* Class = "NSButtonCell"; title = "Reintentar"; ObjectID = "440"; */
+"440.title" = "Reintentar";
 
-/* Class = "NSButtonCell"; title = "Automáticamente mover a casa"; ObjectID = "427"; */
-"427.title" = "Automáticamente mover a casa";
+/* Class = "NSButtonCell"; title = "Automáticamente mover a casa"; ObjectID = "441"; */
+"441.title" = "Automáticamente mover a casa";
 
-/* Class = "NSButtonCell"; title = "Permitir movidas múltiples"; ObjectID = "428"; */
-"428.title" = "Permitir movidas múltiples";
+/* Class = "NSButtonCell"; title = "Permitir movidas múltiples"; ObjectID = "442"; */
+"442.title" = "Permitir movidas múltiples";
 
-/* Class = "NSButtonCell"; title = "Cerrar"; ObjectID = "429"; */
-"429.title" = "Cerrar";
+/* Class = "NSButtonCell"; title = "Cerrar"; ObjectID = "443"; */
+"443.title" = "Cerrar";
 
-/* Class = "NSTextFieldCell"; title = "Color de fondo del juego:"; ObjectID = "430"; */
-"430.title" = "Color de fondo del juego:";
+/* Class = "NSTextFieldCell"; title = "Color de fondo del juego:"; ObjectID = "444"; */
+"444.title" = "Color de fondo del juego:";
