@@ -7,14 +7,14 @@
 
 import Cocoa
 
-class CardView: NSObject {
+final class CardView {
 	private let cards: [Card: NSImage]
 	private let selectedCards: [Card: NSImage]
 	private let blank: NSImage
 	private let selectedBlank: NSImage
 	let cardSize: NSSize
 	
-	override init() {
+	init() {
 		let bonded = NSImage(named: "bonded")!
 		let bondedSize = bonded.size
 		
@@ -72,8 +72,6 @@ class CardView: NSObject {
 			
 			selectedCards = dict
 		}
-
-		super.init()
 	}
 	
 	func image(for card: Card?, selected isSelected: Bool) -> NSImage! {

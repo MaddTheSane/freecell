@@ -8,9 +8,8 @@
 import Foundation
 
 struct Card: Hashable, CustomStringConvertible {
+	// Suit order is important: must match the card graphics file.
 	/// Card suite.
-	///
-    /// Suit order is important: must match the card graphics file.
     enum Suit: Int32, CustomStringConvertible, CaseIterable {
         case clubs = 0
         case diamonds
