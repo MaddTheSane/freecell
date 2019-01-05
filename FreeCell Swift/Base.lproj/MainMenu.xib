@@ -338,13 +338,13 @@ Gw
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" multipleSelection="NO" autosaveColumns="NO" headerView="458" id="234">
-                                    <rect key="frame" x="0.0" y="0.0" width="475" height="214"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="495" height="214"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="gameNumber" editable="NO" width="96" minWidth="40" maxWidth="1000" id="236">
+                                        <tableColumn identifier="gameNumber" editable="NO" width="150" minWidth="40" maxWidth="1000" id="236">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Game Number">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -434,7 +434,7 @@ Gw
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="458">
-                            <rect key="frame" x="0.0" y="0.0" width="475" height="25"/>
+                            <rect key="frame" x="0.0" y="0.0" width="495" height="25"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
