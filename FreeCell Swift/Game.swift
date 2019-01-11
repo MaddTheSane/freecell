@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class Game {
+final class Game {
 	let table: Table
 	let view: GameView
 	let controller: GameController

@@ -16,7 +16,8 @@ struct VCCRandomNumberGenerator: RandomNumberGenerator {
     
     mutating func next() -> UInt64 {
         holdrand = holdrand &* 214013 &+ 2531011
-        return ((holdrand >> 16) & 0x7fff)
+        let toRet = (holdrand >> 16) & 0x7fff
+		return toRet
     }
     
     mutating func seed(_ seed: UInt64) {

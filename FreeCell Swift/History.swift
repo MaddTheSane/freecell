@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class History: Codable {
+final class History: Codable {
 	struct Object: Codable {
 		var gameNumber: UInt64
 		var result: Result

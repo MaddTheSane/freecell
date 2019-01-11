@@ -12,7 +12,7 @@ let NUMBER_OF_STACKS = 4
 let NUMBER_OF_FREE_CELLS = 4
 let NUMBER_OF_DECKS = 1
 
-class Table {
+final class Table {
 	private var columns: [[Card]]
 	private var stacks: [[Card]]
 	private var freeCells: [[Card]]
