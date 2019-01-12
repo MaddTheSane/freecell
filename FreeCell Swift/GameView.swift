@@ -142,18 +142,18 @@ class GameView: NSView {
 			
 			let o = (count * overlap > maxHeight) ? maxHeight/count : overlap;
 			
-			var curRow: Int = 0
+			var hasCard = false
 			for (row, card) in column.enumerated() {
 				let origin = NSPoint(x: CGFloat(edgeMargin + (cardWidth + margin) * i),
 									 y: frame.size.height - CGFloat(edgeMargin)
 										- CGFloat((cardHeight + margin) * 2) - CGFloat(o * row));
 				let image = cardView.image(for: card, selected: game.isSelected(card))
 				image?.draw(at: origin, from: .zero, operation: .sourceOver, fraction: 1)
-				curRow = row
+				hasCard = true
 			}
 			
 			// If the column is empty and selected, draw the selected image
-			if curRow == 0 && game.isSelected(TableLocation(type: .column, number: UInt16(i))) {
+			if hasCard == false && game.isSelected(TableLocation(type: .column, number: UInt16(i))) {
 				let origin = NSPoint(x: CGFloat(edgeMargin + (cardWidth + margin) * i),
 									 y: frame.size.height - CGFloat(edgeMargin)
 										- CGFloat((cardHeight + margin) * 2));
