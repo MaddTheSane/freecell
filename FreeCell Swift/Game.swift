@@ -20,6 +20,7 @@ final class Game {
 	var endDate: Date?
 	private(set) var inProgress = false
 	private(set) var result = Result.unplayed
+	var hilightedRanks = Set<Card.Rank>()
 	
 	init(view newView: GameView, controller newController: GameController, gameNumber newGameNumber: UInt64) {
 		view = newView
@@ -402,6 +403,9 @@ final class Game {
 			if tableCard == card {
 				return true
 			}
+		}
+		if hilightedRanks.contains(card.rank) {
+			return true
 		}
 		
 		return false

@@ -192,4 +192,162 @@ class GameView: NSView {
 			}
 		}
 	}
+	
+	override var isOpaque: Bool {
+		return true
+	}
+	
+	override var acceptsFirstResponder: Bool {
+		return true
+	}
+	
+	override func keyDown(with event: NSEvent) {
+		if let key = event.characters {
+			switch key {
+			case "1", "a", "A":
+				game?.hilightedRanks.insert(.ace)
+				needsDisplay = true
+				return
+				
+			case "2":
+				game?.hilightedRanks.insert(.two)
+				needsDisplay = true
+				return
+				
+			case "3":
+				game?.hilightedRanks.insert(.three)
+				needsDisplay = true
+				return
+				
+			case "4":
+				game?.hilightedRanks.insert(.four)
+				needsDisplay = true
+				return
+				
+			case "5":
+				game?.hilightedRanks.insert(.five)
+				needsDisplay = true
+				return
+				
+			case "6":
+				game?.hilightedRanks.insert(.six)
+				needsDisplay = true
+				return
+				
+			case "7":
+				game?.hilightedRanks.insert(.seven)
+				needsDisplay = true
+				return
+				
+			case "8":
+				game?.hilightedRanks.insert(.eight)
+				needsDisplay = true
+				return
+				
+			case "9":
+				game?.hilightedRanks.insert(.nine)
+				needsDisplay = true
+				return
+				
+			case "0":
+				game?.hilightedRanks.insert(.ten)
+				needsDisplay = true
+				return
+				
+			case "j", "J":
+				game?.hilightedRanks.insert(.jack)
+				needsDisplay = true
+				return
+				
+			case "q", "Q":
+				game?.hilightedRanks.insert(.queen)
+				needsDisplay = true
+				return
+				
+			case "k", "K":
+				game?.hilightedRanks.insert(.king)
+				needsDisplay = true
+				return
+				
+			default:
+				break
+			}
+		}
+		super.keyDown(with: event)
+	}
+
+	override func keyUp(with event: NSEvent) {
+		if let key = event.characters {
+			switch key {
+			case "1", "a", "A":
+				game?.hilightedRanks.remove(.ace)
+				needsDisplay = true
+				return
+				
+			case "2":
+				game?.hilightedRanks.remove(.two)
+				needsDisplay = true
+				return
+				
+			case "3":
+				game?.hilightedRanks.remove(.three)
+				needsDisplay = true
+				return
+				
+			case "4":
+				game?.hilightedRanks.remove(.four)
+				needsDisplay = true
+				return
+				
+			case "5":
+				game?.hilightedRanks.remove(.five)
+				needsDisplay = true
+				return
+				
+			case "6":
+				game?.hilightedRanks.remove(.six)
+				needsDisplay = true
+				return
+				
+			case "7":
+				game?.hilightedRanks.remove(.seven)
+				needsDisplay = true
+				return
+				
+			case "8":
+				game?.hilightedRanks.remove(.eight)
+				needsDisplay = true
+				return
+				
+			case "9":
+				game?.hilightedRanks.remove(.nine)
+				needsDisplay = true
+				return
+				
+			case "0":
+				game?.hilightedRanks.remove(.ten)
+				needsDisplay = true
+				return
+				
+			case "j", "J":
+				game?.hilightedRanks.remove(.jack)
+				needsDisplay = true
+				return
+				
+			case "q", "Q":
+				game?.hilightedRanks.remove(.queen)
+				needsDisplay = true
+				return
+				
+			case "k", "K":
+				game?.hilightedRanks.remove(.king)
+				needsDisplay = true
+				return
+				
+			default:
+				break
+			}
+		}
+		super.keyUp(with: event)
+	}
 }
