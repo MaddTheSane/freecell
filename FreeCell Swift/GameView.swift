@@ -205,67 +205,67 @@ class GameView: NSView {
 		if let key = event.characters {
 			switch key {
 			case "1", "a", "A":
-				game?.hilightedRanks.insert(.ace)
+				game?.hilightedRank = .ace
 				needsDisplay = true
 				return
 				
 			case "2":
-				game?.hilightedRanks.insert(.two)
+				game?.hilightedRank = .two
 				needsDisplay = true
 				return
 				
 			case "3":
-				game?.hilightedRanks.insert(.three)
+				game?.hilightedRank = .three
 				needsDisplay = true
 				return
 				
 			case "4":
-				game?.hilightedRanks.insert(.four)
+				game?.hilightedRank = .four
 				needsDisplay = true
 				return
 				
 			case "5":
-				game?.hilightedRanks.insert(.five)
+				game?.hilightedRank = .five
 				needsDisplay = true
 				return
 				
 			case "6":
-				game?.hilightedRanks.insert(.six)
+				game?.hilightedRank = .six
 				needsDisplay = true
 				return
 				
 			case "7":
-				game?.hilightedRanks.insert(.seven)
+				game?.hilightedRank = .seven
 				needsDisplay = true
 				return
 				
 			case "8":
-				game?.hilightedRanks.insert(.eight)
+				game?.hilightedRank = .eight
 				needsDisplay = true
 				return
 				
 			case "9":
-				game?.hilightedRanks.insert(.nine)
+				game?.hilightedRank = .nine
 				needsDisplay = true
 				return
 				
 			case "0":
-				game?.hilightedRanks.insert(.ten)
+				game?.hilightedRank = .ten
 				needsDisplay = true
 				return
 				
 			case "j", "J":
-				game?.hilightedRanks.insert(.jack)
+				game?.hilightedRank = .jack
 				needsDisplay = true
 				return
 				
 			case "q", "Q":
-				game?.hilightedRanks.insert(.queen)
+				game?.hilightedRank = .queen
 				needsDisplay = true
 				return
 				
 			case "k", "K":
-				game?.hilightedRanks.insert(.king)
+				game?.hilightedRank = .king
 				needsDisplay = true
 				return
 				
@@ -280,68 +280,94 @@ class GameView: NSView {
 		if let key = event.characters {
 			switch key {
 			case "1", "a", "A":
-				game?.hilightedRanks.remove(.ace)
-				needsDisplay = true
+				if game?.hilightedRank == .ace {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "2":
-				game?.hilightedRanks.remove(.two)
-				needsDisplay = true
+				if game?.hilightedRank == .two {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "3":
-				game?.hilightedRanks.remove(.three)
-				needsDisplay = true
+				if game?.hilightedRank == .three {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "4":
-				game?.hilightedRanks.remove(.four)
-				needsDisplay = true
+				if game?.hilightedRank == .four {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "5":
-				game?.hilightedRanks.remove(.five)
-				needsDisplay = true
+				if game?.hilightedRank == .five {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "6":
-				game?.hilightedRanks.remove(.six)
-				needsDisplay = true
+				if game?.hilightedRank == .six {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "7":
-				game?.hilightedRanks.remove(.seven)
-				needsDisplay = true
+				if game?.hilightedRank == .seven {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "8":
-				game?.hilightedRanks.remove(.eight)
-				needsDisplay = true
+				if game?.hilightedRank == .eight {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "9":
-				game?.hilightedRanks.remove(.nine)
-				needsDisplay = true
+				if game?.hilightedRank == .nine {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "0":
-				game?.hilightedRanks.remove(.ten)
-				needsDisplay = true
+				if game?.hilightedRank == .ten {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "j", "J":
-				game?.hilightedRanks.remove(.jack)
-				needsDisplay = true
+				if game?.hilightedRank == .jack {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "q", "Q":
-				game?.hilightedRanks.remove(.queen)
-				needsDisplay = true
+				if game?.hilightedRank == .queen {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			case "k", "K":
-				game?.hilightedRanks.remove(.king)
-				needsDisplay = true
+				if game?.hilightedRank == .king {
+					game?.hilightedRank = nil
+					needsDisplay = true
+				}
 				return
 				
 			default:
