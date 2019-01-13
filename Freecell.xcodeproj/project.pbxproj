@@ -14,6 +14,7 @@
 		552B1E3D217801650062E4CC /* Freecell.help in Resources */ = {isa = PBXBuildFile; fileRef = 552B1E3C217801650062E4CC /* Freecell.help */; };
 		552B1E3E217801650062E4CC /* Freecell.help in Resources */ = {isa = PBXBuildFile; fileRef = 552B1E3C217801650062E4CC /* Freecell.help */; };
 		555098792183E92900C76BF8 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555098782183E92900C76BF8 /* PreferencesController.swift */; };
+		558161EA21EAD15F00C30BF6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		55B47D832166B92000D34D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		55B47D862166B92000D34D16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D842166B92000D34D16 /* MainMenu.xib */; };
 		55B47D8E2166B96700D34D16 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D8D2166B96700D34D16 /* Card.swift */; };
@@ -169,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558161EA21EAD15F00C30BF6 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,23 +216,6 @@
 				F2B6AE4E07F5933000F80727 /* vccRand.h */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -281,8 +266,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
