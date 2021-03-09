@@ -42,9 +42,11 @@
 - init
 {
     if (self = [super init]) {
-        [self drawBlanks];
-        [self drawCards];
-        [self drawSelectedCards];
+        @autoreleasepool {
+            [self drawBlanks];
+            [self drawCards];
+            [self drawSelectedCards];
+        }
     }
 	
     return self;
@@ -55,6 +57,7 @@
     NSImage *bonded = [NSImage imageNamed: @"bonded"];
     NSSize bondedSize = [bonded size];
     NSRect source;
+    NSBitmapImageRep *card1x, *card2x;
 
     cardSize = NSMakeSize(bondedSize.width / 13, bondedSize.height / 5);
     
@@ -62,23 +65,49 @@
     blank = [[NSImage alloc] initWithSize: cardSize];
     source = NSMakeRect(0, bondedSize.height - 5 * cardSize.height,
                         cardSize.width, cardSize.height);
-    
-    [blank lockFocus];
+    card1x = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:cardSize.width pixelsHigh:cardSize.height bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
+    card2x = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:((NSInteger)cardSize.width)*2 pixelsHigh:((NSInteger)cardSize.height)*2 bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
+    card2x.size = cardSize;
+
+    [NSGraphicsContext saveGraphicsState];
+    NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:card1x];
 	[bonded drawAtPoint: NSZeroPoint
 			   fromRect: source
 			  operation: NSCompositingOperationCopy fraction:1];
-    [blank unlockFocus];
+    [NSGraphicsContext.currentContext flushGraphics];
+
+    NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:card2x];
+    [bonded drawAtPoint: NSZeroPoint
+               fromRect: source
+              operation: NSCompositingOperationCopy fraction:1];
+    [NSGraphicsContext.currentContext flushGraphics];
+
+    
+    [blank addRepresentations:@[card1x, card2x]];
     
     // Selected blank (for placeholders and compositing selected cards)
     selectedBlank = [[NSImage alloc] initWithSize: cardSize];
     source = NSMakeRect(cardSize.width, bondedSize.height - 5 * cardSize.height,
                         cardSize.width, cardSize.height);
     
-    [selectedBlank lockFocus];
+    card1x = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:cardSize.width pixelsHigh:cardSize.height bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
+    card2x = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:((NSInteger)cardSize.width)*2 pixelsHigh:((NSInteger)cardSize.height)*2 bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
+    card2x.size = cardSize;
+
+    NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:card1x];
 	[bonded drawAtPoint: NSZeroPoint
 			   fromRect: source
 			  operation: NSCompositingOperationCopy fraction: 1];
-    [selectedBlank unlockFocus];
+    
+    NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:card2x];
+    [bonded drawAtPoint: NSZeroPoint
+               fromRect: source
+              operation: NSCompositingOperationCopy fraction:1];
+    [NSGraphicsContext.currentContext flushGraphics];
+
+    
+    [selectedBlank addRepresentations:@[card1x, card2x]];
+    [NSGraphicsContext restoreGraphicsState];
 }
 
 - (void) drawCards
@@ -87,25 +116,38 @@
     NSImage *card;
     NSRect source;
     NSSize bondedSize = [bonded size];
-    NSMutableDictionary *dict;
-    unsigned i;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity: 52];
     
-    dict = [NSMutableDictionary dictionaryWithCapacity: 52];
-    for (i = 0; i < NUMBER_OF_SUITS; i++)
+    for (unsigned i = 0; i < NUMBER_OF_SUITS; i++) @autoreleasepool
     {
-        unsigned j;
-        for (j = ACE; j <= KING; j++)
+        for (unsigned j = ACE; j <= KING; j++)
         {
             card = [[NSImage alloc] initWithSize: cardSize];
             source = NSMakeRect((j - 1) * cardSize.width,
                                        bondedSize.height - (i + 1) * cardSize.height,
                                        cardSize.width, cardSize.height);
             
-            [card lockFocus];
+            NSBitmapImageRep *card1x, *card2x;
+            card1x = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:cardSize.width pixelsHigh:cardSize.height bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
+            card2x = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:((NSInteger)cardSize.width)*2 pixelsHigh:((NSInteger)cardSize.height)*2 bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
+            card2x.size = cardSize;
+
+            [NSGraphicsContext saveGraphicsState];
+            NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:card1x];
             [bonded drawAtPoint: NSZeroPoint
                        fromRect: source
                       operation: NSCompositingOperationCopy fraction:1];
-            [card unlockFocus];
+            [NSGraphicsContext.currentContext flushGraphics];
+            
+            NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:card2x];
+            [bonded drawAtPoint: NSZeroPoint
+                       fromRect: source
+                      operation: NSCompositingOperationCopy fraction:1];
+            [NSGraphicsContext.currentContext flushGraphics];
+
+            [NSGraphicsContext restoreGraphicsState];
+            
+            [card addRepresentations:@[card1x, card2x]];
             
             [dict setObject: card forKey: [Card cardWithSuit: i rank: j]];
         }
@@ -117,19 +159,34 @@
 - (void) drawSelectedCards
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity: 52];
-    Card *card;
     NSEnumerator *enumerator = [cards keyEnumerator];
 
-    while (card = [enumerator nextObject])
+    for (Card *card in enumerator)
     {
+        NSBitmapImageRep *card1x, *card2x;
+        card1x = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:cardSize.width pixelsHigh:cardSize.height bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
+        card2x = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL pixelsWide:((NSInteger)cardSize.width)*2 pixelsHigh:((NSInteger)cardSize.height)*2 bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace bytesPerRow:0 bitsPerPixel:0];
+        card2x.size = cardSize;
+        
         NSImage *cardImage = [cards objectForKey: card];
         NSImage *selectedCardImage = [[NSImage alloc] initWithSize: cardSize];
-        [selectedCardImage lockFocus];
+        [NSGraphicsContext saveGraphicsState];
+        NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:card1x];
         [cardImage drawAtPoint: NSMakePoint(0, 0) fromRect: NSZeroRect
                      operation: NSCompositeCopy fraction: 1.0];
         [selectedBlank drawAtPoint: NSMakePoint(0, 0) fromRect: NSZeroRect
                          operation: NSCompositeSourceAtop fraction: 0.5];
-        [selectedCardImage unlockFocus];
+        [NSGraphicsContext.currentContext flushGraphics];
+        
+        NSGraphicsContext.currentContext = [NSGraphicsContext graphicsContextWithBitmapImageRep:card2x];
+        [cardImage drawAtPoint: NSMakePoint(0, 0) fromRect: NSZeroRect
+                     operation: NSCompositeCopy fraction: 1.0];
+        [selectedBlank drawAtPoint: NSMakePoint(0, 0) fromRect: NSZeroRect
+                         operation: NSCompositeSourceAtop fraction: 0.5];
+        [NSGraphicsContext.currentContext flushGraphics];
+
+        [NSGraphicsContext restoreGraphicsState];
+        [selectedCardImage addRepresentations:@[card1x, card2x]];
         [dict setObject: selectedCardImage forKey: card];        
     }
     selectedCards = dict;

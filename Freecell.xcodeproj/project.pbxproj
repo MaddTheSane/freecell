@@ -45,7 +45,6 @@
 		F29D0D40158CE03A0050A6FA /* vccRand.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B6AE4E07F5933000F80727 /* vccRand.h */; };
 		F29D0D42158CE03A0050A6FA /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		F29D0D43158CE03A0050A6FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		F29D0D44158CE03A0050A6FA /* Freecell.icns in Resources */ = {isa = PBXBuildFile; fileRef = F2E57CE104C20E36005D2EDB /* Freecell.icns */; };
 		F29D0D45158CE03A0050A6FA /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = F2F17F5C04E07FD4003ED142 /* Credits.html */; };
 		F29D0D46158CE03A0050A6FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2BD40BD04E06C960098C7F4 /* Localizable.strings */; };
 		F29D0D4A158CE03A0050A6FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -135,7 +134,7 @@
 		F2B6AE4E07F5933000F80727 /* vccRand.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = vccRand.h; sourceTree = "<group>"; };
 		F2BD40BE04E06C960098C7F4 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F2BFB9B104B89C1D0085C4AC /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
-		F2BFB9B204B89C1D0085C4AC /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		F2BFB9B204B89C1D0085C4AC /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; usesTabs = 0; };
 		F2CBECB004B4D1890052BE5F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		F2CBECB104B4D1890052BE5F /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		F2CD26A404B477F30003D579 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
@@ -276,19 +275,19 @@
 		552B1E372177CF5B0062E4CC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				55998D4125F8338E00581095 /* Xoroshiro128Plus.swift */,
 				55B47D8D2166B96700D34D16 /* Card.swift */,
 				55CCAA252166F085008EEFE7 /* CardView.swift */,
 				552B1E382177D9CB0062E4CC /* Game.swift */,
-				552B1E3A2177D9E90062E4CC /* GameView.swift */,
 				55B47D932166BB9500D34D16 /* GameController.swift */,
+				552B1E3A2177D9E90062E4CC /* GameView.swift */,
 				552B1E2D2177B5710062E4CC /* History.swift */,
 				552B1E352177BDCE0062E4CC /* HistoryController.swift */,
+				555098782183E92900C76BF8 /* PreferencesController.swift */,
 				55B47D972166C4E000D34D16 /* Result.swift */,
 				55CCAA232166F053008EEFE7 /* Table.swift */,
 				55B47D952166C28C00D34D16 /* TableLocation.swift */,
 				55ECE0882169DCC300943261 /* TableMove.swift */,
-				555098782183E92900C76BF8 /* PreferencesController.swift */,
+				55998D4125F8338E00581095 /* Xoroshiro128Plus.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -449,7 +448,6 @@
 			files = (
 				F29D0D42158CE03A0050A6FA /* MainMenu.nib in Resources */,
 				F29D0D43158CE03A0050A6FA /* InfoPlist.strings in Resources */,
-				F29D0D44158CE03A0050A6FA /* Freecell.icns in Resources */,
 				F29D0D45158CE03A0050A6FA /* Credits.html in Resources */,
 				55CCAA202166DD67008EEFE7 /* Assets.xcassets in Resources */,
 				552B1E3D217801650062E4CC /* Freecell.help in Resources */,
@@ -763,6 +761,7 @@
 		F29D0D5B158CE03A0050A6FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Freecell;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -799,6 +798,7 @@
 		F29D0D5C158CE03A0050A6FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = Freecell;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";

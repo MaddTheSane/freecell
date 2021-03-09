@@ -85,7 +85,7 @@
 
 - (NSString *) suitString
 {
-    NSString *suitToString[] = {
+    NSString *const suitToString[] = {
         @"Clubs", @"Diamonds", @"Hearts", @"Spades" };
 
     return suitToString[suit];
@@ -95,7 +95,7 @@
 
 - (NSString *) rankString
 {
-    NSString *rankToString[] = {
+    NSString *const rankToString[] = {
         @"None", @"Ace", @"Two", @"Three", @"Four",
         @"Five", @"Six", @"Seven", @"Eight", @"Nine",
         @"Ten", @"Jack", @"Queen", @"King" };

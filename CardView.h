@@ -32,8 +32,8 @@
 
 @interface CardView : NSObject
 {
-    NSDictionary    *cards;
-    NSDictionary    *selectedCards;
+    NSDictionary<Card*,NSImage*>    *cards;
+    NSDictionary<Card*,NSImage*>    *selectedCards;
     NSImage         *blank;
     NSImage         *selectedBlank;
     NSImage         *placeholder;
@@ -49,7 +49,7 @@
 
 - (NSImage *) imageForCard: (Card *) card selected: (BOOL) isSelected;
 @property (readonly) NSSize size;
-- (unsigned) overlap;
-- (unsigned) smallOverlap;
+@property (readonly) unsigned overlap;
+@property (readonly) unsigned smallOverlap;
 
 @end
