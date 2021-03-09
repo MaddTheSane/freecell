@@ -46,7 +46,7 @@
         // Default colour is a nice shade of green
         NSColor *colour = [NSColor colorWithCalibratedRed: 0.2 green: 0.4
                                                      blue: 0.1 alpha: 1.0];
-        NSData *data = [NSArchiver archivedDataWithRootObject: colour];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject: colour];
 
         // Set the default
         [defaults registerDefaults:
@@ -55,8 +55,12 @@
 
         // Then try to read the preference
         data = [defaults dataForKey: @"backgroundColour"];
-        if (data)
-            colour = [NSUnarchiver unarchiveObjectWithData: data];
+        if (data) {
+            colour = [NSKeyedUnarchiver unarchiveObjectWithData: data];
+            if (!colour) {
+                colour = [NSUnarchiver unarchiveObjectWithData: data];
+            }
+        }
         [defaults synchronize];
 
         // And set the coloour

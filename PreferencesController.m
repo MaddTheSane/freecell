@@ -49,7 +49,10 @@
     data = [defaults dataForKey: @"backgroundColour"];
     if (data)
     {
-        NSColor *colour = [NSUnarchiver unarchiveObjectWithData: data];
+        NSColor *colour = [NSKeyedUnarchiver unarchiveObjectWithData: data];
+        if (!colour) {
+            colour = [NSUnarchiver unarchiveObjectWithData: data];
+        }
         [backgroundColour setColor: colour];
     }
     [defaults synchronize];
@@ -78,7 +81,7 @@
 - (IBAction) backgroundColourChosen: (id) sender
 {
     NSColor *colour = [backgroundColour color];
-    [defaults setObject: [NSArchiver archivedDataWithRootObject: colour] forKey: @"backgroundColour"];
+    [defaults setObject: [NSKeyedArchiver archivedDataWithRootObject: colour] forKey: @"backgroundColour"];
     [defaults synchronize];
     [gameView setBackgroundColour: colour];
 }
