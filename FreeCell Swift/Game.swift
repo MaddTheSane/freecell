@@ -161,7 +161,7 @@ final class Game {
 		let deckTableLocation = TableLocation(type: .deck, number: 0)
 		
 		// Shuffle the deck
-		var shuffleRand = VCCRandomNumberGenerator(holdrand: gameNumber)
+		var shuffleRand = PRNG(seed: gameNumber)
 		table.shuffleDeck(using: &shuffleRand)
 		let deck = table.array(for: deckTableLocation)!
 		

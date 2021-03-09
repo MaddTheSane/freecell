@@ -15,13 +15,13 @@
 		552B1E3E217801650062E4CC /* Freecell.help in Resources */ = {isa = PBXBuildFile; fileRef = 552B1E3C217801650062E4CC /* Freecell.help */; };
 		555098792183E92900C76BF8 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555098782183E92900C76BF8 /* PreferencesController.swift */; };
 		558161EA21EAD15F00C30BF6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		55998D4225F8338E00581095 /* Xoroshiro128Plus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55998D4125F8338E00581095 /* Xoroshiro128Plus.swift */; };
 		55B47D832166B92000D34D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		55B47D862166B92000D34D16 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D842166B92000D34D16 /* MainMenu.xib */; };
 		55B47D8E2166B96700D34D16 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D8D2166B96700D34D16 /* Card.swift */; };
 		55B47D942166BB9500D34D16 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D932166BB9500D34D16 /* GameController.swift */; };
 		55B47D962166C28C00D34D16 /* TableLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D952166C28C00D34D16 /* TableLocation.swift */; };
 		55B47D982166C4E000D34D16 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D972166C4E000D34D16 /* Result.swift */; };
-		55B47D9A2166C6AF00D34D16 /* vccRandHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B47D992166C6AF00D34D16 /* vccRandHelper.swift */; };
 		55CCAA202166DD67008EEFE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B47D822166B92000D34D16 /* Assets.xcassets */; };
 		55CCAA212166EF96008EEFE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2BD40BD04E06C960098C7F4 /* Localizable.strings */; };
 		55CCAA242166F053008EEFE7 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CCAA232166F053008EEFE7 /* Table.swift */; };
@@ -85,6 +85,7 @@
 		552ED143216BEE88009D31B2 /* es */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		552ED144216BEE8E009D31B2 /* fi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		555098782183E92900C76BF8 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
+		55998D4125F8338E00581095 /* Xoroshiro128Plus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xoroshiro128Plus.swift; sourceTree = "<group>"; };
 		55B47D7E2166B91E00D34D16 /* FreeCell Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FreeCell Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B47D822166B92000D34D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B47D852166B92000D34D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		55B47D932166BB9500D34D16 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		55B47D952166C28C00D34D16 /* TableLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableLocation.swift; sourceTree = "<group>"; };
 		55B47D972166C4E000D34D16 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		55B47D992166C6AF00D34D16 /* vccRandHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vccRandHelper.swift; sourceTree = "<group>"; };
 		55CCAA232166F053008EEFE7 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		55CCAA252166F085008EEFE7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		55E630F221C4277E002C0FBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -276,6 +276,7 @@
 		552B1E372177CF5B0062E4CC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				55998D4125F8338E00581095 /* Xoroshiro128Plus.swift */,
 				55B47D8D2166B96700D34D16 /* Card.swift */,
 				55CCAA252166F085008EEFE7 /* CardView.swift */,
 				552B1E382177D9CB0062E4CC /* Game.swift */,
@@ -287,7 +288,6 @@
 				55CCAA232166F053008EEFE7 /* Table.swift */,
 				55B47D952166C28C00D34D16 /* TableLocation.swift */,
 				55ECE0882169DCC300943261 /* TableMove.swift */,
-				55B47D992166C6AF00D34D16 /* vccRandHelper.swift */,
 				555098782183E92900C76BF8 /* PreferencesController.swift */,
 			);
 			name = Classes;
@@ -466,9 +466,9 @@
 			files = (
 				55B47D982166C4E000D34D16 /* Result.swift in Sources */,
 				55CCAA262166F085008EEFE7 /* CardView.swift in Sources */,
-				55B47D9A2166C6AF00D34D16 /* vccRandHelper.swift in Sources */,
 				552B1E2E2177B5710062E4CC /* History.swift in Sources */,
 				55B47D942166BB9500D34D16 /* GameController.swift in Sources */,
+				55998D4225F8338E00581095 /* Xoroshiro128Plus.swift in Sources */,
 				55B47D962166C28C00D34D16 /* TableLocation.swift in Sources */,
 				552B1E392177D9CB0062E4CC /* Game.swift in Sources */,
 				55B47D8E2166B96700D34D16 /* Card.swift in Sources */,
