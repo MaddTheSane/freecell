@@ -49,9 +49,7 @@
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject: colour];
 
         // Set the default
-        [defaults registerDefaults:
-            [NSDictionary dictionaryWithObjectsAndKeys:
-                data, @"backgroundColour", nil]];
+        [defaults registerDefaults:@{@"backgroundColour": data}];
 
         // Then try to read the preference
         data = [defaults dataForKey: @"backgroundColour"];
