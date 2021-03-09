@@ -22,18 +22,41 @@ final class CardView {
 		
 		do { // drawBlanks
 			// Placeholder blank
-			blank = NSImage(size: cardSize)
-			var source = NSRect(origin: CGPoint(x: 0, y: bondedSize.height - 5 * cardSize.height), size: cardSize)
-			blank.lockFocus()
-			bonded.draw(at: .zero, from: source, operation: .copy, fraction: 1)
-			blank.unlockFocus()
+			do {
+				let card1x = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(cardSize.width), pixelsHigh: Int(cardSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+				let card2x = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(cardSize.width) * 2, pixelsHigh: Int(cardSize.height) * 2, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+				card2x.size = cardSize
+				
+				blank = NSImage(size: cardSize)
+				let source = NSRect(origin: CGPoint(x: 0, y: bondedSize.height - 5 * cardSize.height), size: cardSize)
+				NSGraphicsContext.saveGraphicsState()
+				NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: card1x)
+				bonded.draw(at: .zero, from: source, operation: .copy, fraction: 1)
+				NSGraphicsContext.current?.flushGraphics()
+				NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: card2x)
+				bonded.draw(at: .zero, from: source, operation: .copy, fraction: 1)
+				NSGraphicsContext.current?.flushGraphics()
+				NSGraphicsContext.restoreGraphicsState()
+				blank.addRepresentations([card1x, card2x])
+			}
 			
 			// Selected blank (for placeholders and compositing selected cards)
-			selectedBlank = NSImage(size: cardSize)
-			source = NSRect(origin: CGPoint(x: cardSize.width, y: bondedSize.height - 5 * cardSize.height), size: cardSize)
-			selectedBlank.lockFocus()
-			bonded.draw(at: .zero, from: source, operation: .copy, fraction: 1)
-			selectedBlank.unlockFocus()
+			do {
+				let card1x = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(cardSize.width), pixelsHigh: Int(cardSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+				let card2x = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(cardSize.width) * 2, pixelsHigh: Int(cardSize.height) * 2, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+				card2x.size = cardSize
+				selectedBlank = NSImage(size: cardSize)
+				let source = NSRect(origin: CGPoint(x: cardSize.width, y: bondedSize.height - 5 * cardSize.height), size: cardSize)
+				NSGraphicsContext.saveGraphicsState()
+				NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: card1x)
+				bonded.draw(at: .zero, from: source, operation: .copy, fraction: 1)
+				NSGraphicsContext.current?.flushGraphics()
+				NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: card2x)
+				bonded.draw(at: .zero, from: source, operation: .copy, fraction: 1)
+				NSGraphicsContext.current?.flushGraphics()
+				NSGraphicsContext.restoreGraphicsState()
+				selectedBlank.addRepresentations([card1x, card2x])
+			}
 		}
 		
 		do { // drawCards
@@ -42,14 +65,23 @@ final class CardView {
 			
 			for i in Card.Suit.allCases {
 				for j in Card.Rank.allCases {
+					let card1x = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(cardSize.width), pixelsHigh: Int(cardSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+					let card2x = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(cardSize.width) * 2, pixelsHigh: Int(cardSize.height) * 2, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+					card2x.size = cardSize
+					NSGraphicsContext.saveGraphicsState()
+					NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: card1x)
 					let card = NSImage(size: cardSize)
 					let source = NSRect(origin:
 						CGPoint(x: CGFloat(j.rawValue - 1) * cardSize.width,
 								y: bondedSize.height - CGFloat(i.rawValue + 1) * cardSize.height),
 										size: cardSize)
-					card.lockFocus()
 					bonded.draw(at: .zero, from: source, operation: .copy, fraction: 1)
-					card.unlockFocus()
+					NSGraphicsContext.current?.flushGraphics()
+					NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: card2x)
+					bonded.draw(at: .zero, from: source, operation: .copy, fraction: 1)
+					NSGraphicsContext.current?.flushGraphics()
+					NSGraphicsContext.restoreGraphicsState()
+					card.addRepresentations([card1x, card2x])
 					
 					dict[Card(suit: i, rank: j)] = card
 				}
@@ -62,11 +94,23 @@ final class CardView {
 			dict.reserveCapacity(52)
 
 			for (card, cardImage) in cards {
+				let card1x = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(cardSize.width), pixelsHigh: Int(cardSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+				let card2x = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(cardSize.width) * 2, pixelsHigh: Int(cardSize.height) * 2, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .calibratedRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+				card2x.size = cardSize
+
 				let selectedCardImage = NSImage(size: cardSize)
-				selectedCardImage.lockFocus()
+				NSGraphicsContext.saveGraphicsState()
+				NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: card1x)
 				cardImage.draw(at: .zero, from: .zero, operation: .copy, fraction: 1.0)
 				selectedBlank.draw(at: .zero, from: .zero, operation: .sourceAtop, fraction: 0.5)
-				selectedCardImage.unlockFocus()
+				NSGraphicsContext.current?.flushGraphics()
+				NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: card2x)
+				cardImage.draw(at: .zero, from: .zero, operation: .copy, fraction: 1.0)
+				selectedBlank.draw(at: .zero, from: .zero, operation: .sourceAtop, fraction: 0.5)
+				NSGraphicsContext.current?.flushGraphics()
+				NSGraphicsContext.restoreGraphicsState()
+				selectedCardImage.addRepresentations([card1x, card2x])
+
 				dict[card] = selectedCardImage
 			}
 			

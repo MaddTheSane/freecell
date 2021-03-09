@@ -43,7 +43,7 @@ struct TableLocation: Hashable, CustomStringConvertible {
 }
 
 extension TableLocation {
-    init(none: ()) {
+    init() {
         type = .none
         number = 0
     }

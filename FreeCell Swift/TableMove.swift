@@ -14,7 +14,7 @@ struct TableMove: CustomStringConvertible {
 	
 	var count: UInt32 = 1
 
-	init(source newSource: TableLocation, destination newDestination: TableLocation = TableLocation(none: ()), count newCount: UInt32 = 1) {
+	init(source newSource: TableLocation, destination newDestination: TableLocation = TableLocation(), count newCount: UInt32 = 1) {
 		self.source = newSource
 		destination = newDestination
 		
@@ -26,8 +26,8 @@ struct TableMove: CustomStringConvertible {
 	}
 	
 	init() {
-		source = TableLocation(none: ())
-		destination = TableLocation(none: ())
+		source = TableLocation()
+		destination = TableLocation()
 		count = 0
 	}
 	
