@@ -61,29 +61,29 @@ final class History: Codable {
 		return filtered.count
 	}
 	
-	func sort(byIdentifier: String, descending: Bool) {
+	func sort(by byIdentifier: NSUserInterfaceItemIdentifier, descending: Bool) {
 		switch byIdentifier {
-		case "gameNumber":
+		case gameNumberIdentifier:
 			records.sort { (lhs, rhs) -> Bool in
 				lhs.gameNumber < rhs.gameNumber
 			}
 			
-		case "moves":
+		case movesIdentifier:
 			records.sort { (lhs, rhs) -> Bool in
 				lhs.moves < rhs.moves
 			}
 			
-		case "result":
+		case resultIdentifier:
 			records.sort { (lhs, rhs) -> Bool in
 				lhs.result < rhs.result
 			}
 
-		case "duration":
+		case durationIdentifier:
 			records.sort { (lhs, rhs) -> Bool in
 				lhs.duration < rhs.duration
 			}
 
-		case "date":
+		case dateIdentifier:
 			records.sort { (lhs, rhs) -> Bool in
 				lhs.date < rhs.date
 			}

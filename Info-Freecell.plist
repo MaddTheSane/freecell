@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleGetInfoString</key>
-	<string>2.2</string>
+	<string>2.2.1</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>Freecell.help</string>
 	<key>CFBundleHelpBookName</key>

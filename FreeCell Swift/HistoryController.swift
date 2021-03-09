@@ -15,23 +15,23 @@ private var historySortColumn: String {
 	return "historySortColumn"
 }
 
-private var gameNumberIdentifier: NSUserInterfaceItemIdentifier {
+var gameNumberIdentifier: NSUserInterfaceItemIdentifier {
 	return NSUserInterfaceItemIdentifier("gameNumber")
 }
 
-private var dateIdentifier: NSUserInterfaceItemIdentifier {
+var dateIdentifier: NSUserInterfaceItemIdentifier {
 	return NSUserInterfaceItemIdentifier("date")
 }
 
-private var resultIdentifier: NSUserInterfaceItemIdentifier {
+var resultIdentifier: NSUserInterfaceItemIdentifier {
 	return NSUserInterfaceItemIdentifier("result")
 }
 
-private var movesIdentifier: NSUserInterfaceItemIdentifier {
+var movesIdentifier: NSUserInterfaceItemIdentifier {
 	return NSUserInterfaceItemIdentifier("moves")
 }
 
-private var durationIdentifier: NSUserInterfaceItemIdentifier {
+var durationIdentifier: NSUserInterfaceItemIdentifier {
 	return NSUserInterfaceItemIdentifier("duration")
 }
 
@@ -96,7 +96,7 @@ class HistoryController: NSObject, NSTableViewDelegate, NSTableViewDataSource {
 		tableView.setIndicatorImage(sortImage, in: column)
 		tableView.highlightedTableColumn = column
 		
-		history.sort(byIdentifier: sortColumn.rawValue, descending: sortDescending)
+		history.sort(by: sortColumn, descending: sortDescending)
 		tableView.reloadData()
 	}
 	
